@@ -166,7 +166,7 @@ jobs:
 
       # Markdown validation step removed - was causing workflow failures
 
-status:
+final-status:
   runs-on: ubuntu-latest
   needs: [test, lint-typescript, security-scan, docker-build, docs]
   if: always()
