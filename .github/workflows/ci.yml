@@ -68,7 +68,13 @@ jobs:
         env:
           DATABASE_URL: postgresql://test_user:test_password@localhost:5432/test_db
         run: |
-          pytest api-and-sdk/test_*.py -v --tb=short || true
+          # Skip integration tests that require running API server
+          # Only run pytest if test files exist with pytest markers
+          if find api-and-sdk -name "test_*.py" -o -name "*_test.py" | grep -q .; then
+            pytest api-and-sdk -k "not integration" --tb=short -v || true
+          else
+            echo "No pytest tests found, skipping test phase"
+          fi
 
   lint-typescript:
     runs-on: ubuntu-latest
@@ -106,18 +112,25 @@ jobs:
         run: |
           # Simple check for common secret patterns
           # Exclude .env files (they're in .gitignore) and node_modules, venv, __pycache__
+          echo "Scanning for hardcoded secrets..."
+          
+          # Check for API keys
           if grep -r "OPENAI_API_KEY=" . --include="*.py" --include="*.ts" \
             --exclude-dir=".git" --exclude-dir="node_modules" --exclude-dir="__pycache__" \
-            --exclude-dir="venv" --exclude-dir=".venv" --exclude="*.env"; then
-            echo "ERROR: Secrets found in code!"
+            --exclude-dir="venv" --exclude-dir=".venv" --exclude="*.env" 2>/dev/null; then
+            echo "ERROR: OPENAI_API_KEY found in code!"
             exit 1
           fi
+          
+          # Check for database URLs
           if grep -r "postgresql://" . --include="*.py" --include="*.ts" \
             --exclude-dir=".git" --exclude-dir="node_modules" --exclude-dir="__pycache__" \
-            --exclude-dir="venv" --exclude-dir=".venv" --exclude="*.env"; then
-            echo "ERROR: Database URLs should not be in code!"
+            --exclude-dir="venv" --exclude-dir=".venv" --exclude="*.env" 2>/dev/null; then
+            echo "ERROR: Database URLs found in code!"
             exit 1
           fi
+          
+          echo "✓ No secrets found"
 
       - name: Check .gitignore
         run: |
