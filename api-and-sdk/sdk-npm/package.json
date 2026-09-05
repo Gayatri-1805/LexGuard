@@ -1,0 +1,25 @@
+{
+  "name": "@legal-hallucination/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for legal domain LLM hallucination detection API",
+  "main": "dist/client.js",
+  "types": "dist/client.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist generated-types.ts",
+    "sync-openapi": "bash ../openapi-sync.sh"
+  },
+  "keywords": [
+    "hallucination",
+    "detection",
+    "legal",
+    "LLM",
+    "verification"
+  ],
+  "author": "HALO Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0",
+    "openapi-typescript": "^6.0"
+  }
+}

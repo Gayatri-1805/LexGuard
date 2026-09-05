@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "d:\projects\HALO\legal-hallucination-detector\api-and-sdk\api\kb\build_index.py", line 160, in main
+    rows = fetch_indexable_rows()
+  File "d:\projects\HALO\legal-hallucination-detector\api-and-sdk\api\kb\build_index.py", line 67, in fetch_indexable_rows
+    print(f"    \u2713 {len(statutes)} statute sections")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 4: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "d:\projects\HALO\legal-hallucination-detector\api-and-sdk\api\kb\build_index.py", line 205, in <module>
+    success = main()
+  File "d:\projects\HALO\legal-hallucination-detector\api-and-sdk\api\kb\build_index.py", line 198, in main
+    print(f"\n\u2717 Build failed: {e}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 2: character maps to <undefined>
+
+======================================================================
+Building FAISS Index for IT Act Knowledge Base
+======================================================================
+
+Fetching indexable rows from Postgres...
+  Fetching statute sections...
