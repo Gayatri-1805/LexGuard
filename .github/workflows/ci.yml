@@ -32,12 +32,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Cache pip packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -77,9 +77,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install npm dependencies
         run: |
@@ -105,11 +105,16 @@ jobs:
       - name: Check for secrets
         run: |
           # Simple check for common secret patterns
-          if grep -r "OPENAI_API_KEY=" . --include="*.py" --include="*.ts" --include="*.env"; then
+          # Exclude .env files (they're in .gitignore) and node_modules, venv, __pycache__
+          if grep -r "OPENAI_API_KEY=" . --include="*.py" --include="*.ts" \
+            --exclude-dir=".git" --exclude-dir="node_modules" --exclude-dir="__pycache__" \
+            --exclude-dir="venv" --exclude-dir=".venv" --exclude="*.env"; then
             echo "ERROR: Secrets found in code!"
             exit 1
           fi
-          if grep -r "postgresql://" . --include="*.py" --include="*.ts" --include=".env"; then
+          if grep -r "postgresql://" . --include="*.py" --include="*.ts" \
+            --exclude-dir=".git" --exclude-dir="node_modules" --exclude-dir="__pycache__" \
+            --exclude-dir="venv" --exclude-dir=".venv" --exclude="*.env"; then
             echo "ERROR: Database URLs should not be in code!"
             exit 1
           fi
@@ -128,10 +133,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
