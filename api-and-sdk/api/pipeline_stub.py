@@ -40,13 +40,20 @@ def check(text: str, context: str | None = None) -> CheckResponse:
         "invalid under", "never required", "completely false", "gross negligence"
     ]
     
-    contains_hallucination = any(keyword in text.lower() for keyword in hallucination_keywords)
+    # Detect text length to vary verdict distribution
+    text_length = len(text)
+    hallucination_score = sum(1 for keyword in hallucination_keywords if keyword in text.lower())
+    
+    contains_hallucination = hallucination_score >= 2  # Need at least 2 hallucination keywords
     contains_section = "section" in text.lower() or "43" in text or "section 43a" in text.lower()
     contains_case = "case" in text.lower() or "miranda" in text.lower() or "warrant" in text.lower()
     contains_procedural = "burden" in text.lower() or "proof" in text.lower()
 
     claims = []
     verdicts = []
+    
+    # Determine how many claims to generate based on text length
+    num_claims = min(3, max(1, text_length // 100))  # 1-3 claims based on length
 
     # Demo claim 1: Section reference
     if contains_section or len(text) > 50:
@@ -59,7 +66,7 @@ def check(text: str, context: str | None = None) -> CheckResponse:
             )
         )
         
-        # If hallucinations detected, contradict this claim
+        # Verdict depends on hallucination detection
         if contains_hallucination:
             verdicts.append(
                 Verdict(
@@ -88,7 +95,7 @@ def check(text: str, context: str | None = None) -> CheckResponse:
             )
 
     # Demo claim 2: Case citation / Privacy rights
-    if contains_case or len(text) > 100:
+    if (contains_case or len(text) > 100) and num_claims >= 2:
         claims.append(
             Claim(
                 id="claim_002",
@@ -98,7 +105,6 @@ def check(text: str, context: str | None = None) -> CheckResponse:
             )
         )
         
-        # If hallucinations detected, contradict this claim
         if contains_hallucination:
             verdicts.append(
                 Verdict(
@@ -127,7 +133,7 @@ def check(text: str, context: str | None = None) -> CheckResponse:
             )
 
     # Demo claim 3: Procedural (often contradicted in stub for variety)
-    if contains_procedural or len(text) > 150:
+    if (contains_procedural or len(text) > 150) and num_claims >= 3:
         claims.append(
             Claim(
                 id="claim_003",
@@ -136,6 +142,8 @@ def check(text: str, context: str | None = None) -> CheckResponse:
                 span=(121, 180),
             )
         )
+        
+        # Claim 3 is often contradicted to create mixed verdicts
         verdicts.append(
             Verdict(
                 claim_id="claim_003",
