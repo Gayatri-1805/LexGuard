@@ -33,6 +33,14 @@ def check(text: str, context: str | None = None) -> CheckResponse:
         CheckResponse with realistic example claims, verdicts, trust_index, decision
     """
     # Parse the input text for demo purposes (simplified)
+    # Detect hallucination keywords
+    hallucination_keywords = [
+        "only applies to government", "no liability", "forbids data protection",
+        "all data breaches are legal", "not protected", "no restrictions",
+        "invalid under", "never required", "completely false", "gross negligence"
+    ]
+    
+    contains_hallucination = any(keyword in text.lower() for keyword in hallucination_keywords)
     contains_section = "section" in text.lower() or "43" in text or "section 43a" in text.lower()
     contains_case = "case" in text.lower() or "miranda" in text.lower() or "warrant" in text.lower()
     contains_procedural = "burden" in text.lower() or "proof" in text.lower()
@@ -50,20 +58,36 @@ def check(text: str, context: str | None = None) -> CheckResponse:
                 span=(0, 60),
             )
         )
-        verdicts.append(
-            Verdict(
-                claim_id="claim_001",
-                label=VerdictLabel.ENTAILED,
-                evidence=[
-                    "Section 43A: Compensation for failure to protect data. "
-                    "Where a person (including a body corporate) causes loss or damage..."
-                ],
-                stage_reached=2,
-                confidence=0.92,
+        
+        # If hallucinations detected, contradict this claim
+        if contains_hallucination:
+            verdicts.append(
+                Verdict(
+                    claim_id="claim_001",
+                    label=VerdictLabel.CONTRADICTED,
+                    evidence=[
+                        "Section 43A: Compensation for failure to protect data. "
+                        "Where a person (including a body corporate) causes loss or damage..."
+                    ],
+                    stage_reached=2,
+                    confidence=0.95,
+                )
             )
-        )
+        else:
+            verdicts.append(
+                Verdict(
+                    claim_id="claim_001",
+                    label=VerdictLabel.ENTAILED,
+                    evidence=[
+                        "Section 43A: Compensation for failure to protect data. "
+                        "Where a person (including a body corporate) causes loss or damage..."
+                    ],
+                    stage_reached=2,
+                    confidence=0.92,
+                )
+            )
 
-    # Demo claim 2: Case citation
+    # Demo claim 2: Case citation / Privacy rights
     if contains_case or len(text) > 100:
         claims.append(
             Claim(
@@ -73,18 +97,34 @@ def check(text: str, context: str | None = None) -> CheckResponse:
                 span=(61, 120),
             )
         )
-        verdicts.append(
-            Verdict(
-                claim_id="claim_002",
-                label=VerdictLabel.ENTAILED,
-                evidence=[
-                    "K.S. Puttaswamy v. Union of India (2017) 10 SCC 1: "
-                    "Privacy is a fundamental right protected by Articles 14, 19, and 21."
-                ],
-                stage_reached=2,
-                confidence=0.88,
+        
+        # If hallucinations detected, contradict this claim
+        if contains_hallucination:
+            verdicts.append(
+                Verdict(
+                    claim_id="claim_002",
+                    label=VerdictLabel.CONTRADICTED,
+                    evidence=[
+                        "K.S. Puttaswamy v. Union of India (2017) 10 SCC 1: "
+                        "Privacy is a fundamental right protected by Articles 14, 19, and 21."
+                    ],
+                    stage_reached=2,
+                    confidence=0.93,
+                )
             )
-        )
+        else:
+            verdicts.append(
+                Verdict(
+                    claim_id="claim_002",
+                    label=VerdictLabel.ENTAILED,
+                    evidence=[
+                        "K.S. Puttaswamy v. Union of India (2017) 10 SCC 1: "
+                        "Privacy is a fundamental right protected by Articles 14, 19, and 21."
+                    ],
+                    stage_reached=2,
+                    confidence=0.88,
+                )
+            )
 
     # Demo claim 3: Procedural (often contradicted in stub for variety)
     if contains_procedural or len(text) > 150:
@@ -118,16 +158,23 @@ def check(text: str, context: str | None = None) -> CheckResponse:
         # Count verdicts by label
         entailed_count = sum(1 for v in verdicts if v.label == VerdictLabel.ENTAILED)
         contradicted_count = sum(1 for v in verdicts if v.label == VerdictLabel.CONTRADICTED)
+        not_enough_count = sum(1 for v in verdicts if v.label == VerdictLabel.NOT_ENOUGH_INFO)
         total_count = len(verdicts)
 
-        # Simple heuristic: trust_index = (entailed + 0.5*not_enough) / total
-        trust_index = (entailed_count + 0.5 * (total_count - entailed_count - contradicted_count)) / total_count
+        # Improved heuristic: trust_index = (entailed + 0.5*not_enough) / total
+        trust_index = (entailed_count + 0.5 * not_enough_count) / total_count
         trust_index = max(0.0, min(1.0, trust_index))
 
-        # Decision based on trust_index
-        if contradicted_count > entailed_count:
-            decision = Decision.FLAGGED
-        elif trust_index >= 0.7:
+        # Decision based on verdict distribution
+        if contradicted_count > 0:
+            # If any claims are contradicted, it's a hallucination
+            if contradicted_count >= entailed_count:
+                decision = Decision.FLAGGED
+            elif trust_index >= 0.75:
+                decision = Decision.SAFE
+            else:
+                decision = Decision.ABSTAIN
+        elif trust_index >= 0.75:
             decision = Decision.SAFE
         else:
             decision = Decision.ABSTAIN
