@@ -53,7 +53,13 @@ def check(text: str, context: str | None = None) -> CheckResponse:
     verdicts = []
     
     # Determine how many claims to generate based on text length
-    num_claims = min(3, max(1, text_length // 100))  # 1-3 claims based on length
+    # Lower threshold: 50 chars → 1 claim, 80 chars → 2 claims, 150+ chars → 3 claims
+    if text_length < 70:
+        num_claims = 1
+    elif text_length < 130:
+        num_claims = 2
+    else:
+        num_claims = 3
 
     # Demo claim 1: Section reference
     if contains_section or len(text) > 50:
