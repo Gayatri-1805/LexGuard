@@ -138,8 +138,9 @@ def check(text: str, context: str | None = None) -> CheckResponse:
                 )
             )
 
-    # Demo claim 3: Procedural (often contradicted in stub for variety)
-    if (contains_procedural or len(text) > 150) and num_claims >= 3:
+    # Demo claim 3: Procedural (often contradicted to create mixed verdicts)
+    # Generate for 2+ claims (not just 3) so we get ABSTAIN with mixed verdicts
+    if (contains_procedural or len(text) > 80) and num_claims >= 2:
         claims.append(
             Claim(
                 id="claim_003",
@@ -149,7 +150,7 @@ def check(text: str, context: str | None = None) -> CheckResponse:
             )
         )
         
-        # Claim 3 is often contradicted to create mixed verdicts
+        # Claim 3 is always contradicted to create mixed verdicts
         verdicts.append(
             Verdict(
                 claim_id="claim_003",
