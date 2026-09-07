@@ -65,14 +65,31 @@ class Claim(BaseModel):
         description="Character offsets (start, end) in the original LLM output where this claim appears. "
                     "Used for tracing back to source text. E.g., (120, 180)."
     )
+    citation: Optional[str] = Field(
+        default=None,
+        description="Verbatim statute section or case citation extracted from the claim, if any. "
+                    "E.g., 'Section 43A, Information Technology Act 2000' or "
+                    "'K.S. Puttaswamy v. Union of India (2017) 10 SCC 1'. "
+                    "None if no citation was identified — the claim will be grounded semantically."
+    )
+    context: Optional[str] = Field(
+        default=None,
+        description="The original surrounding sentence from the LLM output that contained this claim. "
+                    "Preserved verbatim for traceability and downstream explainability."
+    )
 
 
 class VerdictLabel(str, Enum):
     """Outcome of the hallucination detection pipeline (Stages 1-4)."""
+    # ── Legacy labels (Stages 1 / 3 / 4) ────────────────────────────────────
     ENTAILED = "ENTAILED"                  # Claim is supported by retrieved evidence
     CONTRADICTED = "CONTRADICTED"          # Claim is refuted by retrieved evidence
     NOT_ENOUGH_INFO = "NOT_ENOUGH_INFO"    # Insufficient evidence to decide
     LOW_RISK_SKIP = "LOW_RISK_SKIP"        # Stage 1 filtered out as non-falsifiable
+    # ── LLM entailment-judge labels (Stage 2: Grounding / get_verdict) ──────
+    SUPPORTED = "SUPPORTED"                # Excerpt directly supports the claim
+    PARTIALLY_SUPPORTED = "PARTIALLY_SUPPORTED"  # Excerpt supports claim in part only
+    UNVERIFIABLE = "UNVERIFIABLE"          # Insufficient evidence in excerpt to judge
 
 
 class Verdict(BaseModel):
@@ -115,6 +132,36 @@ class Verdict(BaseModel):
         description="Confidence score (0-1) of the verdict, if produced by the stage. "
                     "None if the stage does not compute a confidence. "
                     "Stage 4 always populates this; earlier stages may."
+    )
+    # ── LLM entailment-judge fields (populated by verdict.get_verdict) ──────
+    # All are Optional / have defaults so that existing code constructing Verdict
+    # without these fields continues to work unchanged.
+    reasoning: Optional[str] = Field(
+        default=None,
+        description="2-4 sentence chain-of-thought from the LLM judge explaining its "
+                    "comparison of the claim against the retrieved excerpt."
+    )
+    evidence_span: Optional[str] = Field(
+        default=None,
+        description="Exact verbatim quote from the retrieved excerpt that the judge "
+                    "relied on to reach its verdict. Empty string or None when the "
+                    "excerpt contained no relevant sentence."
+    )
+    unsupported_detail: Optional[str] = Field(
+        default=None,
+        description="The specific part of the claim that is NOT backed by the excerpt. "
+                    "Populated only when label is PARTIALLY_SUPPORTED."
+    )
+    temporal_flag: bool = Field(
+        default=False,
+        description="True if the judge detected that the excerpt may be superseded, "
+                    "amended, or repealed based on dates or amendment markers visible "
+                    "in the excerpt text itself."
+    )
+    temporal_note: Optional[str] = Field(
+        default=None,
+        description="Explanation of the temporal concern when temporal_flag is True. "
+                    "None / empty string when temporal_flag is False."
     )
 
 
