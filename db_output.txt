@@ -1,0 +1,16 @@
+Tables:
+statute_sections
+case_law
+check_logs
+
+--- check_logs last 10 ---
+(337, 'itact_sec67_correct_008', 1.0, 'SAFE', datetime.datetime(2026, 9, 8, 3, 42, 51, 586487))
+(336, 'itact_sec69a_correct_007', 0.3333, 'FLAGGED', datetime.datetime(2026, 9, 8, 3, 39, 53, 585745))
+(335, 'itact_sec10a_correct_005', 1.0, 'SAFE', datetime.datetime(2026, 9, 8, 3, 37, 31, 756234))
+(334, 'itact_sec67a_partial_004', 0.5, 'ABSTAIN', datetime.datetime(2026, 9, 8, 3, 36, 47, 672469))
+(333, 'itact_sec67_partial_003', 0.6667, 'ABSTAIN', datetime.datetime(2026, 9, 8, 3, 36, 10, 421768))
+(332, 'itact_sec66_hallucinated_002', 0.3333, 'FLAGGED', datetime.datetime(2026, 9, 8, 3, 34, 49, 424272))
+(331, 'itact_sec43_hallucinated_001', 0.5, 'ABSTAIN', datetime.datetime(2026, 9, 8, 3, 32, 22, 982553))
+(330, 'microsoft-ireland-abstain-test-001', 0.4286, 'ABSTAIN', datetime.datetime(2026, 9, 7, 17, 0, 47, 846439))
+(329, 'microsoft-ireland-hallucination-test-001', 0.3, 'FLAGGED', datetime.datetime(2026, 9, 7, 16, 46, 38, 19310))
+(328, 'puttaswamy-test-001', 0.8, 'SAFE', datetime.datetime(2026, 9, 7, 16, 31, 54, 190250))

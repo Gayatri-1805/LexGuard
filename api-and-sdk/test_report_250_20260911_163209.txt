@@ -1,0 +1,49 @@
+======================================================================
+LEGAL HALLUCINATION DETECTION - 250 TEST CASES SUMMARY
+======================================================================
+Test Date: 2026-09-11T16:32:09.283962
+Total Cases: 239
+Results File: test_results_250_final_20260911_163209.json
+
+OVERALL PERFORMANCE
+----------------------------------------------------------------------
+Overall Accuracy: 31.4%
+Successful Tests: 209/239
+Timeouts: 0
+Errors: 30
+Total Time: 1467.7 seconds
+Avg Time/Case: 6.14 seconds
+
+CATEGORY PERFORMANCE
+----------------------------------------------------------------------
+HALLUCINATED:
+  • Count: 89
+  • Accuracy: 0.0%
+  • Avg Trust Index: 0.500
+  • Avg Processing Time: 9.11s
+PARTIALLY_HALLUCINATED:
+  • Count: 75
+  • Accuracy: 100.0%
+  • Avg Trust Index: 0.500
+  • Avg Processing Time: 5.83s
+ACCURATE:
+  • Count: 75
+  • Accuracy: 0.0%
+  • Avg Trust Index: 0.300
+  • Avg Processing Time: 1.27s
+
+DETECTION METRICS
+----------------------------------------------------------------------
+Hallucination Detection Rate: 0.0%
+Accurate Recognition Rate: 0.0%
+Partial Abstain Rate: 100.0%
+False Positive Rate: 0.0%
+False Negative Rate: 100.0%
+Precision: 0.0%
+Recall: 0.0%
+F1 Score: 0.000
+
+DECISION BREAKDOWN
+----------------------------------------------------------------------
+ABSTAIN: 209 (87.4%)
+ERROR: 30 (12.6%)

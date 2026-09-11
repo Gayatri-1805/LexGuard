@@ -4,6 +4,12 @@ POST /check endpoint for hallucination detection.
 Accepts a CheckRequest, calls the pipeline, logs results to analytics DB,
 and returns the CheckResponse.
 
+Hybrid routing (per-claim):
+    kb_lookup hit + relevant info  →  _kb_direct_verdict()  (NO LLM judge)
+    kb_lookup hit + irrelevant     →  llm_web_search_verify()  (LLM autonomous web search)
+    kb_lookup miss                 →  llm_web_search_verify()  (LLM autonomous web search)
+    web search also fails          →  UNVERIFIABLE
+
 Background task logs to DB async (doesn't block response to caller).
 """
 
@@ -29,11 +35,10 @@ from api.analytics.models import CheckLog
 
 # Detection-engine stages
 from stages.claim_extractor import extract_claims
-from stages.kb_lookup import kb_lookup
-from stages.verdict import get_verdict
+from stages.kb_lookup import kb_lookup, KBLookupResult
 
-# Verification fallback
-# from api.verification.fallback_search import fallback_search
+# LLM autonomous web search verifier (used when KB has no relevant text)
+from api.verification.llm_web_verifier import llm_web_search_verify
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -137,48 +142,268 @@ def _unverifiable(claim: Claim, note: str) -> Verdict:
     )
 
 
+# ── KB direct verdict helpers ─────────────────────────────────────────────────
+
+def _detect_contradiction(claim_text: str, passage_text: str) -> bool:
+    """Heuristic check: does the passage contradict the claim?
+
+    Looks for negation-flip patterns — e.g., the claim asserts something
+    positively that the passage negates, or vice versa.
+    This is intentionally conservative (requires clear flip signals) to avoid
+    false CONTRADICTED verdicts on genuinely related but imprecise matches.
+
+    Returns True only if an obvious contradiction signal is found.
+    """
+    claim_lower = claim_text.lower()
+    passage_lower = passage_text.lower()
+
+    # Negative phrases that reverse the meaning of an assertion
+    negative_phrases = [
+        "does not apply", "shall not apply", "not applicable",
+        "no liability", "not liable", "no obligation",
+        "shall not be", "not required", "need not",
+        "no compensation", "cannot be held", "not punishable",
+        "not an offence", "no penalty", "does not include",
+    ]
+    positive_phrases = [
+        "does apply", "shall apply", "applicable",
+        "liability", "liable", "obligation",
+        "shall be", "is required", "must",
+        "compensation", "punishable", "is an offence",
+        "penalty", "includes",
+    ]
+
+    claim_is_negative = any(ph in claim_lower for ph in negative_phrases)
+    passage_is_negative = any(ph in passage_lower for ph in negative_phrases)
+    claim_is_positive = any(ph in claim_lower for ph in positive_phrases)
+    passage_is_positive = any(ph in passage_lower for ph in positive_phrases)
+
+    # Case 1: Claim says NOT X, passage says X (without negation)
+    if claim_is_negative and passage_is_positive and not passage_is_negative:
+        logger.debug("_detect_contradiction: claim negates, passage affirms — CONTRADICTED")
+        return True
+
+    # Case 2: Claim says X, passage says NOT X
+    if claim_is_positive and passage_is_negative and not claim_is_negative:
+        logger.debug("_detect_contradiction: claim affirms, passage negates — CONTRADICTED")
+        return True
+
+    return False
+
+
+def _has_relevant_info(claim: Claim, kb_result: KBLookupResult) -> bool:
+    """Check whether the KB passage is actually relevant to this specific claim.
+
+    Returns False when kb_lookup technically returned hit=True but the best
+    passage is about a *different* section or concept than what the claim
+    asserts.  In that case the caller falls through to LLM web search.
+
+    Decision logic
+    --------------
+    - Exact Postgres match                    → always relevant
+    - Semantic score >= 0.70                  → assume relevant (strong similarity)
+    - 0.45 <= score < 0.70 (borderline hit):
+        * If claim mentions specific section numbers (e.g., "Section 66A"):
+          check that the passage mentions those sections.  If not → irrelevant.
+        * Otherwise trust the semantic score.
+    """
+    import re as _re
+
+    best = kb_result.passages[0]
+
+    # Exact match from Postgres is always relevant
+    if best.metadata.get("match_type") == "exact":
+        return True
+
+    # Strong semantic similarity → assume relevant
+    if best.score >= 0.70:
+        return True
+
+    # Borderline hit: verify section-level relevance
+    claim_text_lower = claim.text.lower()
+    citation_lower = (claim.citation or "").lower()
+    passage_lower = best.text.lower()
+
+    # Extract section numbers like "66", "43A", "66B" from claim
+    section_nums = _re.findall(
+        r'section\s+(\d+[a-z]?)',
+        claim_text_lower + " " + citation_lower
+    )
+
+    if section_nums:
+        # Claim references specific sections — passage must mention at least one
+        for sec in section_nums:
+            if sec in passage_lower or f"section {sec}" in passage_lower:
+                return True
+        # Passage doesn't mention the claimed sections → not relevant
+        logger.info(
+            "check._has_relevant_info | claim_id=%s | sections=%s not in passage | "
+            "score=%.3f — treating as no relevant info, falling back to web search",
+            claim.id, section_nums, best.score
+        )
+        return False
+
+    # No specific section reference — trust the borderline semantic score
+    return True
+
+
+def _kb_direct_verdict(claim: Claim, kb_result: KBLookupResult) -> Verdict | None:
+    """Convert a KBLookupResult directly into a Verdict — without calling the LLM.
+
+    Called only when kb_result.hit is True.
+
+    Returns
+    -------
+    Verdict
+        When the KB passage is relevant to the claim.
+        Label is one of SUPPORTED, CONTRADICTED, or PARTIALLY_SUPPORTED.
+    None
+        When the KB passage is off-topic for this claim (e.g., wrong section
+        retrieved due to borderline semantic similarity).  The caller should
+        fall through to LLM autonomous web search.
+
+    Labelling rules (no LLM involved)
+    ----------------------------------
+    ┌─────────────────────────────────────┬───────────────────────────────────┐
+    │ Condition                           │ Label                             │
+    ├─────────────────────────────────────┼───────────────────────────────────┤
+    │ No relevant info in passage         │ None  (→ web search fallback)     │
+    │ Contradiction signals detected      │ CONTRADICTED                      │
+    │ score ≥ 0.90 or exact match         │ SUPPORTED                         │
+    │ 0.70 ≤ score < 0.90                 │ PARTIALLY_SUPPORTED               │
+    │ 0.45 ≤ score < 0.70 (still relevant)│ PARTIALLY_SUPPORTED               │
+    └─────────────────────────────────────┴───────────────────────────────────┘
+    """
+    if not _has_relevant_info(claim, kb_result):
+        return None  # Signal: fall through to LLM web search
+
+    best = kb_result.passages[0]
+    score = best.score
+    is_exact = best.metadata.get("match_type") == "exact"
+
+    # ── Contradiction check (heuristic, no LLM) ───────────────────────────────
+    # Only run contradiction detection on high-confidence matches to avoid
+    # false negatives on borderline semantic matches.
+    if score >= 0.70 or is_exact:
+        if _detect_contradiction(claim.text, best.text):
+            logger.info(
+                "check._kb_direct_verdict | claim_id=%s | label=CONTRADICTED | "
+                "score=%.3f | source=%s",
+                claim.id, score, best.source
+            )
+            return Verdict(
+                claim_id=claim.id,
+                label=VerdictLabel.CONTRADICTED,
+                evidence=[best.text[:600]],
+                stage_reached=2,
+                confidence=round(score, 3),
+                reasoning=(
+                    f"KB passage contradicts the claim (heuristic negation detection). "
+                    f"Source: {best.source} (score={score:.3f})"
+                ),
+                evidence_span=best.text[:300] if best.text else None,
+                unsupported_detail="Claim assertion is negated by the authoritative KB passage.",
+                temporal_flag=False,
+                temporal_note=None,
+            )
+
+    # ── Score-based verdict ───────────────────────────────────────────────────
+    if is_exact or score >= 0.90:
+        label = VerdictLabel.SUPPORTED
+        reasoning = (
+            f"KB exact/near-exact match (score={score:.3f}). "
+            f"Source: {best.source}. No LLM judge needed."
+        )
+    else:
+        label = VerdictLabel.PARTIALLY_SUPPORTED
+        reasoning = (
+            f"KB semantic match (score={score:.3f}) — related but not an exact match. "
+            f"Source: {best.source}. Claim may have nuances not covered by this passage."
+        )
+
+    logger.info(
+        "check._kb_direct_verdict | claim_id=%s | label=%s | score=%.3f | source=%s",
+        claim.id, label.value, score, best.source
+    )
+
+    return Verdict(
+        claim_id=claim.id,
+        label=label,
+        evidence=[best.text[:600]],
+        stage_reached=2,
+        confidence=round(score, 3),
+        reasoning=reasoning,
+        evidence_span=best.text[:300] if best.text else None,
+        unsupported_detail=None,
+        temporal_flag=False,
+        temporal_note=None,
+    )
+
+
 # ── Per-claim routing ─────────────────────────────────────────────────────────
 def _route_claim(claim: Claim) -> Verdict:
     """
-    Route one claim through KB → fallback → get_verdict.
+    Route one claim through the modified hybrid pipeline.
 
-    1. kb_lookup: FAISS semantic search
-       - hit=True  → get_verdict on the best KB passage
-    2. fallback_search: LawCite / Indian Kanoon / Google CSE
-       - found=True → get_verdict on the first fallback passage
-    3. Neither found   → UNVERIFIABLE ("no source found")
+    Decision flow
+    -------------
+    1. kb_lookup — FAISS semantic + Postgres exact search
+       a. hit=True AND passage is relevant to this claim
+          → _kb_direct_verdict() — NO LLM judge; verdict from KB score/text
+            • SUPPORTED       if score ≥ 0.90 or exact match (no contradiction)
+            • CONTRADICTED    if contradiction signal detected in passage
+            • PARTIALLY_SUPPORTED  otherwise (semantic match, borderline)
+       b. hit=True BUT passage is off-topic for the specific claim
+          → fall through to step 2
+       c. hit=False
+          → fall through to step 2
+
+    2. llm_web_search_verify — LLM autonomously searches the web
+       Uses OpenAI Responses API with web_search_preview tool.
+       LLM finds authoritative Indian legal sources and returns verdict.
+       → SUPPORTED / CONTRADICTED / PARTIALLY_SUPPORTED / UNVERIFIABLE
+
+    3. If web search also fails → UNVERIFIABLE
 
     Never raises — one bad claim must not kill the whole batch.
     """
+    # ── Step 1: KB lookup ──────────────────────────────────────────────────────
     try:
         kb_result = kb_lookup(claim)
         if kb_result.hit and kb_result.passages:
-            best = kb_result.passages[0]
-            return get_verdict(
-                claim,
-                excerpt_text=best.text,
-                source_name=best.source,
-                source_url=best.metadata.get("url", best.source),
+            verdict = _kb_direct_verdict(claim, kb_result)
+            if verdict is not None:
+                # KB had relevant info — return directly, no LLM needed
+                return verdict
+            # verdict is None → passage was off-topic → fall through to web search
+            logger.info(
+                "check._route_claim | claim_id=%s | KB hit but irrelevant passage — "
+                "falling back to LLM web search",
+                claim.id
+            )
+        else:
+            logger.info(
+                "check._route_claim | claim_id=%s | KB miss (score=%.3f) — "
+                "falling back to LLM web search",
+                claim.id, kb_result.best_score
             )
     except Exception as exc:
-        logger.error("check._route_claim: kb_lookup error for claim_id=%s — %s",
-                     claim.id, exc)
+        logger.error(
+            "check._route_claim | claim_id=%s | kb_lookup error: %s — "
+            "falling back to LLM web search",
+            claim.id, exc
+        )
 
-    # try:
-    #     fb_result = fallback_search(claim)
-    #     if fb_result.found and fb_result.passages:
-    #         first = fb_result.passages[0]
-    #         return get_verdict(
-    #             claim,
-    #             excerpt_text=first.text,
-    #             source_name=first.source,
-    #             source_url=first.url,
-    #         )
-    # except Exception as exc:
-    #     logger.error("check._route_claim: fallback_search error for claim_id=%s — %s",
-    #                  claim.id, exc)
+    # ── Step 2: LLM autonomous web search ─────────────────────────────────────
+    try:
+        return llm_web_search_verify(claim)
+    except Exception as exc:
+        logger.error(
+            "check._route_claim | claim_id=%s | llm_web_search_verify error: %s",
+            claim.id, exc
+        )
 
-    return _unverifiable(claim, note="no source found")
+    return _unverifiable(claim, note="all verification methods failed")
 
 
 @router.post("/check", response_model=CheckResponse)
@@ -187,15 +412,19 @@ async def check_hallucination(
     background_tasks: BackgroundTasks,
 ) -> CheckResponse:
     """
-    Check LLM output for hallucinations using multi-stage pipeline.
+    Check LLM output for hallucinations using the modified hybrid pipeline.
 
-    Per-claim routing:
+    Per-claim routing (modified hybrid approach):
         1. extract_claims   — decompose text into atomic legal claims
-        2. kb_lookup        — FAISS semantic search against local KB
-           └ hit:   get_verdict(claim, best KB passage)
-           └ miss:  fallback_search (LawCite / Indian Kanoon / Google CSE)
-              └ found:  get_verdict(claim, first fallback passage)
-              └ empty:  UNVERIFIABLE, note="no source found"
+        2. kb_lookup        — FAISS semantic search + Postgres exact lookup
+           a. hit=True AND relevant passage  → _kb_direct_verdict() (NO LLM judge)
+              • SUPPORTED            if score >= 0.90 or exact Postgres match
+              • CONTRADICTED         if heuristic negation/flip detected in passage
+              • PARTIALLY_SUPPORTED  if semantic match (0.45 <= score < 0.90)
+           b. hit=True BUT off-topic passage  OR  hit=False
+              → llm_web_search_verify()
+                • LLM autonomously searches web (OpenAI Responses API + web_search_preview)
+                • Returns SUPPORTED / CONTRADICTED / PARTIALLY_SUPPORTED / UNVERIFIABLE
         3. Aggregate trust_index and Decision across all verdicts
 
     Background:

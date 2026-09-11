@@ -19,6 +19,9 @@ fastapi>=0.104.0
 uvicorn[standard]>=0.24.0
 httpx>=0.24.0
 
+# LLM Integration (for claim extraction and verdict generation)
+openai>=1.0.0
+
 # Optional: Development and testing
 # pytest>=7.0.0
 # pytest-asyncio>=0.21.0

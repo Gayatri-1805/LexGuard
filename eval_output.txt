@@ -1,0 +1,116 @@
+kb_lookup | claim_id=claim_001 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+≡ƒôé Loaded 105 gold items from dashboard-and-eval\eval\gold_set\gold_set.jsonl
+
+≡ƒÜÇ Running eval on 10 gold items (Sample)...
+
+Loading FAISS index from C:\B.T Project\LexGuard\api-and-sdk\api\kb\index\it_act.faiss...
+Γ£ô Loaded index with 123 vectors
+Γ£ô Loaded 123 metadata entries
+Loading embedding model: all-MiniLM-L6-v2...
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 103/103 [00:00<00:00, 3772.58it/s]
+Failed to log check 07f420ae-7f1a-482d-b905-2600289b75f9: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+kb_lookup | claim_id=claim_001 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+kb_lookup | claim_id=claim_002 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+llm_web_verifier: model 'openai/gpt-oss-120b' may not support web_search_preview. Falling back to 'gpt-4o-mini'.
+llm_web_verifier | claim_id=claim_002 | Responses API call failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+Failed to log check 4492ab16-b2ac-445e-91fc-dd5e2e9d7f60: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+kb_lookup | claim_id=claim_001 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Failed to log check 87f49cc4-e0b6-4d5b-997a-ab158e1d50dd: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+kb_lookup | claim_id=claim_001 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+llm_web_verifier: model 'openai/gpt-oss-120b' may not support web_search_preview. Falling back to 'gpt-4o-mini'.
+llm_web_verifier | claim_id=claim_001 | Responses API call failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+Failed to log check c95a9285-328c-49a3-a69c-5d17dbbe9e8a: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+kb_lookup | claim_id=claim_001 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Failed to log check bb9b43cd-18af-4419-9dae-8c6b54061017: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+kb_lookup | claim_id=claim_001 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+llm_web_verifier: model 'openai/gpt-oss-120b' may not support web_search_preview. Falling back to 'gpt-4o-mini'.
+llm_web_verifier | claim_id=claim_001 | Responses API call failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+kb_lookup | claim_id=claim_002 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Failed to log check 26a4a216-5031-491d-8cd6-2baf01510433: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+kb_lookup | claim_id=claim_001 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Failed to log check 0ba1c1fe-80b3-47ef-86d2-63e9c7f229e7: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Failed to log check 4d1e852a-7ca5-47d6-81af-e5c92b16c09f: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+kb_lookup | claim_id=claim_001 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Failed to log check a8da40e0-b7d3-4b01-bceb-bfd805436c05: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+kb_lookup | claim_id=claim_001 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+llm_web_verifier: model 'openai/gpt-oss-120b' may not support web_search_preview. Falling back to 'gpt-4o-mini'.
+llm_web_verifier | claim_id=claim_001 | Responses API call failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+kb_lookup | claim_id=claim_002 | exact_lookup_error: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+llm_web_verifier: model 'openai/gpt-oss-120b' may not support web_search_preview. Falling back to 'gpt-4o-mini'.
+llm_web_verifier | claim_id=claim_002 | Responses API call failed: Error code: 404 - {'error': {'message': 'The model `gpt-4o-mini` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}
+Failed to log check 66d945ea-24b3-4cb9-a942-f1a06ab75450: (psycopg2.OperationalError) could not translate host name "ep-purple-unit-aec8e45k-pooler.c-2.us-east-2.aws.neon.tech" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Γ£ô Model loaded: all-MiniLM-L6-v2 (384 dims)
+Γ£à Evaluated 10 items.
+
+ΓÅ▒  Completed in 76.4s
+
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  LexGuard Evaluation Report
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  Timestamp:    2026-09-11T08:55:50.047680+00:00
+  Total items:  10
+  Accuracy:     0.0%
+  Macro F1:     0.000
+  Weighted F1:  0.000
+
+  Per-label breakdown:
+    ENTAILED             P=0.000  R=0.000  F1=0.000  support=10
+    CONTRADICTED         P=0.000  R=0.000  F1=0.000  support=0
+    NOT_ENOUGH_INFO      P=0.000  R=0.000  F1=0.000  support=0
+
+  Per claim type accuracy:
+    CASE_CITATION             0/2  (0.0%)
+    SECTION_REF               0/8  (0.0%)
+
+  Confidence calibration:
+    Correct predictions:   mean confidence = 0.000
+    Incorrect predictions: mean confidence = 0.644
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ

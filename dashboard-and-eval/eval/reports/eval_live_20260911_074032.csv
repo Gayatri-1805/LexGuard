@@ -1,0 +1,16 @@
+metric,value
+timestamp,2026-09-11T07:40:32.857634+00:00
+total_items,105
+accuracy,0.1905
+macro_f1,0.1075
+weighted_f1,0.0614
+binary_auc,0.5
+ENTAILED_precision,0.0
+ENTAILED_recall,0.0
+ENTAILED_f1,0.0
+CONTRADICTED_precision,0.0
+CONTRADICTED_recall,0.0
+CONTRADICTED_f1,0.0
+NOT_ENOUGH_INFO_precision,0.1923
+NOT_ENOUGH_INFO_recall,1.0
+NOT_ENOUGH_INFO_f1,0.3226

@@ -1,0 +1,2153 @@
+[
+  {
+    "id": "hal_civil_criminal_001",
+    "text": "Section 43 of the Information Technology Act provides for imprisonment for up to 3 years and a fine up to 25 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 is civil liability, not criminal",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_civil_criminal_002",
+    "text": "Section 43A of the Information Technology Act provides for imprisonment for up to 7 years and a fine up to 5 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A is civil liability, not criminal",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_civil_criminal_003",
+    "text": "Section 44 of the Information Technology Act provides for imprisonment for life and a fine up to 10 lakh rupees for violations.",
+    "context": "Verify this statement against Section 44 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 44 is civil liability, not criminal",
+    "section_ref": "44"
+  },
+  {
+    "id": "hal_civil_criminal_004",
+    "text": "Section 45 of the Information Technology Act provides for imprisonment for up to 3 years and a fine up to 1 crore rupees for violations.",
+    "context": "Verify this statement against Section 45 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 45 is civil liability, not criminal",
+    "section_ref": "45"
+  },
+  {
+    "id": "hal_civil_criminal_005",
+    "text": "Section 43 of the Information Technology Act provides for imprisonment for up to 7 years and a fine up to 10 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 is civil liability, not criminal",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_civil_criminal_006",
+    "text": "Section 43A of the Information Technology Act provides for imprisonment for up to 5 years and a fine up to 5 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A is civil liability, not criminal",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_civil_criminal_007",
+    "text": "Section 44 of the Information Technology Act provides for imprisonment for up to 5 years and a fine up to 5 lakh rupees for violations.",
+    "context": "Verify this statement against Section 44 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 44 is civil liability, not criminal",
+    "section_ref": "44"
+  },
+  {
+    "id": "hal_civil_criminal_008",
+    "text": "Section 45 of the Information Technology Act provides for imprisonment for life and a fine up to 1 crore rupees for violations.",
+    "context": "Verify this statement against Section 45 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 45 is civil liability, not criminal",
+    "section_ref": "45"
+  },
+  {
+    "id": "hal_civil_criminal_009",
+    "text": "Section 43 of the Information Technology Act provides for imprisonment for up to 7 years and a fine up to 10 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 is civil liability, not criminal",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_civil_criminal_010",
+    "text": "Section 43A of the Information Technology Act provides for death penalty in severe cases and a fine up to 1 crore rupees for violations.",
+    "context": "Verify this statement against Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A is civil liability, not criminal",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_civil_criminal_011",
+    "text": "Section 44 of the Information Technology Act provides for imprisonment for up to 5 years and a fine up to 25 lakh rupees for violations.",
+    "context": "Verify this statement against Section 44 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 44 is civil liability, not criminal",
+    "section_ref": "44"
+  },
+  {
+    "id": "hal_civil_criminal_012",
+    "text": "Section 45 of the Information Technology Act provides for imprisonment for life and a fine up to 1 crore rupees for violations.",
+    "context": "Verify this statement against Section 45 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 45 is civil liability, not criminal",
+    "section_ref": "45"
+  },
+  {
+    "id": "hal_civil_criminal_013",
+    "text": "Section 43 of the Information Technology Act provides for imprisonment for life and a fine up to 5 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 is civil liability, not criminal",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_civil_criminal_014",
+    "text": "Section 43A of the Information Technology Act provides for imprisonment for life and a fine up to 25 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A is civil liability, not criminal",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_civil_criminal_015",
+    "text": "Section 44 of the Information Technology Act provides for imprisonment for up to 3 years and a fine up to 1 crore rupees for violations.",
+    "context": "Verify this statement against Section 44 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 44 is civil liability, not criminal",
+    "section_ref": "44"
+  },
+  {
+    "id": "hal_civil_criminal_016",
+    "text": "Section 45 of the Information Technology Act provides for death penalty in severe cases and a fine up to 5 lakh rupees for violations.",
+    "context": "Verify this statement against Section 45 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 45 is civil liability, not criminal",
+    "section_ref": "45"
+  },
+  {
+    "id": "hal_civil_criminal_017",
+    "text": "Section 43 of the Information Technology Act provides for imprisonment for life and a fine up to 5 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 is civil liability, not criminal",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_civil_criminal_018",
+    "text": "Section 43A of the Information Technology Act provides for imprisonment for up to 3 years and a fine up to 10 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A is civil liability, not criminal",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_civil_criminal_019",
+    "text": "Section 44 of the Information Technology Act provides for imprisonment for life and a fine up to 1 crore rupees for violations.",
+    "context": "Verify this statement against Section 44 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 44 is civil liability, not criminal",
+    "section_ref": "44"
+  },
+  {
+    "id": "hal_civil_criminal_020",
+    "text": "Section 45 of the Information Technology Act provides for imprisonment for up to 3 years and a fine up to 1 crore rupees for violations.",
+    "context": "Verify this statement against Section 45 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 45 is civil liability, not criminal",
+    "section_ref": "45"
+  },
+  {
+    "id": "hal_civil_criminal_021",
+    "text": "Section 43 of the Information Technology Act provides for imprisonment for up to 3 years and a fine up to 1 crore rupees for violations.",
+    "context": "Verify this statement against Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 is civil liability, not criminal",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_civil_criminal_022",
+    "text": "Section 43A of the Information Technology Act provides for imprisonment for up to 7 years and a fine up to 25 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A is civil liability, not criminal",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_civil_criminal_023",
+    "text": "Section 44 of the Information Technology Act provides for imprisonment for up to 5 years and a fine up to 1 crore rupees for violations.",
+    "context": "Verify this statement against Section 44 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 44 is civil liability, not criminal",
+    "section_ref": "44"
+  },
+  {
+    "id": "hal_civil_criminal_024",
+    "text": "Section 45 of the Information Technology Act provides for imprisonment for up to 7 years and a fine up to 25 lakh rupees for violations.",
+    "context": "Verify this statement against Section 45 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 45 is civil liability, not criminal",
+    "section_ref": "45"
+  },
+  {
+    "id": "hal_civil_criminal_025",
+    "text": "Section 43 of the Information Technology Act provides for imprisonment for life and a fine up to 25 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 is civil liability, not criminal",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_civil_criminal_026",
+    "text": "Section 43A of the Information Technology Act provides for imprisonment for up to 7 years and a fine up to 10 lakh rupees for violations.",
+    "context": "Verify this statement against Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A is civil liability, not criminal",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_civil_criminal_027",
+    "text": "Section 44 of the Information Technology Act provides for imprisonment for up to 3 years and a fine up to 5 lakh rupees for violations.",
+    "context": "Verify this statement against Section 44 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 44 is civil liability, not criminal",
+    "section_ref": "44"
+  },
+  {
+    "id": "hal_civil_criminal_028",
+    "text": "Section 45 of the Information Technology Act provides for imprisonment for up to 7 years and a fine up to 5 lakh rupees for violations.",
+    "context": "Verify this statement against Section 45 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 45 is civil liability, not criminal",
+    "section_ref": "45"
+  },
+  {
+    "id": "hal_wrong_subject_001",
+    "text": "Section 43 of the IT Act exclusively deals with cyber terrorism and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 is about civil liability for unauthorized computer access, not cyber terrorism",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_wrong_subject_002",
+    "text": "Section 43A of the IT Act exclusively deals with offensive messages and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A is about compensation for failure to protect data, not offensive messages",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_wrong_subject_003",
+    "text": "Section 65 of the IT Act exclusively deals with electronic signatures and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 65 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 65 is about tampering with computer source documents, not electronic signatures",
+    "section_ref": "65"
+  },
+  {
+    "id": "hal_wrong_subject_004",
+    "text": "Section 66 of the IT Act exclusively deals with cyber terrorism and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 66 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 66 is about computer-related offences/hacking, not cyber terrorism",
+    "section_ref": "66"
+  },
+  {
+    "id": "hal_wrong_subject_005",
+    "text": "Section 66B of the IT Act exclusively deals with data breach and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 66B of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 66B is about receiving stolen computer resource, not data breach",
+    "section_ref": "66B"
+  },
+  {
+    "id": "hal_wrong_subject_006",
+    "text": "Section 66C of the IT Act exclusively deals with hacking and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 66C of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 66C is about identity theft, not hacking",
+    "section_ref": "66C"
+  },
+  {
+    "id": "hal_wrong_subject_007",
+    "text": "Section 66D of the IT Act exclusively deals with phishing and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 66D of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 66D is about cheating by personation using computer, not phishing",
+    "section_ref": "66D"
+  },
+  {
+    "id": "hal_wrong_subject_008",
+    "text": "Section 66E of the IT Act exclusively deals with spamming and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 66E of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 66E is about violation of privacy, not spamming",
+    "section_ref": "66E"
+  },
+  {
+    "id": "hal_wrong_subject_009",
+    "text": "Section 66F of the IT Act exclusively deals with identity theft and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 66F of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 66F is about cyber terrorism, not identity theft",
+    "section_ref": "66F"
+  },
+  {
+    "id": "hal_wrong_subject_010",
+    "text": "Section 67 of the IT Act exclusively deals with hacking and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 67 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67 is about obscene material in electronic form, not hacking",
+    "section_ref": "67"
+  },
+  {
+    "id": "hal_wrong_subject_011",
+    "text": "Section 67A of the IT Act exclusively deals with cyber terrorism and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 67A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67A is about sexually explicit material, not cyber terrorism",
+    "section_ref": "67A"
+  },
+  {
+    "id": "hal_wrong_subject_012",
+    "text": "Section 67B of the IT Act exclusively deals with phishing and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 67B of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67B is about child pornography, not phishing",
+    "section_ref": "67B"
+  },
+  {
+    "id": "hal_wrong_subject_013",
+    "text": "Section 69 of the IT Act exclusively deals with data breach and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 69 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 69 is about government power to intercept, not data breach",
+    "section_ref": "69"
+  },
+  {
+    "id": "hal_wrong_subject_014",
+    "text": "Section 69A of the IT Act exclusively deals with hacking and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 69A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 69A is about power to block public access, not hacking",
+    "section_ref": "69A"
+  },
+  {
+    "id": "hal_wrong_subject_015",
+    "text": "Section 70 of the IT Act exclusively deals with identity theft and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 70 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 70 is about protected system, not identity theft",
+    "section_ref": "70"
+  },
+  {
+    "id": "hal_wrong_subject_016",
+    "text": "Section 72 of the IT Act exclusively deals with obscene material and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 72 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 72 is about breach of confidentiality, not obscene material",
+    "section_ref": "72"
+  },
+  {
+    "id": "hal_wrong_subject_017",
+    "text": "Section 79 of the IT Act exclusively deals with cyber terrorism and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 79 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 79 is about safe harbor for intermediaries, not cyber terrorism",
+    "section_ref": "79"
+  },
+  {
+    "id": "hal_wrong_subject_018",
+    "text": "Section 80 of the IT Act exclusively deals with hacking and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 80 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 80 is about power of police officer, not hacking",
+    "section_ref": "80"
+  },
+  {
+    "id": "hal_wrong_subject_019",
+    "text": "Section 81 of the IT Act exclusively deals with data breach and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 81 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 81 is about offences outside India, not data breach",
+    "section_ref": "81"
+  },
+  {
+    "id": "hal_wrong_subject_020",
+    "text": "Section 84 of the IT Act exclusively deals with identity theft and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 84 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 84 is about legal representative for companies, not identity theft",
+    "section_ref": "84"
+  },
+  {
+    "id": "hal_wrong_subject_021",
+    "text": "Section 85 of the IT Act exclusively deals with obscene material and provides strict penalties for such violations.",
+    "context": "Verify this statement against Section 85 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 85 is about offence by companies, not obscene material",
+    "section_ref": "85"
+  },
+  {
+    "id": "hal_fake_section_001",
+    "text": "Section 95 of the IT Act, 2000 criminalizes quantum computing crimes with imprisonment up to 10 years.",
+    "context": "Verify if Section 95 exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 95 does not exist in the IT Act",
+    "section_ref": "95"
+  },
+  {
+    "id": "hal_fake_section_002",
+    "text": "Section 95A of the IT Act, 2000 criminalizes AI-generated deepfakes with imprisonment up to 10 years.",
+    "context": "Verify if Section 95A exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 95A does not exist in the IT Act",
+    "section_ref": "95A"
+  },
+  {
+    "id": "hal_fake_section_003",
+    "text": "Section 95B of the IT Act, 2000 criminalizes metaverse fraud with imprisonment up to 10 years.",
+    "context": "Verify if Section 95B exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 95B does not exist in the IT Act",
+    "section_ref": "95B"
+  },
+  {
+    "id": "hal_fake_section_004",
+    "text": "Section 96 of the IT Act, 2000 criminalizes cryptocurrency theft with imprisonment up to 10 years.",
+    "context": "Verify if Section 96 exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 96 does not exist in the IT Act",
+    "section_ref": "96"
+  },
+  {
+    "id": "hal_fake_section_005",
+    "text": "Section 96A of the IT Act, 2000 criminalizes biometric hacking with imprisonment up to 10 years.",
+    "context": "Verify if Section 96A exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 96A does not exist in the IT Act",
+    "section_ref": "96A"
+  },
+  {
+    "id": "hal_fake_section_006",
+    "text": "Section 96B of the IT Act, 2000 criminalizes drone surveillance with imprisonment up to 10 years.",
+    "context": "Verify if Section 96B exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 96B does not exist in the IT Act",
+    "section_ref": "96B"
+  },
+  {
+    "id": "hal_fake_section_007",
+    "text": "Section 97 of the IT Act, 2000 criminalizes neural interface tampering with imprisonment up to 10 years.",
+    "context": "Verify if Section 97 exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 97 does not exist in the IT Act",
+    "section_ref": "97"
+  },
+  {
+    "id": "hal_fake_section_008",
+    "text": "Section 97A of the IT Act, 2000 criminalizes holographic impersonation with imprisonment up to 10 years.",
+    "context": "Verify if Section 97A exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 97A does not exist in the IT Act",
+    "section_ref": "97A"
+  },
+  {
+    "id": "hal_fake_section_009",
+    "text": "Section 97B of the IT Act, 2000 criminalizes virtual reality assault with imprisonment up to 10 years.",
+    "context": "Verify if Section 97B exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 97B does not exist in the IT Act",
+    "section_ref": "97B"
+  },
+  {
+    "id": "hal_fake_section_010",
+    "text": "Section 98 of the IT Act, 2000 criminalizes blockchain manipulation with imprisonment up to 10 years.",
+    "context": "Verify if Section 98 exists in the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 98 does not exist in the IT Act",
+    "section_ref": "98"
+  },
+  {
+    "id": "hal_arrest_powers_001",
+    "text": "Section 43 empowers police to make warrant of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 does not specify arrest powers",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_arrest_powers_002",
+    "text": "Section 43A empowers police to make warrant of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A does not specify arrest powers",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_arrest_powers_003",
+    "text": "Section 67 empowers police to make immediate detention of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 67 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67 does not specify arrest powers",
+    "section_ref": "67"
+  },
+  {
+    "id": "hal_arrest_powers_004",
+    "text": "Section 67A empowers police to make immediate detention of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 67A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67A does not specify arrest powers",
+    "section_ref": "67A"
+  },
+  {
+    "id": "hal_arrest_powers_005",
+    "text": "Section 72 empowers police to make warrantless arrest of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 72 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 72 does not specify arrest powers",
+    "section_ref": "72"
+  },
+  {
+    "id": "hal_arrest_powers_006",
+    "text": "Section 43 empowers police to make warrantless arrest of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 does not specify arrest powers",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_arrest_powers_007",
+    "text": "Section 43A empowers police to make warrantless arrest of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A does not specify arrest powers",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_arrest_powers_008",
+    "text": "Section 67 empowers police to make warrantless arrest of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 67 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67 does not specify arrest powers",
+    "section_ref": "67"
+  },
+  {
+    "id": "hal_arrest_powers_009",
+    "text": "Section 67A empowers police to make warrantless arrest of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 67A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67A does not specify arrest powers",
+    "section_ref": "67A"
+  },
+  {
+    "id": "hal_arrest_powers_010",
+    "text": "Section 72 empowers police to make warrant of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 72 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 72 does not specify arrest powers",
+    "section_ref": "72"
+  },
+  {
+    "id": "hal_arrest_powers_011",
+    "text": "Section 43 empowers police to make warrant of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 does not specify arrest powers",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_arrest_powers_012",
+    "text": "Section 43A empowers police to make warrantless arrest of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A does not specify arrest powers",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_arrest_powers_013",
+    "text": "Section 67 empowers police to make immediate detention of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 67 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67 does not specify arrest powers",
+    "section_ref": "67"
+  },
+  {
+    "id": "hal_arrest_powers_014",
+    "text": "Section 67A empowers police to make warrantless arrest of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 67A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67A does not specify arrest powers",
+    "section_ref": "67A"
+  },
+  {
+    "id": "hal_arrest_powers_015",
+    "text": "Section 72 empowers police to make immediate detention of offenders without judicial oversight.",
+    "context": "Verify arrest provisions under Section 72 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 72 does not specify arrest powers",
+    "section_ref": "72"
+  },
+  {
+    "id": "hal_mandatory_001",
+    "text": "Section 43 mandates automatic license revocation with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 does not have such mandatory provisions",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_mandatory_002",
+    "text": "Section 43A mandates mandatory business closure with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A does not have such mandatory provisions",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_mandatory_003",
+    "text": "Section 66 mandates compulsory fine of 5 lakh rupees with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 66 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 66 does not have such mandatory provisions",
+    "section_ref": "66"
+  },
+  {
+    "id": "hal_mandatory_004",
+    "text": "Section 67 mandates automatic license revocation with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 67 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67 does not have such mandatory provisions",
+    "section_ref": "67"
+  },
+  {
+    "id": "hal_mandatory_005",
+    "text": "Section 72 mandates automatic license revocation with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 72 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 72 does not have such mandatory provisions",
+    "section_ref": "72"
+  },
+  {
+    "id": "hal_mandatory_006",
+    "text": "Section 43 mandates automatic license revocation with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 does not have such mandatory provisions",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_mandatory_007",
+    "text": "Section 43A mandates mandatory business closure with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A does not have such mandatory provisions",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_mandatory_008",
+    "text": "Section 66 mandates mandatory business closure with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 66 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 66 does not have such mandatory provisions",
+    "section_ref": "66"
+  },
+  {
+    "id": "hal_mandatory_009",
+    "text": "Section 67 mandates compulsory fine of 5 lakh rupees with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 67 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67 does not have such mandatory provisions",
+    "section_ref": "67"
+  },
+  {
+    "id": "hal_mandatory_010",
+    "text": "Section 72 mandates compulsory criminal prosecution with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 72 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 72 does not have such mandatory provisions",
+    "section_ref": "72"
+  },
+  {
+    "id": "hal_mandatory_011",
+    "text": "Section 43 mandates mandatory minimum sentence of 2 years with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 43 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43 does not have such mandatory provisions",
+    "section_ref": "43"
+  },
+  {
+    "id": "hal_mandatory_012",
+    "text": "Section 43A mandates compulsory criminal prosecution with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 43A of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 43A does not have such mandatory provisions",
+    "section_ref": "43A"
+  },
+  {
+    "id": "hal_mandatory_013",
+    "text": "Section 66 mandates compulsory criminal prosecution with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 66 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 66 does not have such mandatory provisions",
+    "section_ref": "66"
+  },
+  {
+    "id": "hal_mandatory_014",
+    "text": "Section 67 mandates mandatory business closure with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 67 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 67 does not have such mandatory provisions",
+    "section_ref": "67"
+  },
+  {
+    "id": "hal_mandatory_015",
+    "text": "Section 72 mandates compulsory fine of 5 lakh rupees with no judicial discretion for reducing penalties.",
+    "context": "Verify mandatory provisions under Section 72 of the IT Act, 2000.",
+    "expected_category": "hallucinated",
+    "expected_decision": "FLAGGED",
+    "description": "Section 72 does not have such mandatory provisions",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_penalty_001",
+    "text": "Section 72A of the IT Act punishes violations with imprisonment up to 5 years.",
+    "context": "Verify the punishment under Section 72A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years)",
+    "section_ref": "72A"
+  },
+  {
+    "id": "part_wrong_penalty_002",
+    "text": "Section 72 of the IT Act punishes violations with imprisonment up to 3 years.",
+    "context": "Verify the punishment under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 2 years)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_penalty_003",
+    "text": "Section 66 of the IT Act punishes violations with imprisonment up to 5 years.",
+    "context": "Verify the punishment under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_penalty_004",
+    "text": "Section 67 of the IT Act punishes violations with imprisonment up to 7 years.",
+    "context": "Verify the punishment under Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years first, 5 years subsequent)",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_wrong_penalty_005",
+    "text": "Section 67B of the IT Act punishes violations with imprisonment up to 10 years first, 14 years subsequent.",
+    "context": "Verify the punishment under Section 67B.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67B"
+  },
+  {
+    "id": "part_wrong_penalty_006",
+    "text": "Section 67B of the IT Act punishes violations with imprisonment up to 10 years first, 14 years subsequent.",
+    "context": "Verify the punishment under Section 67B.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67B"
+  },
+  {
+    "id": "part_wrong_penalty_007",
+    "text": "Section 67A of the IT Act punishes violations with imprisonment up to 7 years first, 10 years subsequent.",
+    "context": "Verify the punishment under Section 67A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67A"
+  },
+  {
+    "id": "part_wrong_penalty_008",
+    "text": "Section 67B of the IT Act punishes violations with imprisonment up to 10 years first, 14 years subsequent.",
+    "context": "Verify the punishment under Section 67B.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67B"
+  },
+  {
+    "id": "part_wrong_penalty_009",
+    "text": "Section 66 of the IT Act punishes violations with imprisonment up to 5 years.",
+    "context": "Verify the punishment under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_penalty_010",
+    "text": "Section 72 of the IT Act punishes violations with imprisonment up to 5 years.",
+    "context": "Verify the punishment under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 2 years)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_penalty_011",
+    "text": "Section 67B of the IT Act punishes violations with imprisonment up to 10 years first, 14 years subsequent.",
+    "context": "Verify the punishment under Section 67B.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67B"
+  },
+  {
+    "id": "part_wrong_penalty_012",
+    "text": "Section 72 of the IT Act punishes violations with imprisonment up to 7 years.",
+    "context": "Verify the punishment under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 2 years)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_penalty_013",
+    "text": "Section 72 of the IT Act punishes violations with imprisonment up to 5 years.",
+    "context": "Verify the punishment under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 2 years)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_penalty_014",
+    "text": "Section 66 of the IT Act punishes violations with imprisonment up to 5 years.",
+    "context": "Verify the punishment under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_penalty_015",
+    "text": "Section 72 of the IT Act punishes violations with imprisonment up to 5 years.",
+    "context": "Verify the punishment under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 2 years)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_penalty_016",
+    "text": "Section 67B of the IT Act punishes violations with imprisonment up to 10 years first, 14 years subsequent.",
+    "context": "Verify the punishment under Section 67B.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67B"
+  },
+  {
+    "id": "part_wrong_penalty_017",
+    "text": "Section 72 of the IT Act punishes violations with imprisonment up to 5 years.",
+    "context": "Verify the punishment under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 2 years)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_penalty_018",
+    "text": "Section 72 of the IT Act punishes violations with imprisonment up to 5 years.",
+    "context": "Verify the punishment under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 2 years)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_penalty_019",
+    "text": "Section 67 of the IT Act punishes violations with imprisonment up to 7 years.",
+    "context": "Verify the punishment under Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years first, 5 years subsequent)",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_wrong_penalty_020",
+    "text": "Section 67B of the IT Act punishes violations with imprisonment up to 10 years first, 14 years subsequent.",
+    "context": "Verify the punishment under Section 67B.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67B"
+  },
+  {
+    "id": "part_wrong_penalty_021",
+    "text": "Section 72A of the IT Act punishes violations with imprisonment up to 7 years.",
+    "context": "Verify the punishment under Section 72A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years)",
+    "section_ref": "72A"
+  },
+  {
+    "id": "part_wrong_penalty_022",
+    "text": "Section 67A of the IT Act punishes violations with imprisonment up to 7 years first, 10 years subsequent.",
+    "context": "Verify the punishment under Section 67A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67A"
+  },
+  {
+    "id": "part_wrong_penalty_023",
+    "text": "Section 72A of the IT Act punishes violations with imprisonment up to 7 years.",
+    "context": "Verify the punishment under Section 72A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years)",
+    "section_ref": "72A"
+  },
+  {
+    "id": "part_wrong_penalty_024",
+    "text": "Section 67B of the IT Act punishes violations with imprisonment up to 10 years first, 14 years subsequent.",
+    "context": "Verify the punishment under Section 67B.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67B"
+  },
+  {
+    "id": "part_wrong_penalty_025",
+    "text": "Section 67 of the IT Act punishes violations with imprisonment up to 7 years.",
+    "context": "Verify the punishment under Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years first, 5 years subsequent)",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_wrong_penalty_026",
+    "text": "Section 66 of the IT Act punishes violations with imprisonment up to 7 years.",
+    "context": "Verify the punishment under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_penalty_027",
+    "text": "Section 67B of the IT Act punishes violations with imprisonment up to 10 years first, 14 years subsequent.",
+    "context": "Verify the punishment under Section 67B.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67B"
+  },
+  {
+    "id": "part_wrong_penalty_028",
+    "text": "Section 67B of the IT Act punishes violations with imprisonment up to 10 years first, 14 years subsequent.",
+    "context": "Verify the punishment under Section 67B.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67B"
+  },
+  {
+    "id": "part_wrong_penalty_029",
+    "text": "Section 66 of the IT Act punishes violations with imprisonment up to 10 years.",
+    "context": "Verify the punishment under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 3 years)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_penalty_030",
+    "text": "Section 67A of the IT Act punishes violations with imprisonment up to 7 years first, 10 years subsequent.",
+    "context": "Verify the punishment under Section 67A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong imprisonment term (should be 5 years first, 7 years subsequent)",
+    "section_ref": "67A"
+  },
+  {
+    "id": "part_wrong_fine_001",
+    "text": "Section 66 provides for a fine which may extend to 15 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_fine_002",
+    "text": "Section 67A provides for a fine which may extend to 15 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 67A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 10 lakh)",
+    "section_ref": "67A"
+  },
+  {
+    "id": "part_wrong_fine_003",
+    "text": "Section 66 provides for a fine which may extend to 25 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_fine_004",
+    "text": "Section 72 provides for a fine which may extend to 5 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 1 lakh)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_fine_005",
+    "text": "Section 66 provides for a fine which may extend to 25 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_fine_006",
+    "text": "Section 67 provides for a fine which may extend to 7 lakh first rupees for the offense.",
+    "context": "Verify the fine amount under Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh first)",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_wrong_fine_007",
+    "text": "Section 66 provides for a fine which may extend to 10 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_fine_008",
+    "text": "Section 72 provides for a fine which may extend to 5 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 1 lakh)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_fine_009",
+    "text": "Section 67A provides for a fine which may extend to 15 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 67A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 10 lakh)",
+    "section_ref": "67A"
+  },
+  {
+    "id": "part_wrong_fine_010",
+    "text": "Section 72 provides for a fine which may extend to 5 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 1 lakh)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_fine_011",
+    "text": "Section 67 provides for a fine which may extend to 7 lakh first rupees for the offense.",
+    "context": "Verify the fine amount under Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh first)",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_wrong_fine_012",
+    "text": "Section 67 provides for a fine which may extend to 7 lakh first rupees for the offense.",
+    "context": "Verify the fine amount under Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh first)",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_wrong_fine_013",
+    "text": "Section 67A provides for a fine which may extend to 15 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 67A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 10 lakh)",
+    "section_ref": "67A"
+  },
+  {
+    "id": "part_wrong_fine_014",
+    "text": "Section 72 provides for a fine which may extend to 10 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 1 lakh)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_fine_015",
+    "text": "Section 66 provides for a fine which may extend to 15 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_fine_016",
+    "text": "Section 66 provides for a fine which may extend to 15 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_fine_017",
+    "text": "Section 67 provides for a fine which may extend to 7 lakh first rupees for the offense.",
+    "context": "Verify the fine amount under Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh first)",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_wrong_fine_018",
+    "text": "Section 72 provides for a fine which may extend to 5 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 1 lakh)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_fine_019",
+    "text": "Section 66 provides for a fine which may extend to 25 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_fine_020",
+    "text": "Section 67A provides for a fine which may extend to 15 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 67A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 10 lakh)",
+    "section_ref": "67A"
+  },
+  {
+    "id": "part_wrong_fine_021",
+    "text": "Section 66 provides for a fine which may extend to 15 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh)",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_wrong_fine_022",
+    "text": "Section 67 provides for a fine which may extend to 7 lakh first rupees for the offense.",
+    "context": "Verify the fine amount under Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 5 lakh first)",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_wrong_fine_023",
+    "text": "Section 67A provides for a fine which may extend to 20 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 67A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 10 lakh)",
+    "section_ref": "67A"
+  },
+  {
+    "id": "part_wrong_fine_024",
+    "text": "Section 72 provides for a fine which may extend to 10 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 72.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 1 lakh)",
+    "section_ref": "72"
+  },
+  {
+    "id": "part_wrong_fine_025",
+    "text": "Section 67A provides for a fine which may extend to 15 lakh rupees for the offense.",
+    "context": "Verify the fine amount under Section 67A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Correct section, but wrong fine amount (should be 10 lakh)",
+    "section_ref": "67A"
+  },
+  {
+    "id": "part_mixed_001",
+    "text": "Section 43A requires body corporates to implement security practices. Failure results in mandatory criminal prosecution.",
+    "context": "Verify all details of this statement about Section 43A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "No mandatory criminal prosecution",
+    "section_ref": "43A"
+  },
+  {
+    "id": "part_mixed_002",
+    "text": "Section 67 punishes obscene material. Publishing such material always results in asset seizure.",
+    "context": "Verify all details of this statement about Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Asset seizure not automatic",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_mixed_003",
+    "text": "Section 65 prohibits tampering with computer source documents. The penalty is 3 years imprisonment or 5 lakh fine or both.",
+    "context": "Verify all details of this statement about Section 65.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Penalty amount may be wrong",
+    "section_ref": "65"
+  },
+  {
+    "id": "part_mixed_004",
+    "text": "Section 66 punishes hacking. The offense is non-bailable and non-compoundable.",
+    "context": "Verify all details of this statement about Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Bailability status may be wrong",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_mixed_005",
+    "text": "Section 65 prohibits tampering with computer source documents. The penalty is 3 years imprisonment or 5 lakh fine or both.",
+    "context": "Verify all details of this statement about Section 65.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Penalty amount may be wrong",
+    "section_ref": "65"
+  },
+  {
+    "id": "part_mixed_006",
+    "text": "Section 67 punishes obscene material. Publishing such material always results in asset seizure.",
+    "context": "Verify all details of this statement about Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Asset seizure not automatic",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_mixed_007",
+    "text": "Section 66 punishes hacking. The offense is non-bailable and non-compoundable.",
+    "context": "Verify all details of this statement about Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Bailability status may be wrong",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_mixed_008",
+    "text": "Section 66 punishes hacking. The offense is non-bailable and non-compoundable.",
+    "context": "Verify all details of this statement about Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Bailability status may be wrong",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_mixed_009",
+    "text": "Section 66 punishes hacking. The offense is non-bailable and non-compoundable.",
+    "context": "Verify all details of this statement about Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Bailability status may be wrong",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_mixed_010",
+    "text": "Section 67 punishes obscene material. Publishing such material always results in asset seizure.",
+    "context": "Verify all details of this statement about Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Asset seizure not automatic",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_mixed_011",
+    "text": "Section 43 provides for compensation for damage to computer systems. The maximum compensation is 5 crore rupees.",
+    "context": "Verify all details of this statement about Section 43.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Maximum compensation amount uncertain",
+    "section_ref": "43"
+  },
+  {
+    "id": "part_mixed_012",
+    "text": "Section 65 prohibits tampering with computer source documents. The penalty is 3 years imprisonment or 5 lakh fine or both.",
+    "context": "Verify all details of this statement about Section 65.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Penalty amount may be wrong",
+    "section_ref": "65"
+  },
+  {
+    "id": "part_mixed_013",
+    "text": "Section 65 prohibits tampering with computer source documents. The penalty is 3 years imprisonment or 5 lakh fine or both.",
+    "context": "Verify all details of this statement about Section 65.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Penalty amount may be wrong",
+    "section_ref": "65"
+  },
+  {
+    "id": "part_mixed_014",
+    "text": "Section 66 punishes hacking. The offense is non-bailable and non-compoundable.",
+    "context": "Verify all details of this statement about Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Bailability status may be wrong",
+    "section_ref": "66"
+  },
+  {
+    "id": "part_mixed_015",
+    "text": "Section 43A requires body corporates to implement security practices. Failure results in mandatory criminal prosecution.",
+    "context": "Verify all details of this statement about Section 43A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "No mandatory criminal prosecution",
+    "section_ref": "43A"
+  },
+  {
+    "id": "part_mixed_016",
+    "text": "Section 67 punishes obscene material. Publishing such material always results in asset seizure.",
+    "context": "Verify all details of this statement about Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Asset seizure not automatic",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_mixed_017",
+    "text": "Section 67 punishes obscene material. Publishing such material always results in asset seizure.",
+    "context": "Verify all details of this statement about Section 67.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Asset seizure not automatic",
+    "section_ref": "67"
+  },
+  {
+    "id": "part_mixed_018",
+    "text": "Section 43 provides for compensation for damage to computer systems. The maximum compensation is 5 crore rupees.",
+    "context": "Verify all details of this statement about Section 43.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Maximum compensation amount uncertain",
+    "section_ref": "43"
+  },
+  {
+    "id": "part_mixed_019",
+    "text": "Section 43A requires body corporates to implement security practices. Failure results in mandatory criminal prosecution.",
+    "context": "Verify all details of this statement about Section 43A.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "No mandatory criminal prosecution",
+    "section_ref": "43A"
+  },
+  {
+    "id": "part_mixed_020",
+    "text": "Section 66 punishes hacking. The offense is non-bailable and non-compoundable.",
+    "context": "Verify all details of this statement about Section 66.",
+    "expected_category": "partially_hallucinated",
+    "expected_decision": "ABSTAIN",
+    "description": "Bailability status may be wrong",
+    "section_ref": "66"
+  },
+  {
+    "id": "acc_section_001",
+    "text": "The IT Act, 2000 specifies that section 66b punishes dishonestly receiving stolen computer resources or communication devices.",
+    "context": "Verify this statement about Section 66B of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 66B",
+    "section_ref": "66B"
+  },
+  {
+    "id": "acc_section_002",
+    "text": "The IT Act, 2000 specifies that section 85 addresses offenses by companies and liability of directors and officers.",
+    "context": "Verify this statement about Section 85 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 85",
+    "section_ref": "85"
+  },
+  {
+    "id": "acc_section_003",
+    "text": "The IT Act, 2000 specifies that section 78 provides for the power to investigate offences.",
+    "context": "Verify this statement about Section 78 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 78",
+    "section_ref": "78"
+  },
+  {
+    "id": "acc_section_004",
+    "text": "Under the Information Technology Act, 2000, section 67 punishes publishing or transmitting obscene material in electronic form.",
+    "context": "Verify this statement about Section 67 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 67",
+    "section_ref": "67"
+  },
+  {
+    "id": "acc_section_005",
+    "text": "The IT Act, 2000 specifies that section 75 makes certain offenses under the it act cognizable.",
+    "context": "Verify this statement about Section 75 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 75",
+    "section_ref": "75"
+  },
+  {
+    "id": "acc_section_006",
+    "text": "The IT Act, 2000 specifies that section 65 of the it act prohibits tampering with computer source documents with intent to cause damage.",
+    "context": "Verify this statement about Section 65 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 65",
+    "section_ref": "65"
+  },
+  {
+    "id": "acc_section_007",
+    "text": "As per Indian law, section 67a punishes publishing or transmitting material containing sexually explicit acts in electronic form.",
+    "context": "Verify this statement about Section 67A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 67A",
+    "section_ref": "67A"
+  },
+  {
+    "id": "acc_section_008",
+    "text": "As per Indian law, section 72 punishes breach of confidentiality and privacy by disclosing information in violation of lawful contract.",
+    "context": "Verify this statement about Section 72 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 72",
+    "section_ref": "72"
+  },
+  {
+    "id": "acc_section_009",
+    "text": "Under the Information Technology Act, 2000, section 78 provides for the power to investigate offences.",
+    "context": "Verify this statement about Section 78 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 78",
+    "section_ref": "78"
+  },
+  {
+    "id": "acc_section_010",
+    "text": "As per Indian law, section 71 punishes misrepresentation to obtain access to protected systems.",
+    "context": "Verify this statement about Section 71 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 71",
+    "section_ref": "71"
+  },
+  {
+    "id": "acc_section_011",
+    "text": "The IT Act, 2000 specifies that section 85 addresses offenses by companies and liability of directors and officers.",
+    "context": "Verify this statement about Section 85 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 85",
+    "section_ref": "85"
+  },
+  {
+    "id": "acc_section_012",
+    "text": "The IT Act, 2000 specifies that section 69 empowers the government to intercept, monitor or decrypt information through any computer resource.",
+    "context": "Verify this statement about Section 69 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 69",
+    "section_ref": "69"
+  },
+  {
+    "id": "acc_section_013",
+    "text": "Section 66B punishes dishonestly receiving stolen computer resources or communication devices.",
+    "context": "Verify this statement about Section 66B of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 66B",
+    "section_ref": "66B"
+  },
+  {
+    "id": "acc_section_014",
+    "text": "Under the Information Technology Act, 2000, section 67b punishes publishing or transmitting material depicting children in sexually explicit acts in electronic form.",
+    "context": "Verify this statement about Section 67B of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 67B",
+    "section_ref": "67B"
+  },
+  {
+    "id": "acc_section_015",
+    "text": "As per Indian law, section 78 provides for the power to investigate offences.",
+    "context": "Verify this statement about Section 78 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 78",
+    "section_ref": "78"
+  },
+  {
+    "id": "acc_section_016",
+    "text": "Under the Information Technology Act, 2000, section 72a punishes disclosure of information in breach of lawful contract during provision of services.",
+    "context": "Verify this statement about Section 72A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 72A",
+    "section_ref": "72A"
+  },
+  {
+    "id": "acc_section_017",
+    "text": "As per Indian law, section 84 clarifies punishment of offenses committed by companies and liability of company officials.",
+    "context": "Verify this statement about Section 84 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 84",
+    "section_ref": "84"
+  },
+  {
+    "id": "acc_section_018",
+    "text": "The IT Act, 2000 specifies that section 65 of the it act prohibits tampering with computer source documents with intent to cause damage.",
+    "context": "Verify this statement about Section 65 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 65",
+    "section_ref": "65"
+  },
+  {
+    "id": "acc_section_019",
+    "text": "Under the Information Technology Act, 2000, section 77 clarifies that certain provisions apply to offenses committed outside india by any person.",
+    "context": "Verify this statement about Section 77 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 77",
+    "section_ref": "77"
+  },
+  {
+    "id": "acc_section_020",
+    "text": "Under the Information Technology Act, 2000, section 79 provides safe harbor to intermediaries for third-party content under certain conditions.",
+    "context": "Verify this statement about Section 79 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 79",
+    "section_ref": "79"
+  },
+  {
+    "id": "acc_section_021",
+    "text": "Under the Information Technology Act, 2000, section 69 empowers the government to intercept, monitor or decrypt information through any computer resource.",
+    "context": "Verify this statement about Section 69 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 69",
+    "section_ref": "69"
+  },
+  {
+    "id": "acc_section_022",
+    "text": "Under the Information Technology Act, 2000, section 66f punishes cyber terrorism with imprisonment which may extend to life.",
+    "context": "Verify this statement about Section 66F of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 66F",
+    "section_ref": "66F"
+  },
+  {
+    "id": "acc_section_023",
+    "text": "Section 78 provides for the power to investigate offences.",
+    "context": "Verify this statement about Section 78 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 78",
+    "section_ref": "78"
+  },
+  {
+    "id": "acc_section_024",
+    "text": "The IT Act, 2000 specifies that section 73 punishes publishing false digital signature certificates.",
+    "context": "Verify this statement about Section 73 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 73",
+    "section_ref": "73"
+  },
+  {
+    "id": "acc_section_025",
+    "text": "Section 78 provides for the power to investigate offences.",
+    "context": "Verify this statement about Section 78 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 78",
+    "section_ref": "78"
+  },
+  {
+    "id": "acc_section_026",
+    "text": "As per Indian law, section 67a punishes publishing or transmitting material containing sexually explicit acts in electronic form.",
+    "context": "Verify this statement about Section 67A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 67A",
+    "section_ref": "67A"
+  },
+  {
+    "id": "acc_section_027",
+    "text": "The IT Act, 2000 specifies that section 65 of the it act prohibits tampering with computer source documents with intent to cause damage.",
+    "context": "Verify this statement about Section 65 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 65",
+    "section_ref": "65"
+  },
+  {
+    "id": "acc_section_028",
+    "text": "As per Indian law, section 43 of the it act provides for compensation for damage to computer, computer system or computer network without permission of the owner.",
+    "context": "Verify this statement about Section 43 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 43",
+    "section_ref": "43"
+  },
+  {
+    "id": "acc_section_029",
+    "text": "Section 72 punishes breach of confidentiality and privacy by disclosing information in violation of lawful contract.",
+    "context": "Verify this statement about Section 72 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 72",
+    "section_ref": "72"
+  },
+  {
+    "id": "acc_section_030",
+    "text": "The IT Act, 2000 specifies that section 72a punishes disclosure of information in breach of lawful contract during provision of services.",
+    "context": "Verify this statement about Section 72A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 72A",
+    "section_ref": "72A"
+  },
+  {
+    "id": "acc_section_031",
+    "text": "As per Indian law, section 75 makes certain offenses under the it act cognizable.",
+    "context": "Verify this statement about Section 75 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 75",
+    "section_ref": "75"
+  },
+  {
+    "id": "acc_section_032",
+    "text": "Section 85 addresses offenses by companies and liability of directors and officers.",
+    "context": "Verify this statement about Section 85 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 85",
+    "section_ref": "85"
+  },
+  {
+    "id": "acc_section_033",
+    "text": "Under the Information Technology Act, 2000, section 43 of the it act provides for compensation for damage to computer, computer system or computer network without permission of the owner.",
+    "context": "Verify this statement about Section 43 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 43",
+    "section_ref": "43"
+  },
+  {
+    "id": "acc_section_034",
+    "text": "As per Indian law, section 43 of the it act provides for compensation for damage to computer, computer system or computer network without permission of the owner.",
+    "context": "Verify this statement about Section 43 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 43",
+    "section_ref": "43"
+  },
+  {
+    "id": "acc_section_035",
+    "text": "Section 84 clarifies punishment of offenses committed by companies and liability of company officials.",
+    "context": "Verify this statement about Section 84 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 84",
+    "section_ref": "84"
+  },
+  {
+    "id": "acc_section_036",
+    "text": "Section 70 designates certain computer resources as protected systems and restricts unauthorized access.",
+    "context": "Verify this statement about Section 70 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 70",
+    "section_ref": "70"
+  },
+  {
+    "id": "acc_section_037",
+    "text": "The IT Act, 2000 specifies that section 84 clarifies punishment of offenses committed by companies and liability of company officials.",
+    "context": "Verify this statement about Section 84 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 84",
+    "section_ref": "84"
+  },
+  {
+    "id": "acc_section_038",
+    "text": "Under the Information Technology Act, 2000, section 67a punishes publishing or transmitting material containing sexually explicit acts in electronic form.",
+    "context": "Verify this statement about Section 67A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 67A",
+    "section_ref": "67A"
+  },
+  {
+    "id": "acc_section_039",
+    "text": "Section 79 provides safe harbor to intermediaries for third-party content under certain conditions.",
+    "context": "Verify this statement about Section 79 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 79",
+    "section_ref": "79"
+  },
+  {
+    "id": "acc_section_040",
+    "text": "The IT Act, 2000 specifies that section 72a punishes disclosure of information in breach of lawful contract during provision of services.",
+    "context": "Verify this statement about Section 72A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 72A",
+    "section_ref": "72A"
+  },
+  {
+    "id": "acc_section_041",
+    "text": "As per Indian law, section 80 grants powers to police officers not below the rank of deputy superintendent for certain it act offenses.",
+    "context": "Verify this statement about Section 80 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 80",
+    "section_ref": "80"
+  },
+  {
+    "id": "acc_section_042",
+    "text": "As per Indian law, section 69 empowers the government to intercept, monitor or decrypt information through any computer resource.",
+    "context": "Verify this statement about Section 69 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 69",
+    "section_ref": "69"
+  },
+  {
+    "id": "acc_section_043",
+    "text": "Under the Information Technology Act, 2000, section 80 grants powers to police officers not below the rank of deputy superintendent for certain it act offenses.",
+    "context": "Verify this statement about Section 80 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 80",
+    "section_ref": "80"
+  },
+  {
+    "id": "acc_section_044",
+    "text": "The IT Act, 2000 specifies that section 69a empowers the government to block public access to any information through any computer resource.",
+    "context": "Verify this statement about Section 69A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 69A",
+    "section_ref": "69A"
+  },
+  {
+    "id": "acc_section_045",
+    "text": "Section 67B punishes publishing or transmitting material depicting children in sexually explicit acts in electronic form.",
+    "context": "Verify this statement about Section 67B of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 67B",
+    "section_ref": "67B"
+  },
+  {
+    "id": "acc_section_046",
+    "text": "As per Indian law, section 84 clarifies punishment of offenses committed by companies and liability of company officials.",
+    "context": "Verify this statement about Section 84 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 84",
+    "section_ref": "84"
+  },
+  {
+    "id": "acc_section_047",
+    "text": "Section 66D punishes cheating by personation using computer resources.",
+    "context": "Verify this statement about Section 66D of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 66D",
+    "section_ref": "66D"
+  },
+  {
+    "id": "acc_section_048",
+    "text": "Under the Information Technology Act, 2000, section 81 provides that provisions of the it act shall have effect in addition to other laws.",
+    "context": "Verify this statement about Section 81 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 81",
+    "section_ref": "81"
+  },
+  {
+    "id": "acc_section_049",
+    "text": "As per Indian law, section 84 clarifies punishment of offenses committed by companies and liability of company officials.",
+    "context": "Verify this statement about Section 84 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 84",
+    "section_ref": "84"
+  },
+  {
+    "id": "acc_section_050",
+    "text": "Under the Information Technology Act, 2000, section 85 addresses offenses by companies and liability of directors and officers.",
+    "context": "Verify this statement about Section 85 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 85",
+    "section_ref": "85"
+  },
+  {
+    "id": "acc_section_051",
+    "text": "Section 69A empowers the government to block public access to any information through any computer resource.",
+    "context": "Verify this statement about Section 69A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 69A",
+    "section_ref": "69A"
+  },
+  {
+    "id": "acc_section_052",
+    "text": "The IT Act, 2000 specifies that section 66b punishes dishonestly receiving stolen computer resources or communication devices.",
+    "context": "Verify this statement about Section 66B of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 66B",
+    "section_ref": "66B"
+  },
+  {
+    "id": "acc_section_053",
+    "text": "Section 69 empowers the government to intercept, monitor or decrypt information through any computer resource.",
+    "context": "Verify this statement about Section 69 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 69",
+    "section_ref": "69"
+  },
+  {
+    "id": "acc_section_054",
+    "text": "As per Indian law, section 80 grants powers to police officers not below the rank of deputy superintendent for certain it act offenses.",
+    "context": "Verify this statement about Section 80 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 80",
+    "section_ref": "80"
+  },
+  {
+    "id": "acc_section_055",
+    "text": "The IT Act, 2000 specifies that section 69a empowers the government to block public access to any information through any computer resource.",
+    "context": "Verify this statement about Section 69A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 69A",
+    "section_ref": "69A"
+  },
+  {
+    "id": "acc_section_056",
+    "text": "As per Indian law, section 43 of the it act provides for compensation for damage to computer, computer system or computer network without permission of the owner.",
+    "context": "Verify this statement about Section 43 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 43",
+    "section_ref": "43"
+  },
+  {
+    "id": "acc_section_057",
+    "text": "As per Indian law, section 66f punishes cyber terrorism with imprisonment which may extend to life.",
+    "context": "Verify this statement about Section 66F of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 66F",
+    "section_ref": "66F"
+  },
+  {
+    "id": "acc_section_058",
+    "text": "Under the Information Technology Act, 2000, section 81 provides that provisions of the it act shall have effect in addition to other laws.",
+    "context": "Verify this statement about Section 81 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 81",
+    "section_ref": "81"
+  },
+  {
+    "id": "acc_section_059",
+    "text": "As per Indian law, section 71 punishes misrepresentation to obtain access to protected systems.",
+    "context": "Verify this statement about Section 71 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 71",
+    "section_ref": "71"
+  },
+  {
+    "id": "acc_section_060",
+    "text": "The IT Act, 2000 specifies that section 81 provides that provisions of the it act shall have effect in addition to other laws.",
+    "context": "Verify this statement about Section 81 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 81",
+    "section_ref": "81"
+  },
+  {
+    "id": "acc_section_061",
+    "text": "Section 66F punishes cyber terrorism with imprisonment which may extend to life.",
+    "context": "Verify this statement about Section 66F of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 66F",
+    "section_ref": "66F"
+  },
+  {
+    "id": "acc_section_062",
+    "text": "As per Indian law, section 70 designates certain computer resources as protected systems and restricts unauthorized access.",
+    "context": "Verify this statement about Section 70 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 70",
+    "section_ref": "70"
+  },
+  {
+    "id": "acc_section_063",
+    "text": "Under the Information Technology Act, 2000, section 69 empowers the government to intercept, monitor or decrypt information through any computer resource.",
+    "context": "Verify this statement about Section 69 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 69",
+    "section_ref": "69"
+  },
+  {
+    "id": "acc_section_064",
+    "text": "The IT Act, 2000 specifies that section 72a punishes disclosure of information in breach of lawful contract during provision of services.",
+    "context": "Verify this statement about Section 72A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 72A",
+    "section_ref": "72A"
+  },
+  {
+    "id": "acc_section_065",
+    "text": "Under the Information Technology Act, 2000, section 67a punishes publishing or transmitting material containing sexually explicit acts in electronic form.",
+    "context": "Verify this statement about Section 67A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 67A",
+    "section_ref": "67A"
+  },
+  {
+    "id": "acc_section_066",
+    "text": "The IT Act, 2000 specifies that section 72 punishes breach of confidentiality and privacy by disclosing information in violation of lawful contract.",
+    "context": "Verify this statement about Section 72 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 72",
+    "section_ref": "72"
+  },
+  {
+    "id": "acc_section_067",
+    "text": "As per Indian law, section 79 provides safe harbor to intermediaries for third-party content under certain conditions.",
+    "context": "Verify this statement about Section 79 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 79",
+    "section_ref": "79"
+  },
+  {
+    "id": "acc_section_068",
+    "text": "The IT Act, 2000 specifies that section 66b punishes dishonestly receiving stolen computer resources or communication devices.",
+    "context": "Verify this statement about Section 66B of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 66B",
+    "section_ref": "66B"
+  },
+  {
+    "id": "acc_section_069",
+    "text": "The IT Act, 2000 specifies that section 78 provides for the power to investigate offences.",
+    "context": "Verify this statement about Section 78 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 78",
+    "section_ref": "78"
+  },
+  {
+    "id": "acc_section_070",
+    "text": "The IT Act, 2000 specifies that section 65 of the it act prohibits tampering with computer source documents with intent to cause damage.",
+    "context": "Verify this statement about Section 65 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 65",
+    "section_ref": "65"
+  },
+  {
+    "id": "acc_section_071",
+    "text": "Under the Information Technology Act, 2000, section 79 provides safe harbor to intermediaries for third-party content under certain conditions.",
+    "context": "Verify this statement about Section 79 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 79",
+    "section_ref": "79"
+  },
+  {
+    "id": "acc_section_072",
+    "text": "The IT Act, 2000 specifies that section 85 addresses offenses by companies and liability of directors and officers.",
+    "context": "Verify this statement about Section 85 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 85",
+    "section_ref": "85"
+  },
+  {
+    "id": "acc_section_073",
+    "text": "Section 66C punishes identity theft by fraudulently using another person's electronic signature or password.",
+    "context": "Verify this statement about Section 66C of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 66C",
+    "section_ref": "66C"
+  },
+  {
+    "id": "acc_section_074",
+    "text": "The IT Act, 2000 specifies that section 73 punishes publishing false digital signature certificates.",
+    "context": "Verify this statement about Section 73 of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 73",
+    "section_ref": "73"
+  },
+  {
+    "id": "acc_section_075",
+    "text": "Section 72A punishes disclosure of information in breach of lawful contract during provision of services.",
+    "context": "Verify this statement about Section 72A of the IT Act, 2000.",
+    "expected_category": "accurate",
+    "expected_decision": "SAFE",
+    "description": "Accurate statement about Section 72A",
+    "section_ref": "72A"
+  }
+]

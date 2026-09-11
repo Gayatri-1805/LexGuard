@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-09-11T07:50:31.331823+00:00",
+  "total_items": 105,
+  "accuracy": 0.0952,
+  "macro_f1": 0.0585,
+  "weighted_f1": 0.0167,
+  "binary_auc": 0.5,
+  "per_label": {
+    "ENTAILED": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 80
+    },
+    "CONTRADICTED": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 15
+    },
+    "NOT_ENOUGH_INFO": {
+      "precision": 0.0962,
+      "recall": 1.0,
+      "f1": 0.1754,
+      "support": 10
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "ENTAILED",
+      "CONTRADICTED",
+      "NOT_ENOUGH_INFO"
+    ],
+    "matrix": [
+      [
+        0,
+        0,
+        79
+      ],
+      [
+        0,
+        0,
+        15
+      ],
+      [
+        0,
+        0,
+        10
+      ]
+    ]
+  },
+  "per_claim_type": {
+    "HOLDING": {
+      "total": 10,
+      "correct": 10,
+      "accuracy": 1.0
+    },
+    "SECTION_REF": {
+      "total": 95,
+      "correct": 0,
+      "accuracy": 0.0
+    }
+  },
+  "calibration": {
+    "mean_confidence_correct": 0.5,
+    "mean_confidence_incorrect": 0.5
+  }
+}
