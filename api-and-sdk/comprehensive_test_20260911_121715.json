@@ -1,0 +1,13 @@
+{
+  "timestamp": "20260911_121715",
+  "metrics": {
+    "total_cases": 21,
+    "correct": 11,
+    "accuracy": 0.5238095238095238,
+    "errors": 0,
+    "by_category": {
+      "hallucinated": {
+        "total": 5,
+        "correct": 5,
+        "results": [
+          

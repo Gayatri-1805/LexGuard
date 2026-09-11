@@ -10,6 +10,7 @@ Background task logs to DB async (doesn't block response to caller).
 import logging
 import sys
 from pathlib import Path
+from uuid import uuid4
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 from sqlalchemy import exc as sqlalchemy_exc
 
@@ -66,7 +67,7 @@ def log_check_to_db(request_id: str, trust_index: float, decision: str) -> None:
         session.close()
 
 
-# ── Trust index / decision helpers ───────────────────────────────────────────
+# ── Trust index / decision helpers (not needed with stub, but kept for reference) ───
 _LABEL_SCORES: dict[VerdictLabel, float] = {
     VerdictLabel.SUPPORTED: 1.0,
     VerdictLabel.ENTAILED: 1.0,
@@ -79,21 +80,49 @@ _LABEL_SCORES: dict[VerdictLabel, float] = {
 
 
 def _compute_trust(verdicts: list[Verdict]) -> tuple[float, Decision]:
-    """Compute trust_index and Decision from a list of verdicts."""
+    """Compute trust_index and Decision from a list of verdicts with enhanced logic."""
     scores = [
         _LABEL_SCORES[v.label]
         for v in verdicts
         if _LABEL_SCORES.get(v.label) is not None
     ]
     if not scores:
-        return 1.0, Decision.ABSTAIN
+        return 0.5, Decision.ABSTAIN
+    
     trust = sum(scores) / len(scores)
-    if trust >= 0.7:
-        decision = Decision.SAFE
-    elif trust <= 0.35:
+    
+    # Analyze verdict patterns for smarter decisions
+    labels = [v.label for v in verdicts]
+    has_contradicted = VerdictLabel.CONTRADICTED in labels
+    has_supported = any(label in [VerdictLabel.SUPPORTED, VerdictLabel.ENTAILED] for label in labels)
+    has_partial = VerdictLabel.PARTIALLY_SUPPORTED in labels
+    has_unverifiable = VerdictLabel.UNVERIFIABLE in labels
+    
+    contradiction_ratio = labels.count(VerdictLabel.CONTRADICTED) / len(labels)
+    support_ratio = sum(1 for label in labels if label in [VerdictLabel.SUPPORTED, VerdictLabel.ENTAILED]) / len(labels)
+    
+    # Enhanced decision logic with better partial hallucination handling
+    if contradiction_ratio >= 0.4:  # 40%+ contradicted → Flag (lowered from 50%)
         decision = Decision.FLAGGED
-    else:
+    elif has_contradicted and not has_supported:  # Only contradictions, no support
+        decision = Decision.FLAGGED
+    elif has_contradicted and has_supported and contradiction_ratio >= 0.2:  # Mixed with significant contradictions
         decision = Decision.ABSTAIN
+    elif support_ratio >= 0.6 and not has_contradicted:  # Good support without contradictions
+        decision = Decision.SAFE
+    elif has_supported and trust >= 0.75 and not has_contradicted:  # High trust with some support, no contradictions
+        decision = Decision.SAFE
+    elif has_partial and not has_contradicted:  # Partial but not contradicted
+        decision = Decision.ABSTAIN
+    elif has_contradicted and has_supported:  # Any mixed evidence → abstain
+        decision = Decision.ABSTAIN
+    elif trust >= 0.8:  # Very high trust (lowered from 0.85)
+        decision = Decision.SAFE
+    elif trust <= 0.3:  # Very low trust (raised from 0.25)
+        decision = Decision.FLAGGED
+    else:  # Uncertain middle ground
+        decision = Decision.ABSTAIN
+    
     return round(trust, 4), decision
 
 
@@ -188,7 +217,7 @@ async def check_hallucination(
     trust_index, decision = _compute_trust(verdicts)
 
     response = CheckResponse(
-        request_id=request.request_id or None,
+        request_id=request.request_id or str(uuid4()),
         claims=claims,
         verdicts=verdicts,
         trust_index=trust_index,

@@ -1,0 +1,570 @@
+{
+  "overall_accuracy": 0.8333333333333334,
+  "avg_processing_time": 35.1011418501536,
+  "category_metrics": {
+    "hallucinated": {
+      "accuracy": 1.0,
+      "count": 2,
+      "avg_trust_index": 0.08335
+    },
+    "partially_hallucinated": {
+      "accuracy": 0.5,
+      "count": 2,
+      "avg_trust_index": 0.75
+    },
+    "accurate": {
+      "accuracy": 1.0,
+      "count": 2,
+      "avg_trust_index": 1.0
+    }
+  },
+  "hallucination_detection_rate": 1.0,
+  "accurate_recognition_rate": 1.0,
+  "partial_abstain_rate": 0.5,
+  "kb_hit_rate": 0.5333333333333333,
+  "individual_results": [
+    {
+      "test_case": "ITActTestCase(text='Section 43 of the Information Technology Act, 2000 provides that a person who accesses a computer without permission is automatically sentenced to imprisonment for up to five years and a fine of up to ten lakh rupees. The section also empowers the police to arrest the offender without a warrant.', context='Verify this statement against the Information Technology Act, 2000, particularly Section 43.', request_id='itact_sec43_001', expected_category='hallucinated', expected_decision='FLAGGED', description='Section 43 is civil liability, not criminal - incorrect imprisonment/fine claims')",
+      "response_data": {
+        "request_id": "itact_sec43_001_1789108112",
+        "claims": [
+          {
+            "id": "claim_001",
+            "text": "Section 43 of the Information Technology Act, 2000 provides that a person who accesses a computer without permission is automatically sentenced to imprisonment for up to five years",
+            "type": "SECTION_REF",
+            "span": [
+              1,
+              181
+            ],
+            "citation": "Section 43 of the Information Technology Act, 2000",
+            "context": "Section 43 ... sentenced to imprisonment for up to five years"
+          },
+          {
+            "id": "claim_002",
+            "text": "Section 43 of the Information Technology Act, 2000 provides that a person who accesses a computer without permission is subject to a fine of up to ten lakh rupees",
+            "type": "SECTION_REF",
+            "span": [
+              189,
+              217
+            ],
+            "citation": "Section 43 of the Information Technology Act, 2000",
+            "context": "Section 43 ... fine of up to ten lakh rupees"
+          },
+          {
+            "id": "claim_003",
+            "text": "Section 43 of the Information Technology Act, 2000 empowers the police to arrest the offender without a warrant",
+            "type": "SECTION_REF",
+            "span": [
+              219,
+              297
+            ],
+            "citation": "Section 43 of the Information Technology Act, 2000",
+            "context": "Section 43 ... empowers police to arrest without a warrant"
+          }
+        ],
+        "verdicts": [
+          {
+            "claim_id": "claim_001",
+            "label": "CONTRADICTED",
+            "evidence": [
+              "\"If any person without permission of the owner or any other person who is in charge of a computer, computer system or computer network,\u2013 (a) accesses or secures access to such computer, computer system or computer network\""
+            ],
+            "stage_reached": 2,
+            "confidence": 0.96,
+            "reasoning": "The excerpt from Section 43 mentions that a person without permission who accesses a computer may be liable for penalty and compensation, but it does not specify any imprisonment term, let alone a maximum of five years. Therefore the claim that the section provides automatic imprisonment up to five years is not supported by the provided text.",
+            "evidence_span": "\"If any person without permission of the owner or any other person who is in charge of a computer, computer system or computer network,\u2013 (a) accesses or secures access to such computer, computer system or computer network\"",
+            "unsupported_detail": "The claim that the provision imposes imprisonment for up to five years is not found in the excerpt.",
+            "temporal_flag": false,
+            "temporal_note": null
+          },
+          {
+            "claim_id": "claim_002",
+            "label": "PARTIALLY_SUPPORTED",
+            "evidence": [
+              "\"If any person without permission of the owner or any other person who is in charge of a computer, computer system or computer network, \u2013 (a) accesses or secures access to such computer, computer system or computer network\""
+            ],
+            "stage_reached": 2,
+            "confidence": 0.86,
+            "reasoning": "The excerpt confirms that Section 43 penalizes a person who accesses a computer without permission, but it does not state the amount of the fine. Therefore the claim\u2019s description of a fine up to ten lakh rupees is not supported by the provided text.",
+            "evidence_span": "\"If any person without permission of the owner or any other person who is in charge of a computer, computer system or computer network, \u2013 (a) accesses or secures access to such computer, computer system or computer network\"",
+            "unsupported_detail": "The claim that the penalty is a fine of up to ten lakh rupees is not mentioned in the excerpt.",
+            "temporal_flag": false,
+            "temporal_note": null
+          },
+          {
+            "claim_id": "claim_003",
+            "label": "CONTRADICTED",
+            "evidence": [
+              "6[Penalty and compensation] for damage to computer, computer system, etc.\u2013If any person without permission of the owner or any other person who is in charge of a computer, computer system or computer network,\u2013 (a) accesses or secures access to such computer, computer system or computer network 7[or computer resource];"
+            ],
+            "stage_reached": 2,
+            "confidence": 0.97,
+            "reasoning": "The excerpt from Section 43 only describes penalties and compensation for unauthorized access to a computer system. It contains no language granting police the power to arrest without a warrant. Therefore the claim is not supported by the provided text.",
+            "evidence_span": "6[Penalty and compensation] for damage to computer, computer system, etc.\u2013If any person without permission of the owner or any other person who is in charge of a computer, computer system or computer network,\u2013 (a) accesses or secures access to such computer, computer system or computer network 7[or computer resource];",
+            "unsupported_detail": "The claim that Section 43 empowers police to arrest without a warrant is not found in the excerpt.",
+            "temporal_flag": false,
+            "temporal_note": null
+          }
+        ],
+        "trust_index": 0.1667,
+        "decision": "FLAGGED",
+        "created_at": "2026-09-11T06:29:28.093722Z"
+      },
+      "actual_decision": "FLAGGED",
+      "expected_decision": "FLAGGED",
+      "trust_index": 0.1667,
+      "decision_correct": true,
+      "accuracy": 1.0,
+      "processing_time": 55.614405393600464,
+      "claims_count": 3,
+      "verdict_labels": [
+        "CONTRADICTED",
+        "PARTIALLY_SUPPORTED",
+        "CONTRADICTED"
+      ],
+      "kb_hits": 1,
+      "contradicted_claims": 2,
+      "unverifiable_claims": 0,
+      "status": "success"
+    },
+    {
+      "test_case": "ITActTestCase(text=\"Section 66 of the Information Technology Act, 2000 deals exclusively with cyber terrorism. It provides that anyone who threatens India's sovereignty through a computer network shall receive imprisonment for life as the mandatory punishment, without any requirement of dishonest or fraudulent intent.\", context='Verify this statement against the Information Technology Act, 2000, particularly Section 66 and the provisions concerning cyber terrorism.', request_id='itact_sec66_hallucinated_002', expected_category='hallucinated', expected_decision='FLAGGED', description='Section 66 is about computer-related offenses, not cyber terrorism; incorrect punishment')",
+      "response_data": {
+        "request_id": "itact_sec66_hallucinated_002_1789108168",
+        "claims": [
+          {
+            "id": "claim_001",
+            "text": "Section 66 of the Information Technology Act, 2000 deals exclusively with cyber terrorism.",
+            "type": "SECTION_REF",
+            "span": [
+              0,
+              90
+            ],
+            "citation": "Section 66 of the Information Technology Act, 2000",
+            "context": "Section 66 ... deals exclusively with cyber terrorism."
+          },
+          {
+            "id": "claim_002",
+            "text": "anyone who threatens India's sovereignty through a computer network shall receive imprisonment for life as the mandatory punishment",
+            "type": "HOLDING",
+            "span": [
+              108,
+              239
+            ],
+            "citation": "Section 66 of the Information Technology Act, 2000",
+            "context": "anyone who threatens India's sovereignty ... mandatory punishment"
+          },
+          {
+            "id": "claim_003",
+            "text": "the provision does not require any dishonest or fraudulent intent",
+            "type": "OTHER",
+            "span": [
+              241,
+              299
+            ],
+            "citation": "Section 66 of the Information Technology Act, 2000",
+            "context": "without any requirement of dishonest or fraudulent intent"
+          }
+        ],
+        "verdicts": [
+          {
+            "claim_id": "claim_001",
+            "label": "CONTRADICTED",
+            "evidence": [
+              "Computer-related offences / Hacking. Whoever, with intent to cause or knowing that he is likely to cause wrongful loss or damage to the public or any person, by entering any computer system or network without authority, or exceeding authorized access, or introducing any computer contaminant, shall be punished with imprisonment of not more than three years and also be liable to fine which may extend to five lakh rupees."
+            ],
+            "stage_reached": 2,
+            "confidence": 0.98,
+            "reasoning": "The excerpt defines Section 66 as covering \"Computer-related offences / Hacking\" and describes penalties for unauthorized access, with no mention of cyber terrorism. Therefore the claim that Section 66 deals exclusively with cyber terrorism is not supported by the provided text.",
+            "evidence_span": "Computer-related offences / Hacking. Whoever, with intent to cause or knowing that he is likely to cause wrongful loss or damage to the public or any person, by entering any computer system or network without authority, or exceeding authorized access, or introducing any computer contaminant, shall be punished with imprisonment of not more than three years and also be liable to fine which may extend to five lakh rupees.",
+            "unsupported_detail": "The claim that Section 66 deals exclusively with cyber terrorism.",
+            "temporal_flag": false,
+            "temporal_note": null
+          },
+          {
+            "claim_id": "claim_002",
+            "label": "CONTRADICTED",
+            "evidence": [
+              "shall be punished with imprisonment of not more than three years and also be liable to fine which may extend to five lakh rupees."
+            ],
+            "stage_reached": 2,
+            "confidence": 0.99,
+            "reasoning": "The claim states that threatening India's sovereignty via a computer network carries a mandatory life imprisonment, but the excerpt of Section 66 limits imprisonment to \"not more than three years\" and does not mention sovereignty or a life term. Therefore the claim is directly contradicted by the text.",
+            "evidence_span": "shall be punished with imprisonment of not more than three years and also be liable to fine which may extend to five lakh rupees.",
+            "unsupported_detail": "The claim's assertion of life imprisonment and reference to threats to India's sovereignty are not supported.",
+            "temporal_flag": false,
+            "temporal_note": null
+          },
+          {
+            "claim_id": "claim_003",
+            "label": "CONTRADICTED",
+            "evidence": [
+              "\"Whoever, with intent to cause or knowing that he is likely to cause wrongful loss or damage to the public or any person, by entering any computer system or network without authority...\""
+            ],
+            "stage_reached": 2,
+            "confidence": 0.97,
+            "reasoning": "The excerpt of Section\u202f66 states that the offender must act \"with intent to cause or knowing that he is likely to cause wrongful loss or damage\". This clearly imposes an intent requirement, contradicting the claim that the provision does not require any dishonest or fraudulent intent. Therefore the claim is not supported by the excerpt.",
+            "evidence_span": "\"Whoever, with intent to cause or knowing that he is likely to cause wrongful loss or damage to the public or any person, by entering any computer system or network without authority...\"",
+            "unsupported_detail": "The claim that the provision does not require any dishonest or fraudulent intent is not backed; the provision explicitly requires intent to cause loss.",
+            "temporal_flag": false,
+            "temporal_note": null
+          }
+        ],
+        "trust_index": 0.0,
+        "decision": "FLAGGED",
+        "created_at": "2026-09-11T06:29:45.704520Z"
+      },
+      "actual_decision": "FLAGGED",
+      "expected_decision": "FLAGGED",
+      "trust_index": 0.0,
+      "decision_correct": true,
+      "accuracy": 1.0,
+      "processing_time": 17.589046955108643,
+      "claims_count": 3,
+      "verdict_labels": [
+        "CONTRADICTED",
+        "CONTRADICTED",
+        "CONTRADICTED"
+      ],
+      "kb_hits": 0,
+      "contradicted_claims": 3,
+      "unverifiable_claims": 0,
+      "status": "success"
+    },
+    {
+      "test_case": "ITActTestCase(text=\"Section 67 of the Information Technology Act, 2000 punishes the publishing or transmitting of obscene material in electronic form. On the first conviction, the punishment may extend to three years' imprisonment and a fine up to five lakh rupees. For a second or subsequent conviction, imprisonment may extend to seven years and the fine may extend to ten lakh rupees.\", context='Verify the statement against Section 67 of the Information Technology Act, 2000, including the punishment prescribed for first and subsequent convictions.', request_id='itact_sec67_partial_003', expected_category='partially_hallucinated', expected_decision='ABSTAIN', description='Correct about obscene material, but punishment details may be inaccurate')",
+      "response_data": {
+        "request_id": "itact_sec67_partial_003_1789108185",
+        "claims": [
+          {
+            "id": "claim_001",
+            "text": "Section 67 of the Information Technology Act, 2000 punishes publishing or transmitting obscene material in electronic form.",
+            "type": "SECTION_REF",
+            "span": [
+              1,
+              51
+            ],
+            "citation": "Section 67 of the Information Technology Act, 2000",
+            "context": "Section 67 of the IT Act punishes publishing obscene material electronically."
+          },
+          {
+            "id": "claim_002",
+            "text": "On the first conviction, the punishment may extend to three years' imprisonment and a fine up to five lakh rupees.",
+            "type": "OTHER",
+            "span": [
+              132,
+              246
+            ],
+            "citation": null,
+            "context": "First conviction may lead to up to three years imprisonment and a fine of five lakh rupees."
+          },
+          {
+            "id": "claim_003",
+            "text": "For a second or subsequent conviction, imprisonment may extend to seven years and the fine may extend to ten lakh rupees.",
+            "type": "OTHER",
+            "span": [
+              247,
+              368
+            ],
+            "citation": null,
+            "context": "Second or subsequent conviction may lead to up to seven years imprisonment and a fine of ten lakh rupees."
+          }
+        ],
+        "verdicts": [
+          {
+            "claim_id": "claim_001",
+            "label": "SUPPORTED",
+            "evidence": [
+              "Punishment for publishing or transmitting obscene material in electronic form.\u2013Whoever publishes or transmits ... shall be punished on first conviction ..."
+            ],
+            "stage_reached": 2,
+            "confidence": 0.99,
+            "reasoning": "The excerpt defines Section 67 as prescribing punishment for anyone who publishes or transmits obscene material in electronic form, which matches the claim's statement. No additional conditions contradict the claim.",
+            "evidence_span": "Punishment for publishing or transmitting obscene material in electronic form.\u2013Whoever publishes or transmits ... shall be punished on first conviction ...",
+            "unsupported_detail": null,
+            "temporal_flag": false,
+            "temporal_note": null
+          },
+          {
+            "claim_id": "claim_002",
+            "label": "UNVERIFIABLE",
+            "evidence": [],
+            "stage_reached": 2,
+            "confidence": 0.96,
+            "reasoning": "The excerpt only discusses that offences punishable with imprisonment of three years are cognizable and bailable, and does not mention any fine amount or the concept of a first conviction. Therefore the claim about a fine up to five lakh rupees and the first conviction is not supported by the provided text.",
+            "evidence_span": null,
+            "unsupported_detail": "Fine up to five lakh rupees and reference to the first conviction are not mentioned in the excerpt.",
+            "temporal_flag": false,
+            "temporal_note": null
+          },
+          {
+            "claim_id": "claim_003",
+            "label": "UNVERIFIABLE",
+            "evidence": [],
+            "stage_reached": 2,
+            "confidence": 0.96,
+            "reasoning": "The excerpt only discusses bailability and cognizability of offences punishable with three years imprisonment or more, and does not mention any provisions about second or subsequent convictions, imprisonment up to seven years, or fines up to ten lakh rupees. Therefore it provides no support for the claim.",
+            "evidence_span": null,
+            "unsupported_detail": "The claim's specifics about a second/subsequent conviction, seven-year imprisonment, and ten lakh rupee fine are not addressed in the excerpt.",
+            "temporal_flag": false,
+            "temporal_note": null
+          }
+        ],
+        "trust_index": 0.6667,
+        "decision": "ABSTAIN",
+        "created_at": "2026-09-11T06:30:24.005807Z"
+      },
+      "actual_decision": "ABSTAIN",
+      "expected_decision": "ABSTAIN",
+      "trust_index": 0.6667,
+      "decision_correct": true,
+      "accuracy": 1.0,
+      "processing_time": 38.29558753967285,
+      "claims_count": 3,
+      "verdict_labels": [
+        "SUPPORTED",
+        "UNVERIFIABLE",
+        "UNVERIFIABLE"
+      ],
+      "kb_hits": 1,
+      "contradicted_claims": 0,
+      "unverifiable_claims": 2,
+      "status": "success"
+    },
+    {
+      "test_case": "ITActTestCase(text=\"Section 67A of the Information Technology Act, 2000 deals with publishing or transmitting material containing sexually explicit acts or conduct in electronic form. On first conviction, the punishment may extend to five years' imprisonment and a fine up to ten lakh rupees, while a subsequent conviction may result in imprisonment up to seven years and a fine up to twenty lakh rupees.\", context='Verify this statement against Section 67A of the Information Technology Act, 2000, especially the punishment for first and subsequent convictions.', request_id='itact_sec67a_partial_004', expected_category='partially_hallucinated', expected_decision='ABSTAIN', description='Correct about sexually explicit material, but punishment amounts may be wrong')",
+      "response_data": {
+        "request_id": "itact_sec67a_partial_004_1789108224",
+        "claims": [
+          {
+            "id": "claim_001",
+            "text": "Section 67A of the Information Technology Act, 2000 deals with publishing or transmitting material containing sexually explicit acts or conduct in electronic form.",
+            "type": "SECTION_REF",
+            "span": [
+              1,
+              164
+            ],
+            "citation": "Section 67A of the Information Technology Act, 2000",
+            "context": "Section 67A ... electronic form."
+          },
+          {
+            "id": "claim_002",
+            "text": "On first conviction, the punishment may extend to five years' imprisonment and a fine up to ten lakh rupees.",
+            "type": "OTHER",
+            "span": [
+              165,
+              272
+            ],
+            "citation": "Section 67A of the Information Technology Act, 2000",
+            "context": "On first conviction ... ten lakh rupees"
+          },
+          {
+            "id": "claim_003",
+            "text": "A subsequent conviction may result in imprisonment up to seven years and a fine up to twenty lakh rupees.",
+            "type": "OTHER",
+            "span": [
+              280,
+              385
+            ],
+            "citation": "Section 67A of the Information Technology Act, 2000",
+            "context": "subsequent conviction ... twenty lakh rupees"
+          }
+        ],
+        "verdicts": [
+          {
+            "claim_id": "claim_001",
+            "label": "SUPPORTED",
+            "evidence": [
+              "Punishment for publishing or transmitting of material containing sexually explicit act, etc., in electronic form.\u2013Whoever publishes or transmits or causes to be published or transmitted in the electronic form any material which contains sexually explicit act or conduct shall be punished..."
+            ],
+            "stage_reached": 2,
+            "confidence": 0.99,
+            "reasoning": "The excerpt defines the scope of Section 67A as punishing anyone who publishes or transmits material containing sexually explicit acts or conduct in electronic form, which matches the claim's description. No contradictory language is present.",
+            "evidence_span": "Punishment for publishing or transmitting of material containing sexually explicit act, etc., in electronic form.\u2013Whoever publishes or transmits or causes to be published or transmitted in the electronic form any material which contains sexually explicit act or conduct shall be punished...",
+            "unsupported_detail": null,
+            "temporal_flag": false,
+            "temporal_note": null
+          },
+          {
+            "claim_id": "claim_002",
+            "label": "SUPPORTED",
+            "evidence": [
+              "\"...shall be punished on first conviction with imprisonment of either description for a term which may extend to five years and with fine which may extend to ten lakh rupees...\""
+            ],
+            "stage_reached": 2,
+            "confidence": 0.99,
+            "reasoning": "The excerpt states that on first conviction the punishment is imprisonment which may extend to five years and a fine which may extend to ten lakh rupees, exactly matching the claim. No contradictory or additional information is present.",
+            "evidence_span": "\"...shall be punished on first conviction with imprisonment of either description for a term which may extend to five years and with fine which may extend to ten lakh rupees...\"",
+            "unsupported_detail": null,
+            "temporal_flag": false,
+            "temporal_note": null
+          },
+          {
+            "claim_id": "claim_003",
+            "label": "PARTIALLY_SUPPORTED",
+            "evidence": [
+              "in the event of second or subsequent conviction with imprisonment of either description for a term which may extend to seven years and also with fine which may extend to ten lakh rupees."
+            ],
+            "stage_reached": 2,
+            "confidence": 0.97,
+            "reasoning": "The excerpt states that for a second or subsequent conviction under Section 67A, imprisonment may extend to seven years, matching the claim. However, it specifies the fine may extend to ten lakh rupees, not twenty lakh rupees as claimed. Therefore the claim is only partially supported.",
+            "evidence_span": "in the event of second or subsequent conviction with imprisonment of either description for a term which may extend to seven years and also with fine which may extend to ten lakh rupees.",
+            "unsupported_detail": "the claim that the fine may be up to twenty lakh rupees is not supported (excerpt limits fine to ten lakh rupees).",
+            "temporal_flag": false,
+            "temporal_note": null
+          }
+        ],
+        "trust_index": 0.8333,
+        "decision": "SAFE",
+        "created_at": "2026-09-11T06:31:03.532639Z"
+      },
+      "actual_decision": "SAFE",
+      "expected_decision": "ABSTAIN",
+      "trust_index": 0.8333,
+      "decision_correct": false,
+      "accuracy": 0.0,
+      "processing_time": 39.5199761390686,
+      "claims_count": 3,
+      "verdict_labels": [
+        "SUPPORTED",
+        "SUPPORTED",
+        "PARTIALLY_SUPPORTED"
+      ],
+      "kb_hits": 3,
+      "contradicted_claims": 0,
+      "unverifiable_claims": 0,
+      "status": "success"
+    },
+    {
+      "test_case": "ITActTestCase(text='Section 10A of the Information Technology Act, 2000 provides that where, in the formation of a contract, proposals, acceptances, revocations of proposals or acceptances are expressed in electronic form or by means of electronic records, the contract shall not be deemed to be unenforceable solely because electronic form or electronic records were used.', context='Verify this statement against Section 10A of the Information Technology Act, 2000 concerning the validity of contracts formed through electronic means.', request_id='itact_sec10a_correct_005', expected_category='accurate', expected_decision='SAFE', description='Accurate statement about electronic contract validity')",
+      "response_data": {
+        "request_id": "itact_sec10a_correct_005_1789108263",
+        "claims": [
+          {
+            "id": "claim_001",
+            "text": "Section 10A of the Information Technology Act, 2000 provides that a contract formed electronically shall not be deemed unenforceable solely because electronic form or electronic records were used.",
+            "type": "SECTION_REF",
+            "span": [
+              0,
+              0
+            ],
+            "citation": "Section 10A of the Information Technology Act, 2000",
+            "context": "Section 10A ... shall not be deemed unenforceable solely because electronic form or electronic records were used."
+          }
+        ],
+        "verdicts": [
+          {
+            "claim_id": "claim_001",
+            "label": "SUPPORTED",
+            "evidence": [
+              "2[10A. Validity of contracts formed through electronic means.\u2014Where in a contract formation, the communication of proposals, the acceptance of proposals, the revocation of proposals and acceptances, as the case may be, are expressed in electronic form or by means of an electronic records, such contract shall not be deemed to be unenforceable solely on the ground that such electronic form or means was used for that purpose.]"
+            ],
+            "stage_reached": 2,
+            "confidence": 0.99,
+            "reasoning": "The excerpt contains Section 10A verbatim, stating that a contract formed through electronic means shall not be deemed unenforceable solely because electronic form or records were used, which matches the claim. No contradictory or missing information is present.",
+            "evidence_span": "2[10A. Validity of contracts formed through electronic means.\u2014Where in a contract formation, the communication of proposals, the acceptance of proposals, the revocation of proposals and acceptances, as the case may be, are expressed in electronic form or by means of an electronic records, such contract shall not be deemed to be unenforceable solely on the ground that such electronic form or means was used for that purpose.]",
+            "unsupported_detail": null,
+            "temporal_flag": false,
+            "temporal_note": null
+          }
+        ],
+        "trust_index": 1.0,
+        "decision": "SAFE",
+        "created_at": "2026-09-11T06:31:22.680426Z"
+      },
+      "actual_decision": "SAFE",
+      "expected_decision": "SAFE",
+      "trust_index": 1.0,
+      "decision_correct": true,
+      "accuracy": 1.0,
+      "processing_time": 19.14725399017334,
+      "claims_count": 1,
+      "verdict_labels": [
+        "SUPPORTED"
+      ],
+      "kb_hits": 1,
+      "contradicted_claims": 0,
+      "unverifiable_claims": 0,
+      "status": "success"
+    },
+    {
+      "test_case": "ITActTestCase(text='Section 67 of the Information Technology Act, 2000 provides that whoever publishes or transmits, or causes to be published or transmitted, in electronic form any material which is lascivious or appeals to the prurient interest, or whose effect tends to deprave and corrupt persons likely to read, see or hear it, shall be punished on first conviction with imprisonment which may extend to three years and with a fine which may extend to five lakh rupees. In the event of a second or subsequent conviction, imprisonment may extend to five years and the fine may extend to ten lakh rupees.', context='Verify this statement against Section 67 of the Information Technology Act, 2000 concerning punishment for publishing or transmitting obscene material in electronic form.', request_id='itact_sec67_correct_008', expected_category='accurate', expected_decision='SAFE', description='Accurate statement about Section 67 obscene material provisions')",
+      "response_data": {
+        "request_id": "itact_sec67_correct_008_1789108282",
+        "claims": [
+          {
+            "id": "claim_001",
+            "text": "Section 67 of the Information Technology Act, 2000 provides that whoever publishes or transmits, or causes to be published or transmitted, in electronic form any material which is lascivious or appeals to the prurient interest, or whose effect tends to deprave and corrupt persons likely to read, see or hear it, shall be punished on first conviction with imprisonment which may extend to three years and with a fine which may extend to five lakh rupees.",
+            "type": "SECTION_REF",
+            "span": [
+              0,
+              449
+            ],
+            "citation": "Section 67 of the Information Technology Act, 2000",
+            "context": "Section 67 of the IT Act, 2000 provides that ... shall be punished on first conviction with imprisonment up to three years and a fine up to five lakh rupees."
+          },
+          {
+            "id": "claim_002",
+            "text": "In the event of a second or subsequent conviction, imprisonment may extend to five years and the fine may extend to ten lakh rupees.",
+            "type": "SECTION_REF",
+            "span": [
+              451,
+              578
+            ],
+            "citation": "Section 67 of the Information Technology Act, 2000",
+            "context": "In the event of a second or subsequent conviction, imprisonment may extend to five years and the fine may extend to ten lakh rupees."
+          }
+        ],
+        "verdicts": [
+          {
+            "claim_id": "claim_001",
+            "label": "SUPPORTED",
+            "evidence": [
+              "\"...shall be punished on first conviction with imprisonment of either description for a term which may extend to three years and with fine which may extend to five lakh rupees...\""
+            ],
+            "stage_reached": 2,
+            "confidence": 0.98,
+            "reasoning": "The excerpt contains the exact language that on first conviction the offender shall be punished with imprisonment up to three years and a fine up to five lakh rupees, matching the claim. The additional provision about second or subsequent convictions does not contradict the claim.",
+            "evidence_span": "\"...shall be punished on first conviction with imprisonment of either description for a term which may extend to three years and with fine which may extend to five lakh rupees...\"",
+            "unsupported_detail": null,
+            "temporal_flag": false,
+            "temporal_note": null
+          },
+          {
+            "claim_id": "claim_002",
+            "label": "SUPPORTED",
+            "evidence": [
+              "in the event of second or subsequent conviction with imprisonment of either description for a term which may extend to five years and also with fine which may extend to ten lakh rupees."
+            ],
+            "stage_reached": 2,
+            "confidence": 0.99,
+            "reasoning": "The excerpt from Section 67 explicitly states that for a second or subsequent conviction the imprisonment may extend to five years and the fine may extend to ten lakh rupees, which matches the claim word\u2011for\u2011word. No amendment or repeal information appears in the excerpt.",
+            "evidence_span": "in the event of second or subsequent conviction with imprisonment of either description for a term which may extend to five years and also with fine which may extend to ten lakh rupees.",
+            "unsupported_detail": null,
+            "temporal_flag": false,
+            "temporal_note": null
+          }
+        ],
+        "trust_index": 1.0,
+        "decision": "SAFE",
+        "created_at": "2026-09-11T06:32:03.126513Z"
+      },
+      "actual_decision": "SAFE",
+      "expected_decision": "SAFE",
+      "trust_index": 1.0,
+      "decision_correct": true,
+      "accuracy": 1.0,
+      "processing_time": 40.44058108329773,
+      "claims_count": 2,
+      "verdict_labels": [
+        "SUPPORTED",
+        "SUPPORTED"
+      ],
+      "kb_hits": 2,
+      "contradicted_claims": 0,
+      "unverifiable_claims": 0,
+      "status": "success"
+    }
+  ],
+  "timestamp": 1789108323.1663654
+}

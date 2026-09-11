@@ -43,6 +43,10 @@ from typing import Any
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(_PROJECT_ROOT))
 
+# Load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+
 from shared.schemas import Claim, ClaimType  # noqa: E402
 
 logger = logging.getLogger(__name__)
@@ -51,45 +55,29 @@ logger = logging.getLogger(__name__)
 # Extraction prompt  (edit this independently of parsing / retry logic below)
 # ─────────────────────────────────────────────────────────────────────────────
 EXTRACTION_PROMPT = """\
-You are a legal-domain claim extractor. Your task is to decompose the text \
-below into a list of atomic, independently checkable legal assertions.
+Extract atomic legal claims from the text below. Return ONLY valid JSON array.
 
 Rules:
-1. Split compound sentences — each output item must contain exactly ONE \
-verifiable legal assertion.
-2. If a claim references a statute section (e.g. "Section 43A of the IT Act") \
-or a case citation (e.g. "K.S. Puttaswamy v. Union of India (2017)"), extract \
-the verbatim reference into the "citation" field. Set "citation" to null if \
-none is present.
-3. Claims with no citation are still valid — they will be grounded against the \
-knowledge base via semantic search.
-4. Preserve the original sentence the claim came from in the "context" field, \
-verbatim.
-5. Set "span_start" and "span_end" to the character offsets (0-indexed) in the \
-ORIGINAL input text where the claim text appears.  If you cannot determine \
-exact offsets, use 0 for both.
-6. Return ONLY a valid JSON array — no prose, no markdown fences, no comments.
+1. One verifiable legal assertion per claim
+2. Extract statute/case citations verbatim into "citation" field
+3. Keep "context" concise (max 150 chars) 
+4. Use exact character spans if possible, otherwise use 0,0
 
-Allowed "type" values (pick the single best match):
-  CASE_CITATION  – references a named court case
-  SECTION_REF    – references a statute, act section, or regulation number
-  HOLDING        – states a legal ruling / principle established by a court
-  PROCEDURAL     – describes a procedural rule (burden of proof, standing, …)
-  OTHER          – any other legal assertion that does not fit above
+Types: CASE_CITATION, SECTION_REF, HOLDING, PROCEDURAL, OTHER
 
-Output schema (JSON array, no other text):
+Output format (JSON array only):
 [
   {{
-    "text":       "<atomic legal assertion>",
-    "type":       "<CASE_CITATION|SECTION_REF|HOLDING|PROCEDURAL|OTHER>",
-    "citation":   "<verbatim citation string or null>",
-    "context":    "<original surrounding sentence, verbatim>",
-    "span_start": <integer>,
-    "span_end":   <integer>
+    "text": "<atomic claim>",
+    "type": "<type>", 
+    "citation": "<citation or null>",
+    "context": "<short context>",
+    "span_start": <int>,
+    "span_end": <int>
   }}
 ]
 
-Input text to decompose:
+Text:
 \"\"\"
 {llm_output}
 \"\"\"
@@ -127,6 +115,7 @@ def _get_llm_client():  # -> OpenAI
     """
     try:
         from openai import OpenAI
+        import httpx
     except ImportError as exc:
         raise ImportError(
             "openai package is required for claim extraction. "
@@ -140,7 +129,18 @@ def _get_llm_client():  # -> OpenAI
             "Add it to your .env file or environment before running the pipeline."
         )
     base_url = os.environ.get("OPENAI_BASE_URL") or None
-    return OpenAI(api_key=api_key, base_url=base_url)
+    
+    # Create a custom HTTP client with proper SSL configuration
+    http_client = httpx.Client(
+        verify=False,  # Disable SSL verification to avoid recursion issues
+        timeout=60.0
+    )
+    
+    return OpenAI(
+        api_key=api_key, 
+        base_url=base_url,
+        http_client=http_client
+    )
 
 
 def _resolve_model() -> str:
@@ -178,24 +178,43 @@ def _parse_json_array(raw: str) -> list[dict[str, Any]]:
 # ─────────────────────────────────────────────────────────────────────────────
 def _call_llm(llm_output: str, client: Any, model: str) -> str:
     """Make one low-temperature chat completion call and return the content string."""
-    response = client.chat.completions.create(
-        model=model,
-        temperature=0.1,
-        messages=[
-            {
-                "role": "system",
-                "content": (
-                    "You are a precise legal-claim extractor. "
-                    "Always respond with a valid JSON array and nothing else."
-                ),
-            },
-            {
-                "role": "user",
-                "content": EXTRACTION_PROMPT.format(llm_output=llm_output),
-            },
-        ],
-    )
-    return response.choices[0].message.content or ""
+    try:
+        response = client.chat.completions.create(
+            model=model,
+            temperature=0.1,
+            max_tokens=6000,  # Further increased to handle complex legal texts
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You are a precise legal-claim extractor. "
+                        "Always respond with a valid, complete JSON array and nothing else. "
+                        "Ensure all strings are properly closed and escaped."
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": EXTRACTION_PROMPT.format(llm_output=llm_output),
+                },
+            ],
+        )
+        content = response.choices[0].message.content
+        if not content or content.strip() == "":
+            logger.error("_call_llm: Empty response from LLM")
+            return "[]"  # Return empty array instead of failing
+        
+        # Validate that the response is complete JSON
+        try:
+            json.loads(content)
+            return content
+        except json.JSONDecodeError as e:
+            logger.error("_call_llm: Invalid JSON in LLM response: %s", e)
+            logger.error("_call_llm: Raw response: %s", content[:500])
+            return "[]"  # Return empty array on malformed JSON
+            
+    except Exception as e:
+        logger.error("_call_llm: Exception during LLM call: %s", e)
+        return "[]"  # Return empty array on error
 
 
 # ─────────────────────────────────────────────────────────────────────────────

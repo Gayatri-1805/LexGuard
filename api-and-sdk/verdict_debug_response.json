@@ -1,0 +1,33 @@
+{
+  "request_id": "2372468f-27ce-4da1-a733-2cb7eef08d22",
+  "claims": [
+    {
+      "id": "claim_001",
+      "text": "Section 66 of the Information Technology Act, 2000 deals exclusively with cyber terrorism.",
+      "type": "SECTION_REF",
+      "span": [
+        1,
+        91
+      ],
+      "citation": "Section 66 of the Information Technology Act, 2000",
+      "context": "Section 66 of the Information Technology Act, 2000 deals exclusively with cyber terrorism."
+    }
+  ],
+  "verdicts": [
+    {
+      "claim_id": "claim_001",
+      "label": "UNVERIFIABLE",
+      "evidence": [],
+      "stage_reached": 2,
+      "confidence": 0.96,
+      "reasoning": "The excerpt only discusses Section 66A of the IT Act and its unconstitutionality, with no mention of Section 66 or its subject matter. Therefore, the excerpt provides no support for the claim that Section 66 deals exclusively with cyber terrorism.",
+      "evidence_span": null,
+      "unsupported_detail": "The claim that Section 66 deals exclusively with cyber terrorism is not addressed in the excerpt.",
+      "temporal_flag": false,
+      "temporal_note": null
+    }
+  ],
+  "trust_index": 0.5,
+  "decision": "ABSTAIN",
+  "created_at": "2026-09-11T05:23:31.722670Z"
+}

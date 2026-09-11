@@ -32,6 +32,7 @@ No custom handlers, no DB writes — plain structured log line per lookup.
 from __future__ import annotations
 
 import logging
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -47,7 +48,14 @@ for _p in (_PROJECT_ROOT, _API_ROOT):
 
 from shared.schemas import Claim  # noqa: E402
 
+# Load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+
 logger = logging.getLogger(__name__)
+
+# Module-level cache for vector retriever to avoid reloading FAISS index
+_cached_retriever = None
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Hit threshold — tune this against the gold evaluation set.
@@ -55,7 +63,7 @@ logger = logging.getLogger(__name__)
 # Current default based on all-MiniLM-L6-v2 geometry; re-calibrate after
 # running eval/scoring.py on the annotated gold set.
 # ─────────────────────────────────────────────────────────────────────────────
-KB_HIT_THRESHOLD: float = 0.55
+KB_HIT_THRESHOLD: float = 0.45
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -134,16 +142,16 @@ def _build_source(meta: dict[str, Any]) -> str:
 # ─────────────────────────────────────────────────────────────────────────────
 def kb_lookup(
     claim: Claim,
-    top_k: int = 3,
+    top_k: int = 5,  # Increased from 3 to 5 for better coverage
     threshold: float = KB_HIT_THRESHOLD,
     *,
     retriever: Any = None,
 ) -> KBLookupResult:
     """Ground *claim* against the legal knowledge base.
 
-    Calls VectorRetriever.retrieve_with_metadata() — the richer variant that
-    returns scores alongside passage text — so we can populate KBPassage.score
-    and set hit correctly.
+    Uses a hybrid approach:
+    1. If claim references a specific section (e.g., "Section 66"), try exact lookup first
+    2. Fall back to semantic vector search for all claims
 
     Args:
         claim:      The Claim to ground (from shared/schemas.py).
@@ -161,25 +169,97 @@ def kb_lookup(
                            not been built yet (run python -m api.kb.build_index).
         ImportError:       If faiss-cpu or sentence-transformers are not installed.
     """
-    # Build the retriever lazily if not injected (allows tests to mock it)
+    # Use a module-level cached retriever to avoid reloading FAISS index
+    global _cached_retriever
     if retriever is None:
-        from api.kb.vector_kb import VectorRetriever
-        retriever = VectorRetriever()
+        if '_cached_retriever' not in globals() or _cached_retriever is None:
+            from api.kb.vector_kb import VectorRetriever
+            _cached_retriever = VectorRetriever()
+            logger.info("kb_lookup | initialized cached vector retriever")
+        retriever = _cached_retriever
 
-    # Use the richer variant that returns score + metadata per passage
-    raw_results: list[dict[str, Any]] = retriever.retrieve_with_metadata(
-        claim.text, top_k=top_k
-    )
+    # Try exact section lookup first if claim has a section reference
+    exact_match_passages = []
+    
+    # Enhanced section detection - check both citation and claim text
+    section_patterns = [
+        r'(?:section|sec\.?)\s*(\d+[A-Za-z]?)',  # "Section 66", "Sec 43A", "Section 10A"
+        r'(\d+[A-Za-z]?)\s*(?:of\s+(?:the\s+)?(?:information\s+technology|IT)\s+act)',  # "66 of IT Act"
+    ]
+    
+    section_num = None
+    search_text = f"{claim.citation or ''} {claim.text}"  # Keep original case
+    
+    for pattern in section_patterns:
+        match = re.search(pattern, search_text, re.IGNORECASE)
+        if match:
+            section_num = match.group(1).upper()  # Normalize to uppercase for DB lookup
+            break
+    
+    if section_num:
+        try:
+            from api.kb.postgres_kb import PostgresKB
+            
+            logger.info("kb_lookup | attempting exact lookup for section=%s", section_num)
+            postgres_kb = PostgresKB()
+            section_text = postgres_kb.lookup_section(section_num, "Information Technology Act, 2000")
+            
+            if section_text and len(section_text.strip()) > 50:  # Ensure we got real content
+                # Found exact section - add as a high-confidence passage
+                exact_match_passages.append(
+                    KBPassage(
+                        text=section_text,
+                        source=f"statute:{section_num}",
+                        score=0.95,  # High score for exact match
+                        metadata={"source_type": "statute", "section_number": section_num, "match_type": "exact"}
+                    )
+                )
+                logger.info(
+                    "kb_lookup | claim_id=%s | exact_match=SUCCESS | section=%s | text_length=%d",
+                    claim.id,
+                    section_num,
+                    len(section_text)
+                )
+            else:
+                logger.warning("kb_lookup | claim_id=%s | exact_match=FAILED | section=%s | no_content", claim.id, section_num)
+                
+        except Exception as e:
+            logger.error("kb_lookup | claim_id=%s | exact_lookup_error: %s", claim.id, e)
 
-    # Build KBPassage list
-    passages: list[KBPassage] = []
+    # Enhanced semantic search with multiple strategies
+    all_results = []
+    search_strategies = [
+        claim.text,  # Original claim text
+        claim.citation if claim.citation else claim.text,  # Citation if available
+        f"Section {section_num}" if section_num else claim.text,  # Section-focused
+    ]
+    
+    # Try multiple search strategies and combine results
+    seen_texts = set()
+    for strategy_query in search_strategies[:2]:  # Use top 2 strategies
+        try:
+            strategy_results = retriever.retrieve_with_metadata(strategy_query, top_k=3)
+            for result in strategy_results:
+                result_text = result.get('text', '')[:100]  # First 100 chars for dedup
+                if result_text not in seen_texts:
+                    all_results.append(result)
+                    seen_texts.add(result_text)
+        except Exception as e:
+            logger.warning("kb_lookup | search strategy failed: %s", e)
+    
+    # Take top results across all strategies
+    raw_results = all_results[:top_k]
+
+    # Build KBPassage list from semantic search
+    semantic_passages: list[KBPassage] = []
     for item in raw_results:
         score = float(item.get("score", 0.0))
         # Clamp to [0, 1] — FAISS inner-product on normalised vectors should
         # already be in this range, but guard against floating-point edge cases.
         score = max(0.0, min(1.0, score))
         meta = {k: v for k, v in item.items() if k != "text"}
-        passages.append(
+        meta["match_type"] = "semantic"
+        semantic_passages.append(
             KBPassage(
                 text=str(item.get("text", "")),
                 source=_build_source(item),
@@ -188,17 +268,24 @@ def kb_lookup(
             )
         )
 
+    # Combine exact matches (if any) with semantic matches
+    passages = exact_match_passages + semantic_passages
+    
+    # Limit to top_k total
+    passages = passages[:top_k]
+
     best_score: float = passages[0].score if passages else 0.0
     hit: bool = best_score >= threshold
 
     # Structured log line — same pattern as api/routes/analytics.py and check.py
     logger.info(
         "kb_lookup | claim_id=%s | top_score=%.4f | threshold=%.4f | hit=%s | "
-        "claim_text=%.80r",
+        "exact_matches=%d | claim_text=%.80r",
         claim.id,
         best_score,
         threshold,
         hit,
+        len(exact_match_passages),
         claim.text,
     )
 

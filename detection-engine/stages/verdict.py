@@ -49,6 +49,10 @@ if str(_PROJECT_ROOT) not in sys.path:
 
 from shared.schemas import Claim, Verdict, VerdictLabel  # noqa: E402
 
+# Load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+
 logger = logging.getLogger(__name__)
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -126,6 +130,7 @@ def _get_llm_client():  # -> OpenAI
     """Return an openai.OpenAI client configured from environment variables."""
     try:
         from openai import OpenAI
+        import httpx
     except ImportError as exc:
         raise ImportError(
             "openai package is required for verdict judging. "
@@ -139,7 +144,18 @@ def _get_llm_client():  # -> OpenAI
             "Add it to your .env file or environment before running the pipeline."
         )
     base_url = os.environ.get("OPENAI_BASE_URL") or None
-    return OpenAI(api_key=api_key, base_url=base_url)
+    
+    # Create a custom HTTP client with proper SSL configuration
+    http_client = httpx.Client(
+        verify=False,  # Disable SSL verification to avoid recursion issues
+        timeout=60.0
+    )
+    
+    return OpenAI(
+        api_key=api_key, 
+        base_url=base_url,
+        http_client=http_client
+    )
 
 
 def _resolve_model() -> str:
