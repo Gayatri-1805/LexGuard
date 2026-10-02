@@ -1,0 +1,86 @@
+
+================================================================================
+FALSE POSITIVES ANALYSIS (Expected SAFE, Got FLAGGED)
+================================================================================
+
+================================================================================
+CASE 22: Section 43A covers compensation for failure to protect data...
+================================================================================
+Expected: SAFE
+In KB: True
+Section Ref: Section 43A
+
+Actual Decision: FLAGGED
+Trust Index: 0.0
+
+--- Claims & Verdicts (1) ---
+
+1. Claim: Section 43A covers compensation for failure to protect data...
+   Status: N/A
+   Confidence: 0.95
+   Reasoning: KB passage contradicts the claim (heuristic negation detection). Source: statute...
+
+================================================================================
+CASE 24: Section 79 provides exemption from liability for intermediaries in certain cases...
+================================================================================
+Expected: SAFE
+In KB: True
+Section Ref: Section 79
+
+Actual Decision: FLAGGED
+Trust Index: 0.0
+
+--- Claims & Verdicts (1) ---
+
+1. Claim: Section 79 provides exemption from liability for intermediaries in cer...
+   Status: N/A
+   Confidence: 0.95
+   Reasoning: KB passage contradicts the claim (heuristic negation detection). Source: statute...
+
+
+================================================================================
+FALSE NEGATIVES ANALYSIS (Expected FLAGGED, Got SAFE)
+================================================================================
+
+================================================================================
+CASE 57: The IT Act 2000 mandates all companies to conduct annual cyber security audits...
+================================================================================
+Expected: FLAGGED
+In KB: False
+Section Ref: unknown
+
+Actual Decision: SAFE
+Trust Index: 0.5
+
+--- Claims & Verdicts (1) ---
+
+1. Claim: The IT Act 2000 mandates all companies to conduct annual cyber securit...
+   Status: N/A
+   Confidence: 0.47
+   Reasoning: KB semantic match (score=0.465) — related but not an exact match. Source: statut...
+
+================================================================================
+CASE 60: The Act mandates that all government websites must use .gov.in domain only...
+================================================================================
+Expected: FLAGGED
+In KB: False
+Section Ref: unknown
+
+Actual Decision: ABSTAIN
+Trust Index: 0.5
+
+--- Claims & Verdicts (1) ---
+
+1. Claim: The Act mandates that all government websites must use .gov.in domain ...
+   Status: N/A
+Traceback (most recent call last):
+  File "D:\projects\HALO\legal-hallucination-detector\api-and-sdk\analyze_error_cases.py", line 100, in <module>
+    main()
+    ~~~~^^
+  File "D:\projects\HALO\legal-hallucination-detector\api-and-sdk\analyze_error_cases.py", line 88, in main
+    analyze_case(case_id, case)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\projects\HALO\legal-hallucination-detector\api-and-sdk\analyze_error_cases.py", line 56, in analyze_case
+    print(f"   Confidence: {verdict.get('confidence', 0):.2f}")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported format string passed to NoneType.__format__

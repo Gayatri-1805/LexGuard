@@ -1,0 +1,50 @@
+======================================================================
+LEGAL HALLUCINATION DETECTION - 70 IT ACT TEST CASES SUMMARY
+======================================================================
+Test Date: 2026-09-13T01:12:54.547058
+Total Cases: 70
+Results File: test_results_70_it_act_20260913_011254.json
+
+OVERALL PERFORMANCE
+----------------------------------------------------------------------
+Overall Accuracy: 84.3%
+Successful Tests: 70/70
+Timeouts: 0
+Errors: 0
+Total Time: 260.2 seconds
+Avg Time/Case: 3.72 seconds
+
+CATEGORY PERFORMANCE
+----------------------------------------------------------------------
+ACCURATE:
+  • Count: 51
+  • Accuracy: 98.0%
+  • Avg Trust Index: 0.902
+  • Avg Processing Time: 3.60s
+PARTIALLY_HALLUCINATED:
+  • Count: 4
+  • Accuracy: 25.0%
+  • Avg Trust Index: 0.500
+  • Avg Processing Time: 5.55s
+HALLUCINATED:
+  • Count: 15
+  • Accuracy: 53.3%
+  • Avg Trust Index: 0.233
+  • Avg Processing Time: 3.62s
+
+DETECTION METRICS
+----------------------------------------------------------------------
+Hallucination Detection Rate: 53.3%
+Accurate Recognition Rate: 98.0%
+Partial Abstain Rate: 25.0%
+False Positive Rate: 0.0%
+False Negative Rate: 46.7%
+Precision: 100.0%
+Recall: 53.3%
+F1 Score: 0.696
+
+DECISION BREAKDOWN
+----------------------------------------------------------------------
+SAFE: 57 (81.4%)
+ABSTAIN: 4 (5.7%)
+FLAGGED: 9 (12.9%)

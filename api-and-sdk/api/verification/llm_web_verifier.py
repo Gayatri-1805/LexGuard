@@ -135,7 +135,7 @@ Return only the JSON verdict as specified."""
 # LLM client helper
 # ─────────────────────────────────────────────────────────────────────────────
 def _get_llm_client():  # -> OpenAI
-    """Return an openai.OpenAI client configured for native OpenAI."""
+    """Return an openai.OpenAI client configured for Groq or native OpenAI."""
     try:
         from openai import OpenAI
         import httpx
@@ -144,31 +144,56 @@ def _get_llm_client():  # -> OpenAI
             "openai package required. Install: pip install openai"
         ) from exc
 
-    # Use OPENAI_NATIVE_API_KEY explicitly or fallback to OPENAI_API_KEY
-    api_key = os.environ.get("OPENAI_NATIVE_API_KEY") or os.environ.get("OPENAI_API_KEY")
+    # Check if using Groq (OPENAI_BASE_URL set to Groq)
+    base_url = os.environ.get("OPENAI_BASE_URL")
+    api_key = os.environ.get("OPENAI_API_KEY")
+    
     if not api_key:
         raise EnvironmentError(
-            "OPENAI_NATIVE_API_KEY is not set. Add it to your .env file."
+            "OPENAI_API_KEY is not set. Add it to your .env file."
         )
-
-    # Force base_url to None (ignore OPENAI_BASE_URL which points to Groq)
-    base_url = None
+    
+    # If base_url points to Groq, use Groq API
+    if base_url and "groq" in base_url.lower():
+        logger.info("llm_web_verifier: Using Groq API at %s", base_url)
+        http_client = httpx.Client(
+            verify=False,   # Disable SSL verification
+            timeout=90.0
+        )
+        return OpenAI(api_key=api_key, base_url=base_url, http_client=http_client)
+    
+    # Otherwise use native OpenAI (requires OPENAI_NATIVE_API_KEY for clarity)
+    native_key = os.environ.get("OPENAI_NATIVE_API_KEY")
+    if not native_key:
+        logger.warning(
+            "llm_web_verifier: OPENAI_NATIVE_API_KEY not set. "
+            "Using Groq-configured client. Web search features may not work."
+        )
+        # Fallback to Groq if that's what's configured
+        if base_url:
+            http_client = httpx.Client(verify=False, timeout=90.0)
+            return OpenAI(api_key=api_key, base_url=base_url, http_client=http_client)
+        else:
+            raise EnvironmentError("No valid API configuration found.")
 
     http_client = httpx.Client(
-        verify=False,   # Disable SSL verification (matches existing pattern in codebase)
-        timeout=90.0    # Longer timeout for web search
+        verify=False,   # Disable SSL verification
+        timeout=90.0
     )
 
-    return OpenAI(api_key=api_key, base_url=base_url, http_client=http_client)
+    return OpenAI(api_key=native_key, base_url=None, http_client=http_client)
 
 
 def _resolve_model() -> str:
     """Return the model to use for web search verification."""
-    # Since JUDGE_MODEL in .env is typically used for the Groq fallback 
-    # (e.g. openai/gpt-oss-120b), we default strictly to WEB_SEARCH_MODEL_DEFAULT
-    # which is gpt-4o-mini for best accuracy vs free tier usage.
-    model = os.environ.get("WEB_VERIFIER_MODEL", WEB_SEARCH_MODEL_DEFAULT)
+    # Use WEB_VERIFIER_MODEL from env (defaults to JUDGE_MODEL for Groq compatibility)
+    model = os.environ.get("WEB_VERIFIER_MODEL") or os.environ.get("JUDGE_MODEL", WEB_SEARCH_MODEL_DEFAULT)
     
+    # If using Groq model, return as-is (Groq models don't have web_search_preview but can still verify)
+    if model.startswith("openai/"):
+        return model
+    
+    # For OpenAI models, validate web search support
     supported_prefixes = ("gpt-4", "o1", "o3")
     if not any(model.startswith(pfx) for pfx in supported_prefixes):
         logger.warning(
@@ -311,16 +336,38 @@ def llm_web_search_verify(
         claim.id, _model, claim.text
     )
 
-    # ── Call Responses API with web_search_preview tool ───────────────────────
+    # ── Call Responses/Chat API depending on model capability ─────────────────
     try:
-        response = _client.responses.create(
-            model=_model,
-            tools=[{"type": "web_search_preview"}],
-            input=[
-                {"role": "system", "content": _WEB_SEARCH_SYSTEM_PROMPT},
-                {"role": "user", "content": user_content},
-            ],
-        )
+        # Check if using Groq (doesn't support web_search_preview)
+        base_url = os.environ.get("OPENAI_BASE_URL", "")
+        is_groq = "groq" in base_url.lower()
+        
+        if is_groq or _model.startswith("openai/"):
+            # Groq: Use regular chat completion (no web search tool)
+            logger.info("llm_web_verifier | Using Groq chat completion (no web search)")
+            response = _client.chat.completions.create(
+                model=_model,
+                messages=[
+                    {"role": "system", "content": _WEB_SEARCH_SYSTEM_PROMPT},
+                    {"role": "user", "content": user_content},
+                ],
+                temperature=0.1,
+                max_tokens=2000,
+            )
+            raw_text = response.choices[0].message.content
+        else:
+            # OpenAI: Use Responses API with web_search_preview
+            logger.info("llm_web_verifier | Using OpenAI Responses API with web search")
+            response = _client.responses.create(
+                model=_model,
+                tools=[{"type": "web_search_preview"}],
+                input=[
+                    {"role": "system", "content": _WEB_SEARCH_SYSTEM_PROMPT},
+                    {"role": "user", "content": user_content},
+                ],
+            )
+            raw_text = _extract_text_from_response(response)
+            
     except AttributeError:
         # Responses API not available in this SDK version (< 1.66.0)
         return _fallback_unverifiable(
@@ -330,13 +377,10 @@ def llm_web_search_verify(
         )
     except Exception as exc:
         logger.error(
-            "llm_web_verifier | claim_id=%s | Responses API call failed: %s",
+            "llm_web_verifier | claim_id=%s | API call failed: %s",
             claim.id, exc
         )
         return _fallback_unverifiable(claim, f"API call failed: {exc}")
-
-    # ── Extract raw text from response ────────────────────────────────────────
-    raw_text = _extract_text_from_response(response)
 
     if not raw_text or not raw_text.strip():
         return _fallback_unverifiable(claim, "LLM returned empty response after web search")
