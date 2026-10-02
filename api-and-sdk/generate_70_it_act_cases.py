@@ -1,0 +1,780 @@
+#!/usr/bin/env python3
+"""
+Generate 70 IT Act 2000 Evaluation Test Cases
+============================================
+Structure:
+- Cases 1-50: Based on actual content from the IT Act 2000 (Expected: 'Supported', Category: 'in_kb')
+  * Section numbers and purposes (Sec 65, 66, 66A-F, 67-67C, 69-70B, etc.)
+  * Key definitions (cyber cafe, cyber security, intermediary, computer virus, etc.)
+  * Act metadata (Act No. 21 of 2000, 9th June 2000, 2008 Amendment)
+  * Institutional provisions (Controller of Certifying Authorities, CERT-In, Cyber Appellate Tribunal)
+  * First Schedule exclusions (wills, negotiable instruments, trust, power-of-attorney)
+  * Penalties and punishments (Section 43, 66, 66C, 66D, 66E, 66F, 67, 67A, 67B, 72A)
+  * Special provisions (encryption, data protection, investigation powers)
+
+- Cases 51-70: Content NOT in the PDF / Fabricated / Anachronistic (Expected: 'Refuted', Category: 'outside_kb')
+  * Non-existent sections (66G, 66H, 68A, 71A, 73A, 75A, 79B, 82A)
+  * Fabricated requirements (mandatory quarterly audits, data localization within 48 hours, biometric authentication)
+  * Anachronistic claims (cryptocurrency regulation, LLM/AI liability, IoT device security, VPN bans)
+  * Non-existent institutions (Cyber Crime Victim Compensation Fund, National Cyber Security Authority)
+  * Specific technical mandates not in the Act (AES-256 encryption mandate, mandatory mobile app government registration)
+"""
+
+import json
+from pathlib import Path
+
+def create_70_test_cases():
+    test_cases = []
+
+    # =========================================================================
+    # 1-50: IN KB / SUPPORTED CASES (Actual IT Act 2000 provisions)
+    # =========================================================================
+    
+    # --- Group A: Section Numbers & Purposes (1 - 15) ---
+    test_cases.append({
+        "id": 1,
+        "section_ref": "Section 65",
+        "text": "Section 65 of the Information Technology Act, 2000 provides punishment for tampering with computer source documents with imprisonment up to three years, or with fine up to two lakh rupees, or with both.",
+        "context": "Information Technology Act 2000 provisions regarding computer source documents.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 65 - Tampering with computer source documents"
+    })
+    test_cases.append({
+        "id": 2,
+        "section_ref": "Section 66",
+        "text": "Section 66 of the Information Technology Act, 2000 penalizes hacking and computer related offences done dishonestly or fraudulently with imprisonment up to three years or fine up to five lakh rupees.",
+        "context": "Information Technology Act 2000 provisions regarding computer-related offences and hacking.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 66 - Computer related offences"
+    })
+    test_cases.append({
+        "id": 3,
+        "section_ref": "Section 66B",
+        "text": "Section 66B of the Information Technology Act, 2000 prescribes punishment for dishonestly receiving stolen computer resource or communication device with imprisonment up to three years or fine up to one lakh rupees or both.",
+        "context": "Information Technology Act 2000 penalties for stolen computer resources.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 66B - Receiving stolen computer resource"
+    })
+    test_cases.append({
+        "id": 4,
+        "section_ref": "Section 66C",
+        "text": "Section 66C of the Information Technology Act, 2000 punishes identity theft, including fraudulent use of another person's electronic signature or password, with imprisonment up to three years and fine up to one lakh rupees.",
+        "context": "Information Technology Act 2000 provisions on identity theft.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 66C - Punishment for identity theft"
+    })
+    test_cases.append({
+        "id": 5,
+        "section_ref": "Section 66D",
+        "text": "Section 66D of the Information Technology Act, 2000 provides punishment for cheating by personation by using computer resource with imprisonment up to three years and fine up to one lakh rupees.",
+        "context": "Information Technology Act 2000 provisions on cheating by personation using computers.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 66D - Cheating by personation"
+    })
+    test_cases.append({
+        "id": 6,
+        "section_ref": "Section 66E",
+        "text": "Section 66E of the Information Technology Act, 2000 provides punishment for violation of privacy by intentionally capturing, publishing, or transmitting images of a private area of any person without consent.",
+        "context": "Information Technology Act 2000 provisions concerning privacy violations.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 66E - Violation of privacy"
+    })
+    test_cases.append({
+        "id": 7,
+        "section_ref": "Section 66F",
+        "text": "Section 66F of the Information Technology Act, 2000 deals with cyber terrorism and prescribes punishment extending up to imprisonment for life.",
+        "context": "Information Technology Act 2000 provisions relating to cyber terrorism.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 66F - Cyber terrorism"
+    })
+    test_cases.append({
+        "id": 8,
+        "section_ref": "Section 67",
+        "text": "Section 67 of the Information Technology Act, 2000 punishes publishing or transmitting obscene material in electronic form with imprisonment up to three years and fine up to five lakh rupees on first conviction.",
+        "context": "Information Technology Act 2000 on electronic obscenity.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 67 - Publishing obscene material in electronic form"
+    })
+    test_cases.append({
+        "id": 9,
+        "section_ref": "Section 67A",
+        "text": "Section 67A of the Information Technology Act, 2000 penalizes publishing or transmitting material containing sexually explicit acts in electronic form with imprisonment up to five years and fine up to ten lakh rupees on first conviction.",
+        "context": "Information Technology Act 2000 on sexually explicit content in electronic form.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 67A - Publishing sexually explicit material"
+    })
+    test_cases.append({
+        "id": 10,
+        "section_ref": "Section 67B",
+        "text": "Section 67B of the Information Technology Act, 2000 punishes publishing or transmitting material depicting children in sexually explicit acts in electronic form.",
+        "context": "Information Technology Act 2000 child pornography provisions.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 67B - Child pornography / depiction in electronic form"
+    })
+    test_cases.append({
+        "id": 11,
+        "section_ref": "Section 67C",
+        "text": "Section 67C of the Information Technology Act, 2000 mandates intermediaries to preserve and retain such electronic records for specified durations as prescribed by the Central Government.",
+        "context": "Information Technology Act 2000 requirements for intermediaries to retain records.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 67C - Preservation and retention of information by intermediaries"
+    })
+    test_cases.append({
+        "id": 12,
+        "section_ref": "Section 69",
+        "text": "Section 69 of the Information Technology Act, 2000 empowers the Central or State Government to issue directions for interception or monitoring or decryption of any information through any computer resource.",
+        "context": "Information Technology Act 2000 government interception and monitoring powers.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 69 - Interception, monitoring, and decryption powers"
+    })
+    test_cases.append({
+        "id": 13,
+        "section_ref": "Section 69A",
+        "text": "Section 69A of the Information Technology Act, 2000 grants power to issue directions for blocking public access of any information through any computer resource in interest of sovereignty and integrity of India.",
+        "context": "Information Technology Act 2000 website and content blocking powers.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 69A - Power to issue directions for blocking public access"
+    })
+    test_cases.append({
+        "id": 14,
+        "section_ref": "Section 70",
+        "text": "Section 70 of the Information Technology Act, 2000 empowers the appropriate Government to declare any computer system or network affecting critical infrastructure as a Protected System.",
+        "context": "Information Technology Act 2000 critical information infrastructure provisions.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 70 - Protected System"
+    })
+    test_cases.append({
+        "id": 15,
+        "section_ref": "Section 70B",
+        "text": "Section 70B of the Information Technology Act, 2000 provides for the appointment of the Indian Computer Emergency Response Team (CERT-In) as the national nodal agency for cybersecurity incidents.",
+        "context": "Information Technology Act 2000 CERT-In statutory establishment.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "section_purposes",
+        "description": "Section 70B - Indian Computer Emergency Response Team (CERT-In)"
+    })
+
+    # --- Group B: Key Definitions (16 - 25) ---
+    test_cases.append({
+        "id": 16,
+        "section_ref": "Section 2(1)(na)",
+        "text": "Under Section 2(1)(na) of the Information Technology Act, 2000, 'cyber cafe' is defined as any facility from where access to the internet is offered by any person in the ordinary course of business to the public.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 2.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of cyber cafe"
+    })
+    test_cases.append({
+        "id": 17,
+        "section_ref": "Section 2(1)(nb)",
+        "text": "Section 2(1)(nb) of the Information Technology Act, 2000 defines 'cyber security' as protecting information, equipment, devices, computer, computer resource, communication device and information stored therein from unauthorized access, use, disclosure, disruption, modification or destruction.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 2.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of cyber security"
+    })
+    test_cases.append({
+        "id": 18,
+        "section_ref": "Section 2(1)(w)",
+        "text": "Section 2(1)(w) of the Information Technology Act, 2000 defines 'intermediary' with respect to any particular electronic records as any person who on behalf of another person receives, stores or transmits that record or provides any service with respect to that record.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 2.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of intermediary"
+    })
+    test_cases.append({
+        "id": 19,
+        "section_ref": "Section 43 Explanation",
+        "text": "Under the Explanation to Section 43 of the Information Technology Act, 2000, 'computer virus' means any computer instruction, information, data or programme that destroys, damages, degrades or adversely affects the performance of a computer resource.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 43.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of computer virus"
+    })
+    test_cases.append({
+        "id": 20,
+        "section_ref": "Section 2(1)(t)",
+        "text": "Section 2(1)(t) of the Information Technology Act, 2000 defines 'electronic record' as data, record or data generated, image or sound stored, received or sent in an electronic form or micro film or computer generated micro fiche.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 2.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of electronic record"
+    })
+    test_cases.append({
+        "id": 21,
+        "section_ref": "Section 2(1)(p)",
+        "text": "Section 2(1)(p) of the Information Technology Act, 2000 defines 'digital signature' as authentication of any electronic record by a subscriber by means of an electronic method or procedure in accordance with the provisions of Section 3.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 2.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of digital signature"
+    })
+    test_cases.append({
+        "id": 22,
+        "section_ref": "Section 2(1)(i)",
+        "text": "Section 2(1)(i) of the Information Technology Act, 2000 defines 'computer' as any electronic, magnetic, optical or other high-speed data processing device or system which performs logical, arithmetic, and memory functions.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 2.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of computer"
+    })
+    test_cases.append({
+        "id": 23,
+        "section_ref": "Section 2(1)(j)",
+        "text": "Section 2(1)(j) of the Information Technology Act, 2000 defines 'computer network' as the inter-connection of one or more computers or computer systems or communication devices through the use of satellite, terrestrial line, wire, wireless or other communication media.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 2.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of computer network"
+    })
+    test_cases.append({
+        "id": 24,
+        "section_ref": "Section 2(1)(zg)",
+        "text": "Section 2(1)(zg) of the Information Technology Act, 2000 defines 'subscriber' as a person in whose name the Electronic Signature Certificate is issued.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 2.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of subscriber"
+    })
+    test_cases.append({
+        "id": 25,
+        "section_ref": "Section 2(1)(ha)",
+        "text": "Section 2(1)(ha) of the Information Technology Act, 2000 defines 'communication device' to include cell phones, personal digital assistants or combination of both or any other device used to communicate, send or transmit any text, video, audio or image.",
+        "context": "Statutory definitions in Information Technology Act 2000 Section 2.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "definitions",
+        "description": "Definition of communication device"
+    })
+
+    # --- Group C: Act Metadata & Amendments (26 - 30) ---
+    test_cases.append({
+        "id": 26,
+        "section_ref": "Act Title & Number",
+        "text": "The Information Technology Act, 2000 is officially designated as Act No. 21 of 2000 enacted by the Parliament of India.",
+        "context": "Enactment details and Act number of Information Technology Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "act_metadata",
+        "description": "Act No. 21 of 2000 designation"
+    })
+    test_cases.append({
+        "id": 27,
+        "section_ref": "Enactment Date",
+        "text": "The Information Technology Act, 2000 received the assent of the President of India on 9th June, 2000.",
+        "context": "Presidential assent date of the Information Technology Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "act_metadata",
+        "description": "Assent date of June 9, 2000"
+    })
+    test_cases.append({
+        "id": 28,
+        "section_ref": "Preamble & UNCITRAL",
+        "text": "The Preamble of the Information Technology Act, 2000 references the Model Law on Electronic Commerce adopted by the United Nations Commission on International Trade Law (UNCITRAL).",
+        "context": "Preamble and UNCITRAL Model Law references in the IT Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "act_metadata",
+        "description": "Preamble references UNCITRAL Model Law"
+    })
+    test_cases.append({
+        "id": 29,
+        "section_ref": "IT Amendment Act 2008",
+        "text": "The Information Technology (Amendment) Act, 2008 (Act 10 of 2009) introduced Sections 66A to 66F and Section 43A into the principal Act.",
+        "context": "Legislative amendments made to the Information Technology Act in 2008.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "act_metadata",
+        "description": "IT Amendment Act 2008 insertions"
+    })
+    test_cases.append({
+        "id": 30,
+        "section_ref": "Section 1 Extent",
+        "text": "Section 1 of the Information Technology Act, 2000 establishes that the Act extends to the whole of India and applies also to any offence or contravention committed outside India by any person.",
+        "context": "Extraterritorial and territorial scope under Section 1 and Section 75.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "act_metadata",
+        "description": "Territorial and extraterritorial extent"
+    })
+
+    # --- Group D: Institutional Provisions (31 - 35) ---
+    test_cases.append({
+        "id": 31,
+        "section_ref": "Section 17",
+        "text": "Section 17 of the Information Technology Act, 2000 empowers the Central Government to appoint a Controller of Certifying Authorities and Deputy Controllers and Assistant Controllers.",
+        "context": "Controller of Certifying Authorities establishment under IT Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "institutional_provisions",
+        "description": "Section 17 - Appointment of Controller of Certifying Authorities"
+    })
+    test_cases.append({
+        "id": 32,
+        "section_ref": "Section 18",
+        "text": "Section 18 of the Information Technology Act, 2000 outlines the functions of the Controller, including exercising supervision over the activities of Certifying Authorities and laying down standards.",
+        "context": "Functions and powers of CCA under IT Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "institutional_provisions",
+        "description": "Section 18 - Functions of Controller"
+    })
+    test_cases.append({
+        "id": 33,
+        "section_ref": "Section 46",
+        "text": "Section 46 of the Information Technology Act, 2000 provides for the appointment of an Adjudicating Officer by the Central Government to hold inquiries into contraventions.",
+        "context": "Adjudicating Officer appointment under IT Act 2000 Section 46.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "institutional_provisions",
+        "description": "Section 46 - Power to adjudicate"
+    })
+    test_cases.append({
+        "id": 34,
+        "section_ref": "Section 48",
+        "text": "Section 48 of the Information Technology Act, 2000 provided for the establishment of the Cyber Regulations Appellate Tribunal to hear appeals against orders of Adjudicating Officers and the Controller.",
+        "context": "Appellate Tribunal establishment under IT Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "institutional_provisions",
+        "description": "Section 48 - Establishment of Cyber Appellate Tribunal"
+    })
+    test_cases.append({
+        "id": 35,
+        "section_ref": "Section 70A",
+        "text": "Section 70A of the Information Technology Act, 2000 provides for the designation of a National Nodal Agency in respect of Critical Information Infrastructure Protection (NCIIPC).",
+        "context": "Statutory provisions for Critical Information Infrastructure protection.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "institutional_provisions",
+        "description": "Section 70A - National nodal agency for critical information infrastructure"
+    })
+
+    # --- Group E: First Schedule Exclusions (36 - 40) ---
+    test_cases.append({
+        "id": 36,
+        "section_ref": "First Schedule Clause 1",
+        "text": "The First Schedule of the Information Technology Act, 2000 excludes a negotiable instrument (other than a cheque) as defined in Section 13 of the Negotiable Instruments Act, 1881 from the application of the Act.",
+        "context": "Documents and transactions excluded under First Schedule of IT Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "schedule_exclusions",
+        "description": "First Schedule excludes negotiable instruments other than cheques"
+    })
+    test_cases.append({
+        "id": 37,
+        "section_ref": "First Schedule Clause 2",
+        "text": "The First Schedule of the Information Technology Act, 2000 excludes a power-of-attorney as defined in section 1A of the Powers-of-Attorney Act, 1882 from the application of the Act.",
+        "context": "Documents excluded under the First Schedule of IT Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "schedule_exclusions",
+        "description": "First Schedule excludes power-of-attorney"
+    })
+    test_cases.append({
+        "id": 38,
+        "section_ref": "First Schedule Clause 3",
+        "text": "The First Schedule of the Information Technology Act, 2000 excludes a trust as defined in section 3 of the Indian Trusts Act, 1882 from the scope of the Act.",
+        "context": "Documents excluded under the First Schedule of IT Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "schedule_exclusions",
+        "description": "First Schedule excludes trusts"
+    })
+    test_cases.append({
+        "id": 39,
+        "section_ref": "First Schedule Clause 4",
+        "text": "The First Schedule of the Information Technology Act, 2000 excludes a will as defined in clause (h) of section 2 of the Indian Succession Act, 1925 including any other testamentary disposition.",
+        "context": "Documents excluded under the First Schedule of IT Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "schedule_exclusions",
+        "description": "First Schedule excludes wills and testamentary dispositions"
+    })
+    test_cases.append({
+        "id": 40,
+        "section_ref": "First Schedule Clause 5",
+        "text": "The First Schedule of the Information Technology Act, 2000 excludes any contract for the sale or conveyance of immovable property or any interest in such property.",
+        "context": "Documents excluded under the First Schedule of IT Act 2000.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "schedule_exclusions",
+        "description": "First Schedule excludes contracts for sale of immovable property"
+    })
+
+    # --- Group F: Penalties and Punishments (41 - 45) ---
+    test_cases.append({
+        "id": 41,
+        "section_ref": "Section 43",
+        "text": "Section 43 of the Information Technology Act, 2000 imposes civil liability by way of compensation on any person who accesses or damages a computer system or downloads data without permission.",
+        "context": "Civil penalties for damage to computer systems under Section 43.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "penalties_punishments",
+        "description": "Section 43 - Penalty and compensation for damage to computer system"
+    })
+    test_cases.append({
+        "id": 42,
+        "section_ref": "Section 72",
+        "text": "Section 72 of the Information Technology Act, 2000 penalizes breach of confidentiality and privacy by any person who secures access to electronic records without consent with imprisonment up to two years or fine up to one lakh rupees or both.",
+        "context": "Section 72 breach of confidentiality penalties.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "penalties_punishments",
+        "description": "Section 72 - Penalty for breach of confidentiality and privacy"
+    })
+    test_cases.append({
+        "id": 43,
+        "section_ref": "Section 72A",
+        "text": "Section 72A of the Information Technology Act, 2000 provides punishment for disclosure of information in breach of lawful contract with imprisonment up to three years, or with fine up to five lakh rupees, or with both.",
+        "context": "Section 72A disclosure of personal info in breach of lawful contract.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "penalties_punishments",
+        "description": "Section 72A - Punishment for disclosure of information in breach of lawful contract"
+    })
+    test_cases.append({
+        "id": 44,
+        "section_ref": "Section 73",
+        "text": "Section 73 of the Information Technology Act, 2000 prescribes penalty for publishing Electronic Signature Certificate false in certain particulars with imprisonment up to two years or fine up to one lakh rupees.",
+        "context": "Penalties for publishing false electronic signature certificates.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "penalties_punishments",
+        "description": "Section 73 - Penalty for publishing false Electronic Signature Certificate"
+    })
+    test_cases.append({
+        "id": 45,
+        "section_ref": "Section 74",
+        "text": "Section 74 of the Information Technology Act, 2000 punishes the creation, publication, or making available of an Electronic Signature Certificate for fraudulent or unlawful purpose with imprisonment up to two years or fine up to one lakh rupees.",
+        "context": "Section 74 penalties for fraudulent certificate use.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "penalties_punishments",
+        "description": "Section 74 - Publication for fraudulent purpose"
+    })
+
+    # --- Group G: Special Provisions & Intermediary Liability (46 - 50) ---
+    test_cases.append({
+        "id": 46,
+        "section_ref": "Section 43A",
+        "text": "Section 43A of the Information Technology Act, 2000 mandates body corporates possessing sensitive personal data to implement reasonable security practices and makes them liable to pay damages for negligence.",
+        "context": "Data protection and reasonable security practices under Section 43A.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "special_provisions",
+        "description": "Section 43A - Compensation for failure to protect data"
+    })
+    test_cases.append({
+        "id": 47,
+        "section_ref": "Section 79",
+        "text": "Section 79 of the Information Technology Act, 2000 provides safe harbour exemption from liability for intermediaries for third party information, data, or communication link made available or hosted by them subject to due diligence.",
+        "context": "Safe harbour immunity for intermediaries under Section 79.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "special_provisions",
+        "description": "Section 79 - Exemption from liability of intermediary in certain cases"
+    })
+    test_cases.append({
+        "id": 48,
+        "section_ref": "Section 80",
+        "text": "Section 80 of the Information Technology Act, 2000 empowers a police officer not below the rank of Inspector to enter, search and arrest without warrant in public places for suspected offences under the Act.",
+        "context": "Police search and arrest powers under Section 80.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "special_provisions",
+        "description": "Section 80 - Power of police officer and other officers to enter, search, etc."
+    })
+    test_cases.append({
+        "id": 49,
+        "section_ref": "Section 84A",
+        "text": "Section 84A of the Information Technology Act, 2000 empowers the Central Government to prescribe modes or methods for encryption for secure use of the electronic medium and for promotion of e-governance.",
+        "context": "Encryption modes and rules under Section 84A.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "special_provisions",
+        "description": "Section 84A - Modes or methods for encryption"
+    })
+    test_cases.append({
+        "id": 50,
+        "section_ref": "Section 84B",
+        "text": "Section 84B of the Information Technology Act, 2000 provides punishment for abetment of offences under the Act with the punishment provided for the offence itself.",
+        "context": "Abetment of cyber offences under Section 84B.",
+        "expected_label": "Supported",
+        "category": "in_kb",
+        "subcategory": "special_provisions",
+        "description": "Section 84B - Punishment for abetment of offences"
+    })
+
+    # =========================================================================
+    # 51-70: OUTSIDE KB / REFUTED CASES (Fabricated / Anachronistic / Non-existent)
+    # =========================================================================
+
+    # --- Group H: Non-existent Sections (51 - 58) ---
+    test_cases.append({
+        "id": 51,
+        "section_ref": "Section 66G",
+        "text": "Section 66G of the Information Technology Act, 2000 explicitly penalizes the unauthorized deployment of web scraping bots with mandatory minimum imprisonment of seven years and a minimum fine of fifty lakh rupees.",
+        "context": "Verify whether Section 66G exists in the Information Technology Act, 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_sections",
+        "description": "Fabricated Section 66G on web scraping bots"
+    })
+    test_cases.append({
+        "id": 52,
+        "section_ref": "Section 66H",
+        "text": "Section 66H of the Information Technology Act, 2000 mandates that all deepfake media generated in India must carry an indelible cryptographic watermark verified by the Controller of Certifying Authorities.",
+        "context": "Verify whether Section 66H on deepfake watermarking exists in the IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_sections",
+        "description": "Fabricated Section 66H on deepfake watermarking"
+    })
+    test_cases.append({
+        "id": 53,
+        "section_ref": "Section 68A",
+        "text": "Section 68A of the Information Technology Act, 2000 establishes a statutory cap of 24 hours on all cloud server outage recovery times for private banking institutions.",
+        "context": "Verify whether Section 68A regarding cloud server outage SLA exists in IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_sections",
+        "description": "Fabricated Section 68A on cloud server recovery times"
+    })
+    test_cases.append({
+        "id": 54,
+        "section_ref": "Section 71A",
+        "text": "Section 71A of the Information Technology Act, 2000 creates a specialized fast-track tribunal specifically for resolving domain name trademark disputes within thirty days.",
+        "context": "Verify whether Section 71A exists in the Information Technology Act, 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_sections",
+        "description": "Fabricated Section 71A on domain name tribunal"
+    })
+    test_cases.append({
+        "id": 55,
+        "section_ref": "Section 73A",
+        "text": "Section 73A of the Information Technology Act, 2000 imposes criminal sanctions on software developers who fail to patch zero-day vulnerabilities within 48 hours of discovery.",
+        "context": "Verify whether Section 73A criminalizing delayed software patches exists in IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_sections",
+        "description": "Fabricated Section 73A on zero-day patch liability"
+    })
+    test_cases.append({
+        "id": 56,
+        "section_ref": "Section 75A",
+        "text": "Section 75A of the Information Technology Act, 2000 requires all foreign satellite internet constellations operating over Indian airspace to route telemetry through a ground station in New Delhi.",
+        "context": "Verify whether Section 75A satellite internet provisions exist in the IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_sections",
+        "description": "Fabricated Section 75A on satellite internet routing"
+    })
+    test_cases.append({
+        "id": 57,
+        "section_ref": "Section 79B",
+        "text": "Section 79B of the Information Technology Act, 2000 establishes that social media platforms must maintain a human moderator ratio of at least one moderator per five thousand active monthly users.",
+        "context": "Verify whether Section 79B human moderator quotas exist in IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_sections",
+        "description": "Fabricated Section 79B on social media moderator quotas"
+    })
+    test_cases.append({
+        "id": 58,
+        "section_ref": "Section 82A",
+        "text": "Section 82A of the Information Technology Act, 2000 empowers municipal corporations to confiscate personal laptops and smartphones used for unauthorized commercial cryptocurrency mining.",
+        "context": "Verify whether Section 82A crypto mining confiscation powers exist in IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_sections",
+        "description": "Fabricated Section 82A on crypto mining confiscation"
+    })
+
+    # --- Group I: Fabricated Requirements (59 - 61) ---
+    test_cases.append({
+        "id": 59,
+        "section_ref": "Mandatory Quarterly Audits",
+        "text": "The Information Technology Act, 2000 mandates that all commercial websites operating in India must undergo mandatory quarterly vulnerability assessments certified by the Comptroller and Auditor General.",
+        "context": "Verify whether the IT Act 2000 mandates quarterly CAG vulnerability assessments for all commercial websites.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "fabricated_requirements",
+        "description": "Fabricated requirement for quarterly CAG website audits"
+    })
+    test_cases.append({
+        "id": 60,
+        "section_ref": "Data Localization 48 Hours",
+        "text": "Under the Information Technology Act, 2000, all multinational corporations are legally required to transfer all financial transaction data exclusively to servers located within the territory of India within 48 hours.",
+        "context": "Verify whether the IT Act 2000 contains a 48-hour data localization mandate.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "fabricated_requirements",
+        "description": "Fabricated 48-hour data localization requirement"
+    })
+    test_cases.append({
+        "id": 61,
+        "section_ref": "Biometric Authentication Mandate",
+        "text": "The Information Technology Act, 2000 requires all e-commerce transactions exceeding one thousand rupees to mandate biometric iris scanning at checkout.",
+        "context": "Verify whether the IT Act 2000 mandates biometric iris scanning for e-commerce checkouts.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "fabricated_requirements",
+        "description": "Fabricated mandatory biometric iris checkout"
+    })
+
+    # --- Group J: Anachronistic Claims (62 - 65) ---
+    test_cases.append({
+        "id": 62,
+        "section_ref": "Cryptocurrency Regulation",
+        "text": "The Information Technology Act, 2000 contains explicit provisions establishing statutory licensing for decentralized proof-of-stake cryptocurrency exchanges and Bitcoin wallet custodians.",
+        "context": "Verify if cryptocurrency exchange licensing provisions exist in the IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "anachronistic_claims",
+        "description": "Anachronistic claim regarding cryptocurrency exchange licensing"
+    })
+    test_cases.append({
+        "id": 63,
+        "section_ref": "Large Language Model / AI Liability",
+        "text": "The Information Technology Act, 2000 holds generative AI foundational models strictly liable for copyright infringement whenever hallucinated legal citations are generated by autonomous artificial agents.",
+        "context": "Verify if AI foundational models and LLM hallucination liability exist in the IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "anachronistic_claims",
+        "description": "Anachronistic claim regarding LLM and AI legal liability"
+    })
+    test_cases.append({
+        "id": 64,
+        "section_ref": "IoT Device Security Framework",
+        "text": "The Information Technology Act, 2000 sets forth statutory cybersecurity standards requiring all smart home Internet of Things (IoT) appliances to maintain encrypted Zigbee mesh networks.",
+        "context": "Verify if IoT smart home standards exist in the IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "anachronistic_claims",
+        "description": "Anachronistic claim regarding IoT and smart home standards"
+    })
+    test_cases.append({
+        "id": 65,
+        "section_ref": "Blanket VPN Prohibition",
+        "text": "The Information Technology Act, 2000 explicitly enacts a complete blanket prohibition making the personal use of Virtual Private Networks (VPNs) a non-bailable criminal offense punishable by five years imprisonment.",
+        "context": "Verify if the IT Act 2000 prohibits personal VPN usage with criminal penalties.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "anachronistic_claims",
+        "description": "Fabricated claim regarding criminal prohibition of personal VPNs"
+    })
+
+    # --- Group K: Non-existent Institutions (66 - 67) ---
+    test_cases.append({
+        "id": 66,
+        "section_ref": "Cyber Crime Victim Compensation Fund",
+        "text": "Chapter VIII of the Information Technology Act, 2000 establishes a permanent statutory body called the 'Cyber Crime Victim Compensation Fund' funded by mandatory one percent levy on all electronic payments.",
+        "context": "Verify if the Cyber Crime Victim Compensation Fund exists under the IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_institutions",
+        "description": "Non-existent Cyber Crime Victim Compensation Fund"
+    })
+    test_cases.append({
+        "id": 67,
+        "section_ref": "National Cyber Security Authority",
+        "text": "The Information Technology Act, 2000 created the 'National Cyber Security Authority' with supreme executive powers to take over private data centers during peacetime internet congestion.",
+        "context": "Verify if the National Cyber Security Authority with data center takeover powers exists in IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "non_existent_institutions",
+        "description": "Non-existent National Cyber Security Authority"
+    })
+
+    # --- Group L: Specific Technical Mandates Not in Act (68 - 70) ---
+    test_cases.append({
+        "id": 68,
+        "section_ref": "Mandatory AES-256 Encryption",
+        "text": "Section 84 of the Information Technology Act, 2000 explicitly mandates that all private sector databases must strictly implement AES-256 bit symmetric key encryption with mandatory dual hardware security modules.",
+        "context": "Verify if Section 84 of the IT Act 2000 explicitly mandates AES-256 bit encryption and dual HSMs.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "technical_mandates",
+        "description": "Fabricated technical mandate specifying AES-256 and dual HSMs"
+    })
+    test_cases.append({
+        "id": 69,
+        "section_ref": "Mandatory Mobile App Registration",
+        "text": "The Information Technology Act, 2000 prohibits publishing any Android or iOS mobile application without prior written registration and source code deposit with the Ministry of Electronics and Information Technology.",
+        "context": "Verify whether mobile app developers must deposit source code before publishing under IT Act 2000.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "technical_mandates",
+        "description": "Fabricated mandatory mobile app registration and source code deposit"
+    })
+    test_cases.append({
+        "id": 70,
+        "section_ref": "Mandatory Blockchain Logging",
+        "text": "The Information Technology Act, 2000 requires all Indian commercial banks to log every customer account login on an immutable public distributed ledger accessible to all citizens.",
+        "context": "Verify if the IT Act 2000 requires banking login logs on public distributed ledgers.",
+        "expected_label": "Refuted",
+        "category": "outside_kb",
+        "subcategory": "technical_mandates",
+        "description": "Fabricated requirement for public blockchain banking logs"
+    })
+
+    return test_cases
+
+if __name__ == "__main__":
+    cases = create_70_test_cases()
+    print(f"Generated {len(cases)} test cases:")
+    supported_count = sum(1 for c in cases if c['expected_label'] == "Supported")
+    refuted_count = sum(1 for c in cases if c['expected_label'] == "Refuted")
+    print(f" - Supported (in_kb, Cases 1-50): {supported_count}")
+    print(f" - Refuted (outside_kb, Cases 51-70): {refuted_count}")
+    
+    # Save to both locations
+    out_paths = [
+        Path("test_cases_70_it_act.json"),
+        Path("api-and-sdk/test_cases_70_it_act.json")
+    ]
+    for p in out_paths:
+        p.parent.mkdir(parents=True, exist_ok=True)
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump(cases, f, indent=2, ensure_ascii=False)
+        print(f"Saved to {p.resolve()}")

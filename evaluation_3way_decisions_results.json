@@ -1,0 +1,777 @@
+{
+  "metadata": {
+    "evaluation_type": "3-Way Decision Accuracy Evaluation (SAFE / ABSTAIN / FLAGGED)",
+    "statute": "Information Technology Act, 2000",
+    "timestamp": "2026-09-11T18:36:07.813819+00:00",
+    "total_cases": 70
+  },
+  "overall_metrics": {
+    "accuracy": 0.9,
+    "macro_f1": 0.8402,
+    "weighted_f1": 0.9063
+  },
+  "per_class_metrics": {
+    "SAFE": {
+      "total_actual": 42,
+      "correct_predicted": 37,
+      "precision": 1.0,
+      "recall_accuracy": 0.8809523809523809,
+      "f1_score": 0.9367088607594937,
+      "breakdown_predicted": {
+        "pred_SAFE": 37,
+        "pred_ABSTAIN": 5,
+        "pred_FLAGGED": 0
+      }
+    },
+    "ABSTAIN": {
+      "total_actual": 8,
+      "correct_predicted": 6,
+      "precision": 0.5454545454545454,
+      "recall_accuracy": 0.75,
+      "f1_score": 0.631578947368421,
+      "breakdown_predicted": {
+        "pred_SAFE": 0,
+        "pred_ABSTAIN": 6,
+        "pred_FLAGGED": 2
+      }
+    },
+    "FLAGGED": {
+      "total_actual": 20,
+      "correct_predicted": 20,
+      "precision": 0.9090909090909091,
+      "recall_accuracy": 1.0,
+      "f1_score": 0.9523809523809523,
+      "breakdown_predicted": {
+        "pred_SAFE": 0,
+        "pred_ABSTAIN": 0,
+        "pred_FLAGGED": 20
+      }
+    }
+  },
+  "confusion_matrix_3x3": {
+    "classes": [
+      "SAFE",
+      "ABSTAIN",
+      "FLAGGED"
+    ],
+    "matrix": [
+      [
+        37,
+        5,
+        0
+      ],
+      [
+        0,
+        6,
+        2
+      ],
+      [
+        0,
+        0,
+        20
+      ]
+    ]
+  },
+  "predictions": [
+    {
+      "id": 1,
+      "section_ref": "Section 65",
+      "text": "Section 65 of the Information Technology Act, 2000 provides punishment for tampering with computer source documents with imprisonment up to three years, or with fine up to two lakh rupees, or with both.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.851,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 2,
+      "section_ref": "Section 66",
+      "text": "Section 66 of the Information Technology Act, 2000 penalizes hacking and computer related offences done dishonestly or fraudulently with imprisonment up to three years or fine up to five lakh rupees.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.936,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 3,
+      "section_ref": "Section 66B",
+      "text": "Section 66B of the Information Technology Act, 2000 prescribes punishment for dishonestly receiving stolen computer resource or communication device with imprisonment up to three years or fine up to one lakh rupees or both.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.92,
+      "is_match": false,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 4,
+      "section_ref": "Section 66C",
+      "text": "Section 66C of the Information Technology Act, 2000 punishes identity theft, including fraudulent use of another person's electronic signature or password, with imprisonment up to three years and fine up to one lakh rupees.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.911,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 5,
+      "section_ref": "Section 66D",
+      "text": "Section 66D of the Information Technology Act, 2000 provides punishment for cheating by personation by using computer resource with imprisonment up to three years and fine up to one lakh rupees.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.926,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 6,
+      "section_ref": "Section 66E",
+      "text": "Section 66E of the Information Technology Act, 2000 provides punishment for violation of privacy by intentionally capturing, publishing, or transmitting images of a private area of any person without consent.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.89,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 7,
+      "section_ref": "Section 66F",
+      "text": "Section 66F of the Information Technology Act, 2000 deals with cyber terrorism and prescribes punishment extending up to imprisonment for life.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.952,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 8,
+      "section_ref": "Section 67",
+      "text": "Section 67 of the Information Technology Act, 2000 punishes publishing or transmitting obscene material in electronic form with imprisonment up to three years and fine up to five lakh rupees on first conviction.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.914,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 9,
+      "section_ref": "Section 67A",
+      "text": "Section 67A of the Information Technology Act, 2000 penalizes publishing or transmitting material containing sexually explicit acts in electronic form with imprisonment up to five years and fine up to ten lakh rupees on first conviction.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.909,
+      "is_match": false,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 10,
+      "section_ref": "Section 67B",
+      "text": "Section 67B of the Information Technology Act, 2000 punishes publishing or transmitting material depicting children in sexually explicit acts in electronic form.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.962,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 11,
+      "section_ref": "Section 67C",
+      "text": "Section 67C of the Information Technology Act, 2000 mandates intermediaries to preserve and retain such electronic records for specified durations as prescribed by the Central Government.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.896,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 12,
+      "section_ref": "Section 69",
+      "text": "Section 69 of the Information Technology Act, 2000 empowers the Central or State Government to issue directions for interception or monitoring or decryption of any information through any computer resource.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.921,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 13,
+      "section_ref": "Section 69A",
+      "text": "Section 69A of the Information Technology Act, 2000 grants power to issue directions for blocking public access of any information through any computer resource in interest of sovereignty and integrity of India.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.933,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 14,
+      "section_ref": "Section 70",
+      "text": "Section 70 of the Information Technology Act, 2000 empowers the appropriate Government to declare any computer system or network affecting critical infrastructure as a Protected System.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.951,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 15,
+      "section_ref": "Section 70B",
+      "text": "Section 70B of the Information Technology Act, 2000 provides for the appointment of the Indian Computer Emergency Response Team (CERT-In) as the national nodal agency for cybersecurity incidents.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.868,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 16,
+      "section_ref": "Section 2(1)(na)",
+      "text": "Under Section 2(1)(na) of the Information Technology Act, 2000, 'cyber cafe' is defined as any facility from where access to the internet is offered by any person in the ordinary course of business to the public.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.878,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 17,
+      "section_ref": "Section 2(1)(nb)",
+      "text": "Section 2(1)(nb) of the Information Technology Act, 2000 defines 'cyber security' as protecting information, equipment, devices, computer, computer resource, communication device and information stored therein from unauthorized access, use, disclosure, disruption, modification or destruction.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.934,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 18,
+      "section_ref": "Section 2(1)(w)",
+      "text": "Section 2(1)(w) of the Information Technology Act, 2000 defines 'intermediary' with respect to any particular electronic records as any person who on behalf of another person receives, stores or transmits that record or provides any service with respect to that record.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.868,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 19,
+      "section_ref": "Section 43 Explanation",
+      "text": "Under the Explanation to Section 43 of the Information Technology Act, 2000, 'computer virus' means any computer instruction, information, data or programme that destroys, damages, degrades or adversely affects the performance of a computer resource.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.896,
+      "is_match": false,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 20,
+      "section_ref": "Section 2(1)(t)",
+      "text": "Section 2(1)(t) of the Information Technology Act, 2000 defines 'electronic record' as data, record or data generated, image or sound stored, received or sent in an electronic form or micro film or computer generated micro fiche.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.898,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 21,
+      "section_ref": "Section 2(1)(p)",
+      "text": "Section 2(1)(p) of the Information Technology Act, 2000 defines 'digital signature' as authentication of any electronic record by a subscriber by means of an electronic method or procedure in accordance with the provisions of Section 3.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.959,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 22,
+      "section_ref": "Section 2(1)(i)",
+      "text": "Section 2(1)(i) of the Information Technology Act, 2000 defines 'computer' as any electronic, magnetic, optical or other high-speed data processing device or system which performs logical, arithmetic, and memory functions.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.926,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 23,
+      "section_ref": "Section 2(1)(j)",
+      "text": "Section 2(1)(j) of the Information Technology Act, 2000 defines 'computer network' as the inter-connection of one or more computers or computer systems or communication devices through the use of satellite, terrestrial line, wire, wireless or other communication media.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.869,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 24,
+      "section_ref": "Section 2(1)(zg)",
+      "text": "Section 2(1)(zg) of the Information Technology Act, 2000 defines 'subscriber' as a person in whose name the Electronic Signature Certificate is issued.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.894,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 25,
+      "section_ref": "Section 2(1)(ha)",
+      "text": "Section 2(1)(ha) of the Information Technology Act, 2000 defines 'communication device' to include cell phones, personal digital assistants or combination of both or any other device used to communicate, send or transmit any text, video, audio or image.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.901,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 26,
+      "section_ref": "Act Title & Number",
+      "text": "The Information Technology Act, 2000 is officially designated as Act No. 21 of 2000 enacted by the Parliament of India.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.877,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 27,
+      "section_ref": "Enactment Date",
+      "text": "The Information Technology Act, 2000 received the assent of the President of India on 9th June, 2000.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.967,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 28,
+      "section_ref": "Preamble & UNCITRAL",
+      "text": "The Preamble of the Information Technology Act, 2000 references the Model Law on Electronic Commerce adopted by the United Nations Commission on International Trade Law (UNCITRAL).",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.927,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 29,
+      "section_ref": "IT Amendment Act 2008",
+      "text": "The Information Technology (Amendment) Act, 2008 (Act 10 of 2009) introduced Sections 66A to 66F and Section 43A into the principal Act.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.904,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 30,
+      "section_ref": "Section 1 Extent",
+      "text": "Section 1 of the Information Technology Act, 2000 establishes that the Act extends to the whole of India and applies also to any offence or contravention committed outside India by any person.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.899,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 31,
+      "section_ref": "Section 17",
+      "text": "Section 17 of the Information Technology Act, 2000 empowers the Central Government to appoint a Controller of Certifying Authorities and Deputy Controllers and Assistant Controllers.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.925,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 32,
+      "section_ref": "Section 18",
+      "text": "Section 18 of the Information Technology Act, 2000 outlines the functions of the Controller, including exercising supervision over the activities of Certifying Authorities and laying down standards.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.938,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 33,
+      "section_ref": "Section 46",
+      "text": "Section 46 of the Information Technology Act, 2000 provides for the appointment of an Adjudicating Officer by the Central Government to hold inquiries into contraventions.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.889,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 34,
+      "section_ref": "Section 48",
+      "text": "Section 48 of the Information Technology Act, 2000 provided for the establishment of the Cyber Regulations Appellate Tribunal to hear appeals against orders of Adjudicating Officers and the Controller.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.885,
+      "is_match": false,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 35,
+      "section_ref": "Section 70A",
+      "text": "Section 70A of the Information Technology Act, 2000 provides for the designation of a National Nodal Agency in respect of Critical Information Infrastructure Protection (NCIIPC).",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.871,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 36,
+      "section_ref": "First Schedule Clause 1",
+      "text": "The First Schedule of the Information Technology Act, 2000 excludes a negotiable instrument (other than a cheque) as defined in Section 13 of the Negotiable Instruments Act, 1881 from the application of the Act.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.947,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 37,
+      "section_ref": "First Schedule Clause 2",
+      "text": "The First Schedule of the Information Technology Act, 2000 excludes a power-of-attorney as defined in section 1A of the Powers-of-Attorney Act, 1882 from the application of the Act.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.973,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 38,
+      "section_ref": "First Schedule Clause 3",
+      "text": "The First Schedule of the Information Technology Act, 2000 excludes a trust as defined in section 3 of the Indian Trusts Act, 1882 from the scope of the Act.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.866,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 39,
+      "section_ref": "First Schedule Clause 4",
+      "text": "The First Schedule of the Information Technology Act, 2000 excludes a will as defined in clause (h) of section 2 of the Indian Succession Act, 1925 including any other testamentary disposition.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.945,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 40,
+      "section_ref": "First Schedule Clause 5",
+      "text": "The First Schedule of the Information Technology Act, 2000 excludes any contract for the sale or conveyance of immovable property or any interest in such property.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.918,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 41,
+      "section_ref": "Section 43",
+      "text": "Section 43 of the Information Technology Act, 2000 imposes civil liability by way of compensation on any person who accesses or damages a computer system or downloads data without permission.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.869,
+      "is_match": false,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 42,
+      "section_ref": "Section 72",
+      "text": "Section 72 of the Information Technology Act, 2000 penalizes breach of confidentiality and privacy by any person who secures access to electronic records without consent with imprisonment up to two years or fine up to one lakh rupees or both.",
+      "expected_decision": "SAFE",
+      "predicted_decision": "SAFE",
+      "trust_score": 0.974,
+      "is_match": true,
+      "category_desc": "Accurate Statutory Grounding"
+    },
+    {
+      "id": 43,
+      "section_ref": "Section 72A",
+      "text": "Section 72A of the Information Technology Act, 2000 provides punishment for disclosure of information in breach of lawful contract with imprisonment up to three years, or with fine up to five lakh rupees, or with both.",
+      "expected_decision": "ABSTAIN",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.573,
+      "is_match": true,
+      "category_desc": "Partial / Ambiguous Grounding"
+    },
+    {
+      "id": 44,
+      "section_ref": "Section 73",
+      "text": "Section 73 of the Information Technology Act, 2000 prescribes penalty for publishing Electronic Signature Certificate false in certain particulars with imprisonment up to two years or fine up to one lakh rupees.",
+      "expected_decision": "ABSTAIN",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.49,
+      "is_match": true,
+      "category_desc": "Partial / Ambiguous Grounding"
+    },
+    {
+      "id": 45,
+      "section_ref": "Section 74",
+      "text": "Section 74 of the Information Technology Act, 2000 punishes the creation, publication, or making available of an Electronic Signature Certificate for fraudulent or unlawful purpose with imprisonment up to two years or fine up to one lakh rupees.",
+      "expected_decision": "ABSTAIN",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.539,
+      "is_match": true,
+      "category_desc": "Partial / Ambiguous Grounding"
+    },
+    {
+      "id": 46,
+      "section_ref": "Section 43A",
+      "text": "Section 43A of the Information Technology Act, 2000 mandates body corporates possessing sensitive personal data to implement reasonable security practices and makes them liable to pay damages for negligence.",
+      "expected_decision": "ABSTAIN",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.51,
+      "is_match": true,
+      "category_desc": "Partial / Ambiguous Grounding"
+    },
+    {
+      "id": 47,
+      "section_ref": "Section 79",
+      "text": "Section 79 of the Information Technology Act, 2000 provides safe harbour exemption from liability for intermediaries for third party information, data, or communication link made available or hosted by them subject to due diligence.",
+      "expected_decision": "ABSTAIN",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.594,
+      "is_match": true,
+      "category_desc": "Partial / Ambiguous Grounding"
+    },
+    {
+      "id": 48,
+      "section_ref": "Section 80",
+      "text": "Section 80 of the Information Technology Act, 2000 empowers a police officer not below the rank of Inspector to enter, search and arrest without warrant in public places for suspected offences under the Act.",
+      "expected_decision": "ABSTAIN",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.552,
+      "is_match": false,
+      "category_desc": "Partial / Ambiguous Grounding"
+    },
+    {
+      "id": 49,
+      "section_ref": "Section 84A",
+      "text": "Section 84A of the Information Technology Act, 2000 empowers the Central Government to prescribe modes or methods for encryption for secure use of the electronic medium and for promotion of e-governance.",
+      "expected_decision": "ABSTAIN",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.55,
+      "is_match": false,
+      "category_desc": "Partial / Ambiguous Grounding"
+    },
+    {
+      "id": 50,
+      "section_ref": "Section 84B",
+      "text": "Section 84B of the Information Technology Act, 2000 provides punishment for abetment of offences under the Act with the punishment provided for the offence itself.",
+      "expected_decision": "ABSTAIN",
+      "predicted_decision": "ABSTAIN",
+      "trust_score": 0.679,
+      "is_match": true,
+      "category_desc": "Partial / Ambiguous Grounding"
+    },
+    {
+      "id": 51,
+      "section_ref": "Section 66G",
+      "text": "Section 66G of the Information Technology Act, 2000 explicitly penalizes the unauthorized deployment of web scraping bots with mandatory minimum imprisonment of seven years and a minimum fine of fifty lakh rupees.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.247,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 52,
+      "section_ref": "Section 66H",
+      "text": "Section 66H of the Information Technology Act, 2000 mandates that all deepfake media generated in India must carry an indelible cryptographic watermark verified by the Controller of Certifying Authorities.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.273,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 53,
+      "section_ref": "Section 68A",
+      "text": "Section 68A of the Information Technology Act, 2000 establishes a statutory cap of 24 hours on all cloud server outage recovery times for private banking institutions.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.242,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 54,
+      "section_ref": "Section 71A",
+      "text": "Section 71A of the Information Technology Act, 2000 creates a specialized fast-track tribunal specifically for resolving domain name trademark disputes within thirty days.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.16,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 55,
+      "section_ref": "Section 73A",
+      "text": "Section 73A of the Information Technology Act, 2000 imposes criminal sanctions on software developers who fail to patch zero-day vulnerabilities within 48 hours of discovery.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.245,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 56,
+      "section_ref": "Section 75A",
+      "text": "Section 75A of the Information Technology Act, 2000 requires all foreign satellite internet constellations operating over Indian airspace to route telemetry through a ground station in New Delhi.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.143,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 57,
+      "section_ref": "Section 79B",
+      "text": "Section 79B of the Information Technology Act, 2000 establishes that social media platforms must maintain a human moderator ratio of at least one moderator per five thousand active monthly users.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.083,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 58,
+      "section_ref": "Section 82A",
+      "text": "Section 82A of the Information Technology Act, 2000 empowers municipal corporations to confiscate personal laptops and smartphones used for unauthorized commercial cryptocurrency mining.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.133,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 59,
+      "section_ref": "Mandatory Quarterly Audits",
+      "text": "The Information Technology Act, 2000 mandates that all commercial websites operating in India must undergo mandatory quarterly vulnerability assessments certified by the Comptroller and Auditor General.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.205,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 60,
+      "section_ref": "Data Localization 48 Hours",
+      "text": "Under the Information Technology Act, 2000, all multinational corporations are legally required to transfer all financial transaction data exclusively to servers located within the territory of India within 48 hours.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.178,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 61,
+      "section_ref": "Biometric Authentication Mandate",
+      "text": "The Information Technology Act, 2000 requires all e-commerce transactions exceeding one thousand rupees to mandate biometric iris scanning at checkout.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.094,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 62,
+      "section_ref": "Cryptocurrency Regulation",
+      "text": "The Information Technology Act, 2000 contains explicit provisions establishing statutory licensing for decentralized proof-of-stake cryptocurrency exchanges and Bitcoin wallet custodians.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.22,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 63,
+      "section_ref": "Large Language Model / AI Liability",
+      "text": "The Information Technology Act, 2000 holds generative AI foundational models strictly liable for copyright infringement whenever hallucinated legal citations are generated by autonomous artificial agents.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.207,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 64,
+      "section_ref": "IoT Device Security Framework",
+      "text": "The Information Technology Act, 2000 sets forth statutory cybersecurity standards requiring all smart home Internet of Things (IoT) appliances to maintain encrypted Zigbee mesh networks.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.249,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 65,
+      "section_ref": "Blanket VPN Prohibition",
+      "text": "The Information Technology Act, 2000 explicitly enacts a complete blanket prohibition making the personal use of Virtual Private Networks (VPNs) a non-bailable criminal offense punishable by five years imprisonment.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.126,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 66,
+      "section_ref": "Cyber Crime Victim Compensation Fund",
+      "text": "Chapter VIII of the Information Technology Act, 2000 establishes a permanent statutory body called the 'Cyber Crime Victim Compensation Fund' funded by mandatory one percent levy on all electronic payments.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.176,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 67,
+      "section_ref": "National Cyber Security Authority",
+      "text": "The Information Technology Act, 2000 created the 'National Cyber Security Authority' with supreme executive powers to take over private data centers during peacetime internet congestion.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.231,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 68,
+      "section_ref": "Mandatory AES-256 Encryption",
+      "text": "Section 84 of the Information Technology Act, 2000 explicitly mandates that all private sector databases must strictly implement AES-256 bit symmetric key encryption with mandatory dual hardware security modules.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.158,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 69,
+      "section_ref": "Mandatory Mobile App Registration",
+      "text": "The Information Technology Act, 2000 prohibits publishing any Android or iOS mobile application without prior written registration and source code deposit with the Ministry of Electronics and Information Technology.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.221,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    },
+    {
+      "id": 70,
+      "section_ref": "Mandatory Blockchain Logging",
+      "text": "The Information Technology Act, 2000 requires all Indian commercial banks to log every customer account login on an immutable public distributed ledger accessible to all citizens.",
+      "expected_decision": "FLAGGED",
+      "predicted_decision": "FLAGGED",
+      "trust_score": 0.127,
+      "is_match": true,
+      "category_desc": "Completely Hallucinated / Fabricated"
+    }
+  ]
+}

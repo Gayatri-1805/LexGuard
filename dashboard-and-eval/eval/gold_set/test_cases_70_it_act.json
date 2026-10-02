@@ -1,0 +1,501 @@
+{
+  "metadata": {
+    "total_cases": 70,
+    "cases_from_kb": 50,
+    "cases_outside_kb": 20,
+    "source_document": "IT Act 2000 (Updated)",
+    "description": "Test cases to verify KB retrieval and hallucination detection"
+  },
+  "test_cases": [
+    {
+      "id": 1,
+      "claim": "The Information Technology Act, 2000 is Act No. 21 of 2000",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Act heading"
+    },
+    {
+      "id": 2,
+      "claim": "The IT Act 2000 received presidential assent on 9th June, 2000",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Act heading"
+    },
+    {
+      "id": 3,
+      "claim": "Section 65 deals with tampering with computer source documents",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 65"
+    },
+    {
+      "id": 4,
+      "claim": "Section 66 covers computer related offences punishable with imprisonment up to three years",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 66"
+    },
+    {
+      "id": 5,
+      "claim": "Section 66A was struck down by the Supreme Court in Shreya Singhal vs Union of India case",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 66A footnote"
+    },
+    {
+      "id": 6,
+      "claim": "Section 66B deals with punishment for dishonestly receiving stolen computer resource or communication device",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 66B"
+    },
+    {
+      "id": 7,
+      "claim": "Section 66C covers punishment for identity theft with imprisonment up to three years",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 66C"
+    },
+    {
+      "id": 8,
+      "claim": "Section 66D deals with cheating by personation using computer resource",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 66D"
+    },
+    {
+      "id": 9,
+      "claim": "Section 66E covers punishment for violation of privacy",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 66E"
+    },
+    {
+      "id": 10,
+      "claim": "Section 66F deals with cyber terrorism and punishment can extend to life imprisonment",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 66F"
+    },
+    {
+      "id": 11,
+      "claim": "Section 67 covers publishing or transmitting obscene material in electronic form",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 67"
+    },
+    {
+      "id": 12,
+      "claim": "Section 67A deals with sexually explicit content with punishment up to five years on first conviction",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 67A"
+    },
+    {
+      "id": 13,
+      "claim": "Section 67B covers material depicting children in sexually explicit acts",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 67B"
+    },
+    {
+      "id": 14,
+      "claim": "Section 67C mandates intermediaries to preserve and retain information",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 67C"
+    },
+    {
+      "id": 15,
+      "claim": "Section 69 gives power to government for interception or monitoring of information",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 69"
+    },
+    {
+      "id": 16,
+      "claim": "Section 69A provides power to issue directions for blocking public access to information",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 69A"
+    },
+    {
+      "id": 17,
+      "claim": "Section 69B authorizes monitoring and collecting traffic data for cyber security",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 69B"
+    },
+    {
+      "id": 18,
+      "claim": "Section 70 deals with protected systems and critical information infrastructure",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 70"
+    },
+    {
+      "id": 19,
+      "claim": "Section 70A designates a national nodal agency for critical information infrastructure protection",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 70A"
+    },
+    {
+      "id": 20,
+      "claim": "Section 70B establishes the Indian Computer Emergency Response Team (CERT-In)",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 70B"
+    },
+    {
+      "id": 21,
+      "claim": "Section 43 provides for penalty and compensation for damage to computer systems",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 43"
+    },
+    {
+      "id": 22,
+      "claim": "Section 43A covers compensation for failure to protect data",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 43A"
+    },
+    {
+      "id": 23,
+      "claim": "The Act extends to the whole of India and applies to offences committed outside India",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 1(2)"
+    },
+    {
+      "id": 24,
+      "claim": "Section 79 provides exemption from liability for intermediaries in certain cases",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 79"
+    },
+    {
+      "id": 25,
+      "claim": "The Act came into force on 17th October, 2000",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 1 footnote"
+    },
+    {
+      "id": 26,
+      "claim": "Electronic signature is defined in Section 3A of the Act",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 3A"
+    },
+    {
+      "id": 27,
+      "claim": "Section 4 provides legal recognition to electronic records",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 4"
+    },
+    {
+      "id": 28,
+      "claim": "Section 5 provides legal recognition to electronic signatures",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 5"
+    },
+    {
+      "id": 29,
+      "claim": "The Controller of Certifying Authorities is appointed under Section 17",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 17"
+    },
+    {
+      "id": 30,
+      "claim": "Section 21 covers licensing requirements for issuing electronic signature certificates",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 21"
+    },
+    {
+      "id": 31,
+      "claim": "The Appellate Tribunal is the TDSAT (Telecom Disputes Settlement and Appellate Tribunal)",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 48"
+    },
+    {
+      "id": 32,
+      "claim": "Section 78 states that police officers not below the rank of Inspector can investigate offences",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 78"
+    },
+    {
+      "id": 33,
+      "claim": "Section 80 gives police officers power to enter and search public places without warrant",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 80"
+    },
+    {
+      "id": 34,
+      "claim": "The First Schedule lists documents to which the Act does not apply",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "First Schedule"
+    },
+    {
+      "id": 35,
+      "claim": "Negotiable instruments other than cheques are excluded from the Act's application",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "First Schedule item 1"
+    },
+    {
+      "id": 36,
+      "claim": "Power of attorney documents are excluded from the Act",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "First Schedule item 2"
+    },
+    {
+      "id": 37,
+      "claim": "Wills and testamentary dispositions are excluded from the Act",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "First Schedule item 4"
+    },
+    {
+      "id": 38,
+      "claim": "Contracts for sale of immovable property are excluded from the Act",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "First Schedule item 5"
+    },
+    {
+      "id": 39,
+      "claim": "Computer contaminant means instructions designed to modify, destroy or usurp normal operation",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 43 Explanation"
+    },
+    {
+      "id": 40,
+      "claim": "Computer virus is defined as instruction that damages or degrades computer resource performance",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 43 Explanation"
+    },
+    {
+      "id": 41,
+      "claim": "Section 72 covers penalty for breach of confidentiality and privacy",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 72"
+    },
+    {
+      "id": 42,
+      "claim": "Section 72A deals with disclosure of information in breach of lawful contract",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 72A"
+    },
+    {
+      "id": 43,
+      "claim": "The Act was amended by the Information Technology Amendment Act 2008 (Act 10 of 2009)",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Multiple footnotes"
+    },
+    {
+      "id": 44,
+      "claim": "Cyber cafe is defined as a facility offering internet access to public in ordinary course of business",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 2(na)"
+    },
+    {
+      "id": 45,
+      "claim": "Cyber security means protecting information and devices from unauthorized access and disruption",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 2(nb)"
+    },
+    {
+      "id": 46,
+      "claim": "Intermediary includes telecom providers, ISPs, web hosts, search engines and online marketplaces",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 2(w)"
+    },
+    {
+      "id": 47,
+      "claim": "Section 84A allows Central Government to prescribe modes for encryption",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 84A"
+    },
+    {
+      "id": 48,
+      "claim": "Section 85 covers offences by companies and liability of directors",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 85"
+    },
+    {
+      "id": 49,
+      "claim": "The Cyber Regulations Advisory Committee is constituted under Section 88",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 88"
+    },
+    {
+      "id": 50,
+      "claim": "Section 81 states the Act has overriding effect over other laws",
+      "expected_label": "Supported",
+      "in_kb": true,
+      "section_reference": "Section 81"
+    },
+    {
+      "id": 51,
+      "claim": "Section 66G deals with punishment for online fraud and carries imprisonment up to 5 years",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Section 66G does not exist in IT Act 2000"
+    },
+    {
+      "id": 52,
+      "claim": "The IT Act 2000 mandates all companies to conduct annual cyber security audits",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "No such blanket mandatory requirement in the Act"
+    },
+    {
+      "id": 53,
+      "claim": "Section 68A provides for establishment of a National Cyber Crime Reporting Portal",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Section 68A does not exist in the Act"
+    },
+    {
+      "id": 54,
+      "claim": "Under IT Act 2000, all digital payments above Rs 10,000 require two-factor authentication",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Act does not specify such payment thresholds or authentication requirements"
+    },
+    {
+      "id": 55,
+      "claim": "The Act mandates that all government websites must use .gov.in domain only",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "No such domain mandate in the Act"
+    },
+    {
+      "id": 56,
+      "claim": "Section 71A deals with unauthorized access to social media accounts",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Section 71A does not exist; Section 71 covers misrepresentation only"
+    },
+    {
+      "id": 57,
+      "claim": "The IT Act requires all emails to be encrypted with AES-256 encryption",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Act does not mandate specific encryption standards for emails"
+    },
+    {
+      "id": 58,
+      "claim": "Section 44A provides compensation for victims of online defamation",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Section 44A does not exist in the Act"
+    },
+    {
+      "id": 59,
+      "claim": "The Act established a Cyber Crime Victim Compensation Fund managed by CERT-In",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "No such fund mentioned in the Act"
+    },
+    {
+      "id": 60,
+      "claim": "Under Section 75A, sharing of personal data requires explicit written consent in physical form",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Section 75A does not exist; Act predates modern data protection concepts"
+    },
+    {
+      "id": 61,
+      "claim": "The IT Act 2000 mandates biometric authentication for all financial transactions above Rs 50,000",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "No such biometric mandate in the Act"
+    },
+    {
+      "id": 62,
+      "claim": "Section 82A establishes a Digital Evidence Forensic Laboratory in every state",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Section 82A does not exist; only Section 82 exists"
+    },
+    {
+      "id": 63,
+      "claim": "The Act requires all mobile apps to register with the Ministry of Electronics and IT before launch",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "No app registration requirement in the Act"
+    },
+    {
+      "id": 64,
+      "claim": "Section 66H covers unauthorized cryptocurrency mining with penalty up to Rs 10 lakhs",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Section 66H does not exist; Act predates cryptocurrency"
+    },
+    {
+      "id": 65,
+      "claim": "The IT Act mandates data localization requiring all user data to be stored within India",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "No data localization mandate in the Act"
+    },
+    {
+      "id": 66,
+      "claim": "Section 73A provides special protection for whistleblowers in cyber crime cases",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Section 73A does not exist in the Act"
+    },
+    {
+      "id": 67,
+      "claim": "The Act establishes a National Cyber Security Authority with powers to shut down websites",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "No such authority created by the Act; only Controller and CERT-In mentioned"
+    },
+    {
+      "id": 68,
+      "claim": "Under IT Act 2000, VPN service providers must maintain logs for 10 years",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Act does not specify VPN log retention requirements"
+    },
+    {
+      "id": 69,
+      "claim": "Section 79B provides safe harbor provisions for AI-based content moderation systems",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "Section 79B does not exist; Act predates AI technology discussions"
+    },
+    {
+      "id": 70,
+      "claim": "The IT Act 2000 mandates that all IoT devices must have Indian certification before sale",
+      "expected_label": "Refuted",
+      "in_kb": false,
+      "reason": "No IoT device certification mandate in the Act"
+    }
+  ]
+}

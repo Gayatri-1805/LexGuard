@@ -65,10 +65,18 @@ htmlcov/
 
 # Temporary files
 *.tmp
+*.temp
 *.log
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# MS Office / Word temporary lock files
+~$*
+~$*.docx
+
+# Duplicate / nested script outputs
+api-and-sdk/api-and-sdk/
 
 # Docker
 .docker/
@@ -78,3 +86,4 @@ api-and-sdk/api/kb/kb_raw/
 
 # Vector index (rebuildable derived artifact)
 api-and-sdk/api/kb/index/
+
